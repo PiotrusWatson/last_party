@@ -1,13 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=9 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
 [ext_resource type="Script" path="res://prefabs/partygoer/character_mover.gd" id="2_tnmw0"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="4_itfhl"]
+[ext_resource type="Script" path="res://scripts/state_machine.gd" id="5_u77gh"]
+[ext_resource type="Script" path="res://prefabs/partygoer/states/idle.gd" id="6_mjqa1"]
+[ext_resource type="Script" path="res://prefabs/partygoer/states/approaching.gd" id="7_jk8li"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
-[node name="Partygoer" type="CharacterBody2D"]
+[node name="Partygoer" type="CharacterBody2D" groups=["Partiers"]]
 script = ExtResource("1_6njh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,3 +30,21 @@ max_distance = 250.0
 
 [node name="CharacterMover" type="Node" parent="Components"]
 script = ExtResource("2_tnmw0")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("5_u77gh")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("6_mjqa1")
+
+[node name="Approaching" type="Node" parent="StateMachine"]
+script = ExtResource("7_jk8li")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="ChangeDirectionTimer" type="Timer" parent="Timers"]
+wait_time = 2.277
+
+[connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
+[connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
+[connection signal="timeout" from="Timers/ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]

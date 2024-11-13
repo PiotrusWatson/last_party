@@ -8,7 +8,7 @@
 radius = 16.0
 height = 32.0
 
-[node name="Player" type="RigidBody2D"]
+[node name="Player" type="RigidBody2D" groups=["Partiers"]]
 script = ExtResource("1_4ttaq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
