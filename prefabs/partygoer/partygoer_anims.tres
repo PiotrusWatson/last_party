@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://cxn82o0kqhfsp"]
+
+[ext_resource type="Texture2D" uid="uid://db22d71iworhi" path="res://sprites/placeholder/BANANA.png" id="1_id8mb"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_id8mb")
+}],
+"loop": true,
+"name": &"placeholder",
+"speed": 5.0
+}]
