@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
 [ext_resource type="Script" path="res://prefabs/partygoer/character_mover.gd" id="2_tnmw0"]
-[ext_resource type="Script" path="res://addons/vision_cone_2d/vision_cone_2d.gd" id="4_ulxkl"]
+[ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="4_itfhl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
@@ -18,13 +18,12 @@ scale = Vector2(0.01, 0.01)
 sprite_frames = ExtResource("1_pv8j1")
 animation = &"placeholder"
 
+[node name="VisionCone2D" parent="." instance=ExtResource("4_itfhl")]
+rotation = 4.71239
+angle_deg = 70
+max_distance = 250.0
+
 [node name="Components" type="Node" parent="."]
 
 [node name="CharacterMover" type="Node" parent="Components"]
 script = ExtResource("2_tnmw0")
-
-[node name="VisionCone2D" type="Node2D" parent="."]
-script = ExtResource("4_ulxkl")
-angle_deg = 75
-max_distance = 1000.0
-debug_shape = true
