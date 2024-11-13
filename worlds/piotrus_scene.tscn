@@ -21,3 +21,4 @@ texture = ExtResource("3_y8dw4")
 
 [node name="Partygoer" parent="." instance=ExtResource("4_r475v")]
 position = Vector2(100, 0)
+distance_to_stop = 0.5

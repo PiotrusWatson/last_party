@@ -1,11 +1,14 @@
 extends PartygoerState
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func enter(previous_state_path: String, data := {}):
+	#speech bubble with greeting
 	pass
+	
+func physics_process(delta):
+	var direction = (partygoer.target.global_position - partygoer.global_position).normalized()
+	partygoer.mover.move_direction(direction)
+	partygoer.change_direction_helper(direction)
+	if partygoer.global_position.distance_to(partygoer.target.global_position) < partygoer.distance_to_stop:
+		finished.emit(CHATTING)
+	

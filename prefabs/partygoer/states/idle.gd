@@ -12,19 +12,13 @@ func physics_process(delta):
 
 func change_direction():
 	current_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()
-	flip_sprite_on_direction()
-	partygoer.vision_cone.rotation = current_direction.angle() + partygoer.cone_rotation_offset
+	partygoer.change_direction_helper(current_direction)
 	
 func handle_seeing_something(body):
-	if body.is_in_group("Partier"):
+	if body.is_in_group("Partiers") and body != partygoer:
 		partygoer.set_target(body)
 		finished.emit(APPROACHING)
 		
 
-func flip_sprite_on_direction():
-	var animator = partygoer.animator as AnimatedSprite2D
-	if current_direction.x < 0:
-		animator.flip_h = true
-	else:
-		animator.flip_h = false
+
 		

@@ -40,6 +40,8 @@ script = ExtResource("6_mjqa1")
 [node name="Approaching" type="Node" parent="StateMachine"]
 script = ExtResource("7_jk8li")
 
+[node name="Chatting" type="Node" parent="StateMachine"]
+
 [node name="Timers" type="Node" parent="."]
 
 [node name="ChangeDirectionTimer" type="Timer" parent="Timers"]
