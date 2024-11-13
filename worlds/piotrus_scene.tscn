@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4uyb55a4rjwc"]
+
+[ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
+[ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
+[ext_resource type="Texture2D" uid="uid://bf01mbjlhf7kb" path="res://sprites/placeholder/Sam_Lake-MichaelFörtsch.jpg" id="3_y8dw4"]
+
+[node name="PiotrusScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_xf4hq")]
+gravity_scale = 0.0
+
+[node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
+script = ExtResource("2_hmd5b")
+thing_to_follow = NodePath("../Player")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(-10, -18)
+texture = ExtResource("3_y8dw4")
