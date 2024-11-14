@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=9 format=3 uid="uid://c4uyb55a4rjwc"]
 
+[ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
 [ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
@@ -13,6 +14,7 @@ size = Vector2(638, 172)
 size = Vector2(159, 374)
 
 [node name="PiotrusScene" type="Node2D"]
+script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
 gravity_scale = 0.0
