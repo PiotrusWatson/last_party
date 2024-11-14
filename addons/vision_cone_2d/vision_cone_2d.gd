@@ -1,7 +1,8 @@
 extends Node2D
-
 ## A configurable vision cone for 2D entities. It can be used for example to simulate the vision of enemies in a stealth game.
 class_name VisionCone2D
+
+@onready var renderer = $VisionConeRenderer
 signal entered_vision_cone(body)
 signal exited_vision_cone(body)
 
