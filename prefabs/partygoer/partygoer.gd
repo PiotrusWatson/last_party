@@ -8,9 +8,9 @@ class_name Partygoer
 @onready var direction_timer = $Timers/ChangeDirectionTimer
 @onready var boredom_timer = $Timers/BoredomTimer
 
-@export var distance_to_stop = 0.5
 var target: Node2D
 var cone_rotation_offset
+
 func _ready() -> void:
 	mover.init(self)
 	cone_rotation_offset = vision_cone.rotation

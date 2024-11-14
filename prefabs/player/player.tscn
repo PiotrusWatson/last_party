@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=8 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="SpriteFrames" uid="uid://bklbwmhu5dyhk" path="res://prefabs/player/player_anims.tres" id="1_l5056"]
 [ext_resource type="PackedScene" uid="uid://b3r3r55bme8l6" path="res://components/physics_mover.tscn" id="3_chdan"]
+[ext_resource type="Texture2D" uid="uid://brgqd5do7bveh" path="res://sprites/placeholder/circle.tres" id="4_ujjfo"]
+[ext_resource type="PackedScene" uid="uid://couje8gm6mtot" path="res://components/health.tscn" id="4_yrta5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxn8t"]
 radius = 6.0
 height = 40.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ah0om"]
+radius = 58.0086
 
 [node name="Player" type="RigidBody2D" groups=["Partiers"]]
 script = ExtResource("1_4ttaq")
@@ -26,3 +31,26 @@ shape = SubResource("CapsuleShape2D_lxn8t")
 
 [node name="PhysicsMover" parent="Components" instance=ExtResource("3_chdan")]
 speed = 10.0
+
+[node name="Health" parent="Components" instance=ExtResource("4_yrta5")]
+
+[node name="PersonalSpace" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace"]
+position = Vector2(0, -32)
+shape = SubResource("CircleShape2D_ah0om")
+
+[node name="Sprite2D" type="Sprite2D" parent="PersonalSpace"]
+position = Vector2(0.499996, -31.5)
+scale = Vector2(1.85938, 1.89062)
+texture = ExtResource("4_ujjfo")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="AnxietyDamage" type="Timer" parent="Timers"]
+wait_time = 0.5
+
+[connection signal="dead" from="Components/Health" to="." method="_on_health_dead"]
+[connection signal="body_entered" from="PersonalSpace" to="." method="_on_personal_space_body_entered"]
+[connection signal="body_exited" from="PersonalSpace" to="." method="_on_personal_space_body_exited"]
+[connection signal="timeout" from="Timers/AnxietyDamage" to="." method="_on_anxiety_damage_timeout"]
