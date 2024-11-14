@@ -11,7 +11,6 @@
 gravity_scale = 0.0
 
 [node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
-zoom = Vector2(10, 10)
 script = ExtResource("2_hmd5b")
 thing_to_follow = NodePath("../Player")
 
