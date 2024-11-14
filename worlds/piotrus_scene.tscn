@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=13 format=3 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="4_r475v"]
 [ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
+[ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="7_5p2nu"]
+[ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="7_pb6ad"]
+[ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="9_xhapp"]
+[ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5670n"]
 size = Vector2(638, 172)
@@ -70,3 +74,40 @@ position = Vector2(100, 0)
 
 [node name="Partygoer2" parent="." instance=ExtResource("5_m13ws")]
 position = Vector2(-33, 6)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnxietyBar" type="TextureProgressBar" parent="UI/UI"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 60.0
+grow_horizontal = 2
+nine_patch_stretch = true
+texture_under = ExtResource("7_5p2nu")
+texture_progress = ExtResource("7_pb6ad")
+script = ExtResource("9_xhapp")
+
+[node name="Label" type="Label" parent="UI/UI/AnxietyBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = -25.0
+offset_right = 45.0
+offset_bottom = -2.0
+grow_horizontal = 2
+text = "Anxiety Bar"
+
+[node name="God" type="Node" parent="."]
+script = ExtResource("10_gu7p8")

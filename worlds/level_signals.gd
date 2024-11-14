@@ -1,12 +1,9 @@
 extends Node2D
 
 @onready var player = $Player
-
+@onready var angst_bar = $UI/UI/AnxietyBar
+@onready var god = $God
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	player.anxiety_changed.connect(angst_bar.set_anxiety)
+	player.dead.connect(god.die)
