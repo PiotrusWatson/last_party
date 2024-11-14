@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="4_r475v"]
-[ext_resource type="PackedScene" uid="uid://cfm2k875xgph8" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
+[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5670n"]
 size = Vector2(638, 172)
