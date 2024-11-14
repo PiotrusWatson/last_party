@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=8 format=3 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
 [ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
-[ext_resource type="Texture2D" uid="uid://bf01mbjlhf7kb" path="res://sprites/placeholder/Sam_Lake-MichaelFörtsch.jpg" id="3_y8dw4"]
+[ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="4_r475v"]
+[ext_resource type="PackedScene" uid="uid://cfm2k875xgph8" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5670n"]
+size = Vector2(638, 172)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dx6j6"]
+size = Vector2(159, 374)
 
 [node name="PiotrusScene" type="Node2D"]
 
@@ -15,10 +22,49 @@ zoom = Vector2(10, 10)
 script = ExtResource("2_hmd5b")
 thing_to_follow = NodePath("../Player")
 
+[node name="WorldColliders" type="Node2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(3.88851, 6.79824)
+
+[node name="WorldColliderBody" type="StaticBody2D" parent="WorldColliders"]
+position = Vector2(0, 0.882581)
+scale = Vector2(0.257168, 0.147097)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldColliders/WorldColliderBody"]
+position = Vector2(2, -158)
+shape = SubResource("RectangleShape2D_5670n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldColliders/WorldColliderBody"]
+position = Vector2(10, 115)
+shape = SubResource("RectangleShape2D_5670n")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldColliders/WorldColliderBody"]
+position = Vector2(-228, 7)
+shape = SubResource("RectangleShape2D_dx6j6")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldColliders/WorldColliderBody"]
+position = Vector2(229, 14)
+shape = SubResource("RectangleShape2D_dx6j6")
+
+[node name="BGBlack" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
+texture_filter = 1
+position = Vector2(0, -6)
+scale = Vector2(3.88851, 6.79824)
+texture = ExtResource("3_crhye")
+
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
-position = Vector2(-10, -18)
-texture = ExtResource("3_y8dw4")
+texture_filter = 1
+position = Vector2(2, -14)
+scale = Vector2(2, 2)
+texture = ExtResource("3_crhye")
 
 [node name="Partygoer" parent="." instance=ExtResource("4_r475v")]
 position = Vector2(100, 0)
+
+[node name="Partygoer2" parent="." instance=ExtResource("5_m13ws")]
+position = Vector2(-33, 6)

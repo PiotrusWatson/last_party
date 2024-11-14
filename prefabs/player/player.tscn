@@ -5,19 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://b3r3r55bme8l6" path="res://components/physics_mover.tscn" id="3_chdan"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxn8t"]
-radius = 2.0
-height = 12.0
+radius = 6.0
+height = 40.0
 
 [node name="Player" type="RigidBody2D" groups=["Partiers"]]
 script = ExtResource("1_4ttaq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_lxn8t")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+texture_filter = 1
 sprite_frames = ExtResource("1_l5056")
 animation = &"placeholder"
+centered = false
+offset = Vector2(-15.81, -61.36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -22)
+shape = SubResource("CapsuleShape2D_lxn8t")
 
 [node name="Components" type="Node" parent="."]
 
