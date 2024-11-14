@@ -17,6 +17,7 @@ thing_to_follow = NodePath("../Player")
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(-10, -18)
+scale = Vector2(2, 2)
 texture = ExtResource("3_y8dw4")
 
 [node name="Partygoer" parent="." instance=ExtResource("4_r475v")]
