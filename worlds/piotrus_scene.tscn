@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=14 format=3 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="7_pb6ad"]
 [ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="9_xhapp"]
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
+[ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5670n"]
 size = Vector2(638, 172)
@@ -109,5 +110,27 @@ offset_bottom = -2.0
 grow_horizontal = 2
 text = "Anxiety Bar"
 
+[node name="Clock" type="Label" parent="UI/UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+text = "🕒Time Left🕒: 30"
+script = ExtResource("10_wims2")
+
 [node name="God" type="Node" parent="."]
 script = ExtResource("10_gu7p8")
+
+[node name="GameTimer" type="Timer" parent="God"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="GameTick" type="Timer" parent="God"]
+autostart = true
+
+[connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
+[connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]
