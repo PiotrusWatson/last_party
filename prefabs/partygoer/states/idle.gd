@@ -1,6 +1,7 @@
 extends PartygoerState
 
 var current_direction: Vector2
+@export var speed = 15.0
 
 func enter(previous_state_path: String, data := {}):
 	current_direction = partygoer.get_global_transform().x
@@ -8,7 +9,7 @@ func enter(previous_state_path: String, data := {}):
 	
 
 func physics_process(delta):
-	partygoer.mover.move_direction(current_direction)
+	partygoer.mover.move_direction_at_speed(current_direction, speed)
 
 func change_direction():
 	current_direction = Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized()

@@ -47,6 +47,8 @@ script = ExtResource("7_jk8li")
 [node name="ChangeDirectionTimer" type="Timer" parent="Timers"]
 wait_time = 2.277
 
+[node name="BoredomTimer" type="Timer" parent="Timers"]
+
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
 [connection signal="timeout" from="Timers/ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]

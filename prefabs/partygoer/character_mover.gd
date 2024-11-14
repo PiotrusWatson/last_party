@@ -10,5 +10,8 @@ func init(body: CharacterBody2D) -> void:
 
 
 func move_direction(direction: Vector2) -> void:
-	body.velocity = direction * speed
+	move_direction_at_speed(direction, speed)
+	
+func move_direction_at_speed(direction: Vector2, new_speed: float) -> void:
+	body.velocity = direction * new_speed
 	body.move_and_slide()
