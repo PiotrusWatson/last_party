@@ -1,12 +1,12 @@
 [gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://bklbwmhu5dyhk"]
 
-[ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="1_bku7p"]
+[ext_resource type="Texture2D" uid="uid://djroshgn6b2ij" path="res://sprites/Player/astronautguy.png" id="1_j8pak"]
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_bku7p")
+"texture": ExtResource("1_j8pak")
 }],
 "loop": true,
 "name": &"placeholder",

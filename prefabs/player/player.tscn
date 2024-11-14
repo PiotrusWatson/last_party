@@ -15,7 +15,7 @@ script = ExtResource("1_4ttaq")
 shape = SubResource("CapsuleShape2D_lxn8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.3, 0.3)
+texture_filter = 1
 sprite_frames = ExtResource("1_l5056")
 animation = &"placeholder"
 
