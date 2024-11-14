@@ -6,6 +6,7 @@ class_name Partygoer
 @onready var animator = $AnimatedSprite2D
 @onready var state_machine = $StateMachine
 @onready var direction_timer = $Timers/ChangeDirectionTimer
+@onready var boredom_timer = $Timers/BoredomTimer
 
 @export var distance_to_stop = 0.5
 var target: Node2D
@@ -42,3 +43,8 @@ func _on_change_direction_timer_timeout() -> void:
 
 func set_target(target):
 	self.target = target
+
+
+func _on_boredom_timer_timeout() -> void:
+	if state_machine.state.has_method("handle_boredom_tick"):
+		state_machine.state.handle_boredom_tick()

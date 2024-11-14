@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=10 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="5_u77gh"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/idle.gd" id="6_mjqa1"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/approaching.gd" id="7_jk8li"]
+[ext_resource type="Script" path="res://prefabs/partygoer/states/chatting.gd" id="8_r3y4m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
@@ -39,8 +40,11 @@ script = ExtResource("6_mjqa1")
 
 [node name="Approaching" type="Node" parent="StateMachine"]
 script = ExtResource("7_jk8li")
+distance_to_stop = 30.0
 
 [node name="Chatting" type="Node" parent="StateMachine"]
+script = ExtResource("8_r3y4m")
+boredom_threshold = 15.0
 
 [node name="Timers" type="Node" parent="."]
 
@@ -52,3 +56,4 @@ wait_time = 2.277
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
 [connection signal="timeout" from="Timers/ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]
+[connection signal="timeout" from="Timers/BoredomTimer" to="." method="_on_boredom_timer_timeout"]
