@@ -1,0 +1,3 @@
+extends Node
+
+enum ConeHas{SEEN_PLAYER, SEEN_PARTYGOER, SEEN_NOTHING}

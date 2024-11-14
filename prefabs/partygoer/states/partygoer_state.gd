@@ -4,6 +4,7 @@ class_name PartygoerState
 const IDLE = "Idle"
 const APPROACHING = "Approaching"
 const CHATTING = "Chatting"
+const SEARCHING = "Searching"
 
 var partygoer : Partygoer
 

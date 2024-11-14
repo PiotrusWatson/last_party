@@ -122,6 +122,8 @@ func _ray_to(direction: Vector2) -> Vector2:
 	var ray_position = collision["position"] if "position" in collision else destination
 	return to_local(ray_position)
 
+func change_vision_cone_colour(state):
+	renderer.change_colour_by_choice(state)
 
 func _on_vision_cone_area_body_entered(body: Node2D) -> void:
 	entered_vision_cone.emit(body)

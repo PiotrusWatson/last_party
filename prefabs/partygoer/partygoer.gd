@@ -44,7 +44,9 @@ func _on_change_direction_timer_timeout() -> void:
 func set_target(target):
 	self.target = target
 
-
+func change_cone_colour(state):
+	vision_cone.change_vision_cone_colour(state)
+	
 func _on_boredom_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_boredom_tick"):
 		state_machine.state.handle_boredom_tick()

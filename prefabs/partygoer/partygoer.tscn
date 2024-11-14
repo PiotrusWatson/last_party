@@ -11,7 +11,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
-[node name="Partygoer" type="CharacterBody2D" groups=["Partiers"]]
+[node name="Partygoer" type="CharacterBody2D" groups=["Partiers", "Player"]]
 script = ExtResource("1_6njh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
