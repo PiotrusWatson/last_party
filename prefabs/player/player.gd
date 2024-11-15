@@ -4,6 +4,7 @@ extends RigidBody2D
 @onready var anxiety_timer = $Timers/AnxietyDamage
 @onready var health = $Components/Health
 @onready var arm = $Arm
+@onready var left_arm = $BodyParts/LeftArm
 var direction = Vector2.ZERO
 var body_count = 0
 
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	mover.push_direction(direction)
+	left_arm.move_to_target(get_global_mouse_position())
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Fire"):
