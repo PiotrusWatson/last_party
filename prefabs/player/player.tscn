@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=15 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="Texture2D" uid="uid://tb5t6kmedonj" path="res://sprites/Player/BodyParts/Astronaut_floating_torso.png" id="2_iw4hd"]
@@ -8,6 +8,10 @@
 [ext_resource type="Script" path="res://prefabs/arm/arm.gd" id="6_2gfem"]
 [ext_resource type="SpriteFrames" uid="uid://b5c8k530i4nrf" path="res://prefabs/arm/arm_sprite_frames.tres" id="6_qpuv8"]
 [ext_resource type="PackedScene" uid="uid://cf21ft67x8nc4" path="res://prefabs/player/body_parts/head.tscn" id="8_7gs0h"]
+[ext_resource type="PackedScene" uid="uid://1se5evh7ewp0" path="res://prefabs/player/body_parts/left_arm.tscn" id="9_xjprf"]
+[ext_resource type="PackedScene" uid="uid://5q8im6l7tr55" path="res://prefabs/player/body_parts/left_leg.tscn" id="10_v0n13"]
+[ext_resource type="PackedScene" uid="uid://be57jqugphug1" path="res://prefabs/player/body_parts/right_arm.tscn" id="11_3snor"]
+[ext_resource type="PackedScene" uid="uid://ciilee4wpa3e4" path="res://prefabs/player/body_parts/right_leg.tscn" id="12_xwh6r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lxn8t"]
 radius = 6.0
@@ -21,6 +25,7 @@ texture_filter = 1
 script = ExtResource("1_4ttaq")
 
 [node name="Torso" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 1
 position = Vector2(-14, 31)
 texture = ExtResource("2_iw4hd")
@@ -56,12 +61,12 @@ texture = ExtResource("4_ujjfo")
 wait_time = 0.5
 
 [node name="Arm" type="RayCast2D" parent="."]
-visible = false
 position = Vector2(0, -35)
 target_position = Vector2(50, 0)
 script = ExtResource("6_2gfem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Arm"]
+visible = false
 position = Vector2(19, -1)
 scale = Vector2(0.34375, 0.0703125)
 sprite_frames = ExtResource("6_qpuv8")
@@ -70,8 +75,59 @@ animation = &"open"
 [node name="BodyParts" type="Node2D" parent="."]
 
 [node name="Head" parent="BodyParts" instance=ExtResource("8_7gs0h")]
+z_index = 3
+position = Vector2(-11, -5)
+mass = 0.001
+
+[node name="LeftArm" parent="BodyParts" instance=ExtResource("9_xjprf")]
+z_index = 2
+position = Vector2(-5, 7)
+collision_layer = 8
+collision_mask = 8
+
+[node name="LeftLeg" parent="BodyParts" instance=ExtResource("10_v0n13")]
+z_index = 2
+position = Vector2(13, 5)
+collision_layer = 8
+collision_mask = 8
+
+[node name="RightArm" parent="BodyParts" instance=ExtResource("11_3snor")]
+z_index = -1
+position = Vector2(-9, 3)
+collision_layer = 16
+collision_mask = 16
+
+[node name="RightLeg" parent="BodyParts" instance=ExtResource("12_xwh6r")]
+position = Vector2(8, 6)
+collision_layer = 16
+collision_mask = 16
 
 [node name="Joints" type="Node2D" parent="."]
+
+[node name="HeadTorso" type="PinJoint2D" parent="Joints"]
+position = Vector2(-10, 0)
+node_a = NodePath("../../BodyParts/Head")
+node_b = NodePath("../..")
+
+[node name="LeftArmTorso" type="PinJoint2D" parent="Joints"]
+position = Vector2(-2, 5)
+node_a = NodePath("../..")
+node_b = NodePath("../../BodyParts/LeftArm")
+
+[node name="RightArmTorso" type="PinJoint2D" parent="Joints"]
+position = Vector2(-7, 3)
+node_a = NodePath("../..")
+node_b = NodePath("../../BodyParts/RightArm")
+
+[node name="LeftLegTorso" type="PinJoint2D" parent="Joints"]
+position = Vector2(9, 2)
+node_a = NodePath("../..")
+node_b = NodePath("../../BodyParts/LeftLeg")
+
+[node name="RightLegTorso" type="PinJoint2D" parent="Joints"]
+position = Vector2(8, 3)
+node_a = NodePath("../..")
+node_b = NodePath("../../BodyParts/RightLeg")
 
 [connection signal="dead" from="Components/Health" to="." method="_on_health_dead"]
 [connection signal="body_entered" from="PersonalSpace" to="." method="_on_personal_space_body_entered"]

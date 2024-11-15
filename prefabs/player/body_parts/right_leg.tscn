@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ciilee4wpa3e4"]
 
-[ext_resource type="Texture2D" uid="uid://bkyjiokl1q5b5" path="res://sprites/Player/BodyParts/Astronaut_floating_legR.png" id="1_qvo6w"]
-[ext_resource type="PackedScene" uid="uid://dr2yq0la1ueex" path="res://prefabs/player/body_parts/right_leg_lower.tscn" id="2_u8vwm"]
+[ext_resource type="Texture2D" uid="uid://bkyjiokl1q5b5" path="res://sprites/Player/BodyParts/Astronaut_floating_legR.png" id="1_rt2xx"]
+[ext_resource type="PackedScene" uid="uid://dr2yq0la1ueex" path="res://prefabs/player/body_parts/right_leg_lower.tscn" id="2_urahv"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
 radius = 2.09398
@@ -12,14 +12,14 @@ mass = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-6, -5)
-texture = ExtResource("1_qvo6w")
+texture = ExtResource("1_rt2xx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)
 rotation = 2.39285
 shape = SubResource("CapsuleShape2D_cjmcl")
 
-[node name="RightLegLower" parent="." instance=ExtResource("2_u8vwm")]
+[node name="RightLegLower" parent="." instance=ExtResource("2_urahv")]
 z_index = -1
 position = Vector2(7.535, -0.76)
 
