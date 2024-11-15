@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://be57jqugphug1"]
+
+[ext_resource type="Texture2D" uid="uid://cn10rlnjgdwlp" path="res://sprites/Player/BodyParts/Astronaut_floating_armR.png" id="1_s3vmh"]
+[ext_resource type="PackedScene" uid="uid://dnb2dj3kxpc4l" path="res://prefabs/player/body_parts/right_arm_lower.tscn" id="2_wpyop"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
+radius = 2.18749
+height = 8.24581
+
+[node name="RightArm" type="RigidBody2D"]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, -4)
+texture = ExtResource("1_s3vmh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.31598
+shape = SubResource("CapsuleShape2D_cjmcl")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(-4.94, 0.81)
+node_a = NodePath("..")
+node_b = NodePath("../RightArmLower")
+
+[node name="RightArmLower" parent="." instance=ExtResource("2_wpyop")]
+position = Vector2(-9.1, 1.375)
