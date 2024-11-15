@@ -52,7 +52,6 @@ func _on_boredom_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_boredom_tick"):
 		state_machine.state.handle_boredom_tick()
 
-
 func _on_dialogue_displayer_finished_showing_text() -> void:
 	if state_machine.state.has_method("handle_finished_dialogue"):
 		state_machine.state.handle_finished_dialogue()
