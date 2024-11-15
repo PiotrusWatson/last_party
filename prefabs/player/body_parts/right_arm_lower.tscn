@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnb2dj3kxpc4l"]
+
+[ext_resource type="Texture2D" uid="uid://bjahctoa5yocf" path="res://sprites/Player/BodyParts/Astronaut_floating_handR.png" id="1_fd2wh"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
+radius = 1.93542
+height = 10.6854
+
+[node name="RightArmLower" type="RigidBody2D"]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(22, -5)
+texture = ExtResource("1_fd2wh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 1)
+rotation = 1.31598
+shape = SubResource("CapsuleShape2D_cjmcl")

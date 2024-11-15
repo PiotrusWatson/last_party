@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://be57jqugphug1"]
+
+[ext_resource type="Texture2D" uid="uid://cn10rlnjgdwlp" path="res://sprites/Player/BodyParts/Astronaut_floating_armR.png" id="1_dt1vo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
+radius = 2.18749
+height = 8.24581
+
+[node name="RightArmUpper" type="RigidBody2D"]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, -4)
+texture = ExtResource("1_dt1vo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 1.31598
+shape = SubResource("CapsuleShape2D_cjmcl")

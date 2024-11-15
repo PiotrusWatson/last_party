@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf21ft67x8nc4"]
+
+[ext_resource type="Texture2D" uid="uid://dxtlht4jxmb7h" path="res://sprites/Player/BodyParts/Astronaut_floating_head.png" id="1_pvuqw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t123f"]
+
+[node name="Head" type="RigidBody2D"]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(14, 4)
+texture = ExtResource("1_pvuqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_t123f")
