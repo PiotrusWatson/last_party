@@ -24,7 +24,9 @@ func handle_seeing_something(body):
 		
 		
 func exit():
+	partygoer.dialogue_displayer.display_text(Dialogues.greetings.pick_random())
 	partygoer.direction_timer.stop()
+	
 
 func set_colour_off_type_of_partier(body):
 	if body.is_in_group("Player"):

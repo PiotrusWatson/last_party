@@ -7,6 +7,7 @@ class_name Partygoer
 @onready var state_machine = $StateMachine
 @onready var direction_timer = $Timers/ChangeDirectionTimer
 @onready var boredom_timer = $Timers/BoredomTimer
+@onready var dialogue_displayer = $DialogueDisplayer
 
 var target: Node2D
 var cone_rotation_offset
@@ -50,3 +51,8 @@ func change_cone_colour(state):
 func _on_boredom_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_boredom_tick"):
 		state_machine.state.handle_boredom_tick()
+
+
+func _on_dialogue_displayer_finished_showing_text() -> void:
+	if state_machine.state.has_method("handle_finished_dialogue"):
+		state_machine.state.handle_finished_dialogue()

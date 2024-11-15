@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=11 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://prefabs/partygoer/states/idle.gd" id="6_mjqa1"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/approaching.gd" id="7_jk8li"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/chatting.gd" id="8_r3y4m"]
+[ext_resource type="Script" path="res://prefabs/partygoer/show_dialogue.gd" id="9_1flnt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
@@ -53,7 +54,25 @@ wait_time = 2.277
 
 [node name="BoredomTimer" type="Timer" parent="Timers"]
 
+[node name="DialogueDisplayer" type="Label" parent="."]
+offset_left = 12.0
+offset_top = -52.0
+offset_right = 149.0
+offset_bottom = 23.0
+scale = Vector2(0.5, 0.5)
+text = "placeholder text
+i am having a real
+place holder text "
+script = ExtResource("9_1flnt")
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeTimer" type="Timer" parent="DialogueDisplayer"]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
 [connection signal="timeout" from="Timers/ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]
 [connection signal="timeout" from="Timers/BoredomTimer" to="." method="_on_boredom_timer_timeout"]
+[connection signal="finished_showing_text" from="DialogueDisplayer" to="." method="_on_dialogue_displayer_finished_showing_text"]
+[connection signal="timeout" from="DialogueDisplayer/FadeTimer" to="DialogueDisplayer" method="_on_fade_timer_timeout"]
