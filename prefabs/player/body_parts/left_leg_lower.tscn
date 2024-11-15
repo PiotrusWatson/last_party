@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cejt2b41n1wov"]
+
+[ext_resource type="Texture2D" uid="uid://4oe46jn53rxt" path="res://sprites/Player/BodyParts/Astronaut_floating_feetL.png" id="1_vev6g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
+radius = 2.08141
+height = 12.7845
+
+[node name="RightLegLower" type="RigidBody2D"]
+mass = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-21, -4)
+texture = ExtResource("1_vev6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+rotation = 0.837758
+shape = SubResource("CapsuleShape2D_cjmcl")
