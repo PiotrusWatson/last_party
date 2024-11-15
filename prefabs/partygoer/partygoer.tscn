@@ -53,6 +53,17 @@ wait_time = 2.277
 
 [node name="BoredomTimer" type="Timer" parent="Timers"]
 
+[node name="Label" type="Label" parent="."]
+offset_left = 12.0
+offset_top = -52.0
+offset_right = 149.0
+offset_bottom = 23.0
+scale = Vector2(0.5, 0.5)
+text = "placeholder text
+i am having a real
+place holder text "
+metadata/_edit_use_anchors_ = true
+
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
 [connection signal="timeout" from="Timers/ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]
