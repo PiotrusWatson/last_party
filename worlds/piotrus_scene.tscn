@@ -22,10 +22,11 @@ size = Vector2(159, 374)
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
+position = Vector2(-129.635, 0)
 gravity_scale = 0.0
 
 [node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
-zoom = Vector2(10, 10)
+zoom = Vector2(3, 3)
 script = ExtResource("2_hmd5b")
 thing_to_follow = NodePath("../Player")
 
@@ -125,7 +126,7 @@ script = ExtResource("10_wims2")
 script = ExtResource("10_gu7p8")
 
 [node name="GameTimer" type="Timer" parent="God"]
-wait_time = 10.0
+wait_time = 900.0
 one_shot = true
 autostart = true
 
