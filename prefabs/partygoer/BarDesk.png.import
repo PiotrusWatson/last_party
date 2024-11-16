@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2omxnirs7t2d"
-path="res://.godot/imported/Discoball.png-48f507894a383a45115875e0a2020e6e.ctex"
+uid="uid://djwamikgra78s"
+path="res://.godot/imported/BarDesk.png-14661d51e33dfda2a0cdaac5be893592.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Background/Discoball.png"
-dest_files=["res://.godot/imported/Discoball.png-48f507894a383a45115875e0a2020e6e.ctex"]
+source_file="res://prefabs/partygoer/BarDesk.png"
+dest_files=["res://.godot/imported/BarDesk.png-14661d51e33dfda2a0cdaac5be893592.ctex"]
 
 [params]
 
