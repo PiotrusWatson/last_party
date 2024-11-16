@@ -5,16 +5,20 @@ class_name Partygoer
 @onready var vision_cone = $VisionCone2D
 @onready var animator = $AnimatedSprite2D
 @onready var state_machine = $StateMachine
-@onready var direction_timer = $Timers/ChangeDirectionTimer
+@onready var direction_timer = $Timers/WaitTimer
 @onready var boredom_timer = $Timers/BoredomTimer
 @onready var dialogue_displayer = $DialogueDisplayer
 
+var thirst = 0
+var restlessness = 0
+var points_of_interest = []
 var target: Node2D
 var cone_rotation_offset
 
 func _ready() -> void:
 	mover.init(self)
 	cone_rotation_offset = vision_cone.rotation
+	points_of_interest = get_tree().get_nodes_in_group("PointsOfInterest")
 	
 	
 func change_direction_helper(new_direction):

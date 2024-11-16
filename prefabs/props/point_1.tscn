@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dx2implnlqytc"]
+
+[node name="Point1" type="Marker2D" groups=["PointsOfInterest"]]
+gizmo_extents = 55.0
