@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dkjneqr4vf04w"]
+[gd_scene load_steps=19 format=4 uid="uid://dkjneqr4vf04w"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_1roi1"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="2_wlgng"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="4_jdh76"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_nxc8h"]
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="6_s03wq"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_dog.tscn" id="7_xiu1f"]
+[ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="7_xiu1f"]
 [ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="10_5koe1"]
 [ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="11_d7nho"]
 [ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="12_v8vr6"]
@@ -55,6 +55,15 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_mxbmk")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5nbou"]
+size = Vector2(75, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bgycl"]
+size = Vector2(246.5, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0wsq4"]
+size = Vector2(246.5, 107)
+
 [node name="PiotrusScene" type="Node2D"]
 script = ExtResource("1_1roi1")
 
@@ -102,8 +111,19 @@ position = Vector2(-33, 6)
 
 [node name="WorldColliders" type="StaticBody2D" parent="."]
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldColliders"]
+position = Vector2(-145.5, -6.5)
+shape = SubResource("RectangleShape2D_5nbou")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldColliders"]
+position = Vector2(3.75, 84)
+shape = SubResource("RectangleShape2D_bgycl")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldColliders"]
+position = Vector2(14, -117)
+shape = SubResource("RectangleShape2D_0wsq4")
+
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UI" type="Control" parent="UI"]
 layout_mode = 3

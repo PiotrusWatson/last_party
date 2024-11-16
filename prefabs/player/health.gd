@@ -18,3 +18,5 @@ func damage(amount):
 	health -= amount
 	if health <= 0:
 		dead.emit()
+	if health > max_health:
+		health = max_health

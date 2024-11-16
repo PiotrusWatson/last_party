@@ -25,3 +25,4 @@ script = ExtResource("2_3svus")
 shape = SubResource("CircleShape2D_4sk1r")
 
 [connection signal="body_entered" from="InteractableZone" to="." method="_on_interactable_zone_body_entered"]
+[connection signal="body_exited" from="InteractableZone" to="." method="_on_interactable_zone_body_exited"]

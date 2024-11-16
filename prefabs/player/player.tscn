@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=15 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="Texture2D" uid="uid://tb5t6kmedonj" path="res://sprites/Player/BodyParts/Astronaut_floating_torso.png" id="2_iw4hd"]
@@ -19,7 +19,9 @@ height = 22.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_ah0om"]
 radius = 58.0086
 
-[node name="Player" type="RigidBody2D" groups=["Partiers"]]
+[sub_resource type="CircleShape2D" id="CircleShape2D_kdbi3"]
+
+[node name="Player" type="RigidBody2D" groups=["Partiers", "Player"]]
 texture_filter = 1
 mass = 30.0
 script = ExtResource("1_4ttaq")
@@ -36,7 +38,6 @@ speed = 5000.0
 [node name="Health" parent="Components" instance=ExtResource("4_yrta5")]
 
 [node name="PersonalSpace" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace"]
 position = Vector2(0, -32)
@@ -111,6 +112,12 @@ node_b = NodePath("../../BodyParts/RightLeg")
 z_index = 1
 texture = ExtResource("12_jf1pr")
 
+[node name="Drinker" type="Area2D" parent="ImmovableSprites/Head"]
+position = Vector2(-15.845, -5.465)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ImmovableSprites/Head/Drinker"]
+shape = SubResource("CircleShape2D_kdbi3")
+
 [node name="Torso" type="Sprite2D" parent="ImmovableSprites"]
 z_index = 1
 texture_filter = 1
@@ -123,3 +130,4 @@ offset = Vector2(-15.81, -61.36)
 [connection signal="body_entered" from="PersonalSpace" to="." method="_on_personal_space_body_entered"]
 [connection signal="body_exited" from="PersonalSpace" to="." method="_on_personal_space_body_exited"]
 [connection signal="timeout" from="Timers/AnxietyDamage" to="." method="_on_anxiety_damage_timeout"]
+[connection signal="area_entered" from="ImmovableSprites/Head/Drinker" to="." method="_on_drinker_area_entered"]

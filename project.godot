@@ -32,6 +32,7 @@ enabled=PackedStringArray("res://addons/vision_cone_2d/plugin.cfg")
 
 Partiers=""
 Player=""
+Beer=""
 
 [input]
 

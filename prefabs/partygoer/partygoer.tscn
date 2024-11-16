@@ -16,7 +16,7 @@
 [sub_resource type="Theme" id="Theme_m38eg"]
 default_font = ExtResource("9_6g13c")
 
-[node name="Partygoer" type="CharacterBody2D" groups=["Partiers", "Player"]]
+[node name="Partygoer" type="CharacterBody2D" groups=["Partiers"]]
 script = ExtResource("1_6njh4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
