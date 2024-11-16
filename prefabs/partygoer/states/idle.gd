@@ -9,6 +9,7 @@ var waiting = false
 func enter(previous_state_path: String, data := {}):
 	current_target = pick_target()
 	current_direction = get_direction_from_target(current_target)
+	partygoer.change_direction_helper(current_direction)
 	partygoer.change_cone_colour(Globals.ConeHas.SEEN_NOTHING)
 	
 
@@ -23,6 +24,7 @@ func physics_process(delta):
 func change_direction():
 	current_target = pick_target()
 	current_direction = get_direction_from_target(current_target)
+	partygoer.change_direction_helper(current_direction)
 	waiting = false
 	
 func handle_seeing_something(body):

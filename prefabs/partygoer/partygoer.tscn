@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=15 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://prefabs/partygoer/states/chatting.gd" id="8_r3y4m"]
 [ext_resource type="Script" path="res://prefabs/partygoer/show_dialogue.gd" id="9_1flnt"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="9_6g13c"]
+[ext_resource type="Script" path="res://prefabs/partygoer/head_pivot.gd" id="11_nfr8r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
@@ -32,12 +33,6 @@ animation = &"placeholder"
 rotation = 4.71239
 angle_deg = 70
 max_distance = 250.0
-
-[node name="Head" type="Sprite2D" parent="VisionCone2D"]
-position = Vector2(-13, 3.00002)
-rotation = 1.5708
-scale = Vector2(-1, 1)
-texture = ExtResource("4_h2kyf")
 
 [node name="Components" type="Node" parent="."]
 
@@ -65,6 +60,8 @@ wait_time = 2.0
 
 [node name="BoredomTimer" type="Timer" parent="Timers"]
 
+[node name="RotationTimer" type="Timer" parent="Timers"]
+
 [node name="DialogueDisplayer" type="Label" parent="."]
 texture_filter = 1
 offset_left = 12.0
@@ -82,6 +79,16 @@ metadata/_edit_use_anchors_ = true
 [node name="FadeTimer" type="Timer" parent="DialogueDisplayer"]
 wait_time = 2.0
 one_shot = true
+
+[node name="HeadPivot" type="Marker2D" parent="."]
+script = ExtResource("11_nfr8r")
+pos_limits = Vector2(-70, 20)
+
+[node name="Head" type="Sprite2D" parent="HeadPivot"]
+position = Vector2(3, 16)
+rotation = -3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("4_h2kyf")
 
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]

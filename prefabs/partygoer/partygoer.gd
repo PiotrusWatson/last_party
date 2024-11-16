@@ -8,6 +8,7 @@ class_name Partygoer
 @onready var direction_timer = $Timers/WaitTimer
 @onready var boredom_timer = $Timers/BoredomTimer
 @onready var dialogue_displayer = $DialogueDisplayer
+@onready var head_pivot = $HeadPivot
 
 var thirst = 0
 var restlessness = 0
@@ -20,11 +21,11 @@ func _ready() -> void:
 	cone_rotation_offset = vision_cone.rotation
 	points_of_interest = get_tree().get_nodes_in_group("PointsOfInterest")
 	
-	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)
 	vision_cone.rotation = new_direction.angle() + cone_rotation_offset
-
+	head_pivot.rotate_clamped(new_direction.angle())
+	
 ## TODO: maybe move to an animator class later	
 func flip_sprite_on_direction(direction):
 	if direction.x < 0:
