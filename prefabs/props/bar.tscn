@@ -1,11 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://cchwrfy400lx4"]
+[gd_scene load_steps=4 format=3 uid="uid://cchwrfy400lx4"]
+
+[ext_resource type="Script" path="res://prefabs/props/bar.gd" id="1_x8p1t"]
+[ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="2_3svus"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4sk1r"]
 radius = 41.0488
 
-[node name="Bar" type="Area2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_4sk1r")
+[node name="Bar" type="Node2D"]
+script = ExtResource("1_x8p1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Interactable" type="Label" parent="."]
+offset_left = -23.0
+offset_top = -42.0
+offset_right = 117.0
+offset_bottom = -19.0
+text = "Press E"
+script = ExtResource("2_3svus")
+
+[node name="InteractableZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableZone"]
+shape = SubResource("CircleShape2D_4sk1r")
+
+[connection signal="body_entered" from="InteractableZone" to="." method="_on_interactable_zone_body_entered"]
