@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=14 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
 [ext_resource type="Script" path="res://prefabs/partygoer/character_mover.gd" id="2_tnmw0"]
+[ext_resource type="Texture2D" uid="uid://bh175g6effrcy" path="res://sprites/Partygoers/SamLake_Head.png" id="4_h2kyf"]
 [ext_resource type="PackedScene" uid="uid://kf8tqdlm8c5t" path="res://addons/vision_cone_2d/vision_cone_2d_template.tscn" id="4_itfhl"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="5_u77gh"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/idle.gd" id="6_mjqa1"]
@@ -31,6 +32,12 @@ animation = &"placeholder"
 rotation = 4.71239
 angle_deg = 70
 max_distance = 250.0
+
+[node name="Head" type="Sprite2D" parent="VisionCone2D"]
+position = Vector2(-13, 3.00002)
+rotation = 1.5708
+scale = Vector2(-1, 1)
+texture = ExtResource("4_h2kyf")
 
 [node name="Components" type="Node" parent="."]
 

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="4_r475v"]
-[ext_resource type="PackedScene" uid="uid://cfm2k875xgph8" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
+[ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
 [ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="7_5p2nu"]
 [ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="7_pb6ad"]
