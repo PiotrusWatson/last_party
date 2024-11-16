@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djw3s61m8ih8c"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_774kt"]
-[ext_resource type="SpriteFrames" path="res://Dog_anims.tres" id="2_tvbuy"]
+[ext_resource type="SpriteFrames" uid="uid://c4iliosmvypyt" path="res://Dog_anims.tres" id="2_tvbuy"]
 
 [node name="Partygoer" instance=ExtResource("1_774kt")]
 
@@ -10,3 +10,5 @@ texture_filter = 1
 scale = Vector2(-1, 1)
 sprite_frames = ExtResource("2_tvbuy")
 animation = &"default"
+autoplay = "default"
+frame_progress = 0.921658
