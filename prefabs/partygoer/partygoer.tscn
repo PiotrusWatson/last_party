@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=13 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -9,8 +9,12 @@
 [ext_resource type="Script" path="res://prefabs/partygoer/states/approaching.gd" id="7_jk8li"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/chatting.gd" id="8_r3y4m"]
 [ext_resource type="Script" path="res://prefabs/partygoer/show_dialogue.gd" id="9_1flnt"]
+[ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="9_6g13c"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
+
+[sub_resource type="Theme" id="Theme_m38eg"]
+default_font = ExtResource("9_6g13c")
 
 [node name="Partygoer" type="CharacterBody2D" groups=["Partiers", "Player"]]
 script = ExtResource("1_6njh4")
@@ -55,11 +59,13 @@ wait_time = 2.277
 [node name="BoredomTimer" type="Timer" parent="Timers"]
 
 [node name="DialogueDisplayer" type="Label" parent="."]
+texture_filter = 1
 offset_left = 12.0
 offset_top = -52.0
 offset_right = 149.0
 offset_bottom = 23.0
 scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_m38eg")
 text = "placeholder text
 i am having a real
 place holder text "
