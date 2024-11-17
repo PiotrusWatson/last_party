@@ -82,7 +82,7 @@ one_shot = true
 
 [node name="HeadPivot" type="Marker2D" parent="."]
 script = ExtResource("11_nfr8r")
-pos_limits = Vector2(-70, 20)
+pos_limits = Vector2(-70, 70)
 
 [node name="Head" type="Sprite2D" parent="HeadPivot"]
 position = Vector2(3, 16)
