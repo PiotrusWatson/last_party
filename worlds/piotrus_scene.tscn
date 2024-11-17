@@ -2,28 +2,27 @@
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
-[ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
+[ext_resource type="PackedScene" path="res://components/main_camera.tscn" id="3_st8m8"]
 [ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
-[ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="7_5p2nu"]
-[ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="7_pb6ad"]
 [ext_resource type="Texture2D" uid="uid://btoh8ejigin3h" path="res://sprites/Background/BarDesk.png" id="8_7mumj"]
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
 [ext_resource type="PackedScene" uid="uid://1ciexgxjj0hb" path="res://prefabs/props/radio.tscn" id="8_8o70q"]
 [ext_resource type="Texture2D" uid="uid://crdceov406tde" path="res://sprites/Background/lightblue-sheet.png" id="8_78bav"]
 [ext_resource type="Texture2D" uid="uid://dcx7c5ra88lfa" path="res://sprites/Background/barShelf.png" id="8_yop10"]
-[ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="9_xhapp"]
+[ext_resource type="PackedScene" uid="uid://x0p1kxaj6hkj" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
+[ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
 [ext_resource type="PackedScene" uid="uid://bvndfvkma6tes" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
 [ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxbmk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02l5"]
 texture = ExtResource("5_xc60l")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -62,7 +61,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_b871j"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_mxbmk")
+sources/0 = SubResource("TileSetAtlasSource_i02l5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkuml"]
 size = Vector2(582.5, 177)
@@ -154,6 +153,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbl53"]
 size = Vector2(86, 40)
 
+[sub_resource type="Theme" id="Theme_cy7yc"]
+default_font = ExtResource("11_pj3xo")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_02q5s"]
 animations = [{
 "frames": [{
@@ -211,20 +213,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_wq4ab"]
+[sub_resource type="Gradient" id="Gradient_n4dxn"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pmavj"]
-gradient = SubResource("Gradient_wq4ab")
+gradient = SubResource("Gradient_n4dxn")
 
 [node name="PiotrusScene2" type="Node2D"]
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(818, -176)
+position = Vector2(548, -116)
 
-[node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
-zoom = Vector2(3, 3)
-script = ExtResource("2_hmd5b")
+[node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
 thing_to_follow = NodePath("../Player")
 
 [node name="TileMapLayer_Walls" type="TileMapLayer" parent="."]
@@ -330,7 +330,6 @@ shape = SubResource("RectangleShape2D_rbl53")
 position = Vector2(663, -28)
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UI" type="Control" parent="UI"]
 layout_mode = 3
@@ -341,38 +340,24 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="AnxietyBar" type="TextureProgressBar" parent="UI/UI"]
+[node name="AnxietyBar" parent="UI/UI" instance=ExtResource("10_genvr")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 30.0
-offset_bottom = 60.0
-grow_horizontal = 2
-nine_patch_stretch = true
-texture_under = ExtResource("7_5p2nu")
-texture_progress = ExtResource("7_pb6ad")
-script = ExtResource("9_xhapp")
-
-[node name="Label" type="Label" parent="UI/UI/AnxietyBar"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.0
-offset_top = -25.0
-offset_right = 45.0
-offset_bottom = -2.0
-grow_horizontal = 2
-text = "Anxiety Bar"
+offset_left = 23.96
+offset_top = 51.0
+offset_right = -128.04
+offset_bottom = 86.0
 
 [node name="Clock" type="Label" parent="UI/UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -206.0
+offset_top = 25.0
+offset_right = -19.0
+offset_bottom = 48.0
 grow_horizontal = 0
+theme = SubResource("Theme_cy7yc")
 text = "🕒Time Left🕒: 30"
 script = ExtResource("10_wims2")
 
@@ -553,7 +538,7 @@ position = Vector2(525, 12)
 scale = Vector2(12.7297, 25.8596)
 texture = ExtResource("3_crhye")
 
-[node name="Idk" type="Sprite2D" parent="Flavour"]
+[node name="DarkEffect" type="Sprite2D" parent="Flavour"]
 modulate = Color(0.00392157, 0.027451, 0.0588235, 0.513726)
 z_index = 5
 texture_filter = 1
@@ -565,19 +550,15 @@ texture = SubResource("GradientTexture2D_pmavj")
 
 [node name="Partygoer2" parent="Fellas" instance=ExtResource("5_m13ws")]
 position = Vector2(536, -220)
-head_rotation_amount = 1
 
 [node name="Partygoer" parent="Fellas" instance=ExtResource("18_m5ujp")]
 position = Vector2(702, -216)
-head_rotation_amount = 1
 
 [node name="Partygoer3" parent="Fellas" instance=ExtResource("20_psvbb")]
 position = Vector2(859, 102)
-head_rotation_amount = 1
 
 [node name="Partygoer4" parent="Fellas" instance=ExtResource("19_t7da5")]
 position = Vector2(1192, -83)
-head_rotation_amount = 1
 
 [node name="PointsOfInterest" type="Node2D" parent="."]
 
