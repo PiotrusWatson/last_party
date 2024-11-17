@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2jcjr23v276m"]
+
+[ext_resource type="Texture2D" uid="uid://bcnnx371gayei" path="res://UI/Anxietybar_frame.png" id="1_3vr3l"]
+[ext_resource type="Texture2D" uid="uid://clhoytmatma7a" path="res://UI/Anxietybar_filling.png" id="2_waixi"]
+[ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="3_xybdf"]
+[ext_resource type="Texture2D" uid="uid://ci77s2j6y1qkv" path="res://UI/Anxietybar_filling_critical.png" id="4_oggj2"]
+
+[node name="AnxietyBar" type="TextureProgressBar"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 30.0
+offset_bottom = 60.0
+grow_horizontal = 2
+nine_patch_stretch = true
+texture_over = ExtResource("1_3vr3l")
+texture_progress = ExtResource("2_waixi")
+script = ExtResource("3_xybdf")
+critical_texture_bar = ExtResource("4_oggj2")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = -25.0
+offset_right = 45.0
+offset_bottom = -2.0
+grow_horizontal = 2
+text = "Anxiety Bar"

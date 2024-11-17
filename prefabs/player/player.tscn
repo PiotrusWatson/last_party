@@ -24,6 +24,7 @@ radius = 58.0086
 [node name="Player" type="RigidBody2D" groups=["Partiers", "Player"]]
 texture_filter = 1
 mass = 30.0
+gravity_scale = 0.0
 script = ExtResource("1_4ttaq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
