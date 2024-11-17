@@ -58,10 +58,10 @@ size = Vector2(263.5, 82.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qnbcr"]
 size = Vector2(62.75, 271.5)
 
-[sub_resource type="Gradient" id="Gradient_wq4ab"]
+[sub_resource type="Gradient" id="Gradient_xnum7"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vjhjh"]
-gradient = SubResource("Gradient_wq4ab")
+gradient = SubResource("Gradient_xnum7")
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_smg3e"]
 animations = [{
