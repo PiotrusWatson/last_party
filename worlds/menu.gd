@@ -1,6 +1,6 @@
 extends Control
 
-var main_scene = "res://worlds/piotrus_scene.tscn"
+var main_scene = "res://worlds/tutorial_scene.tscn"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.

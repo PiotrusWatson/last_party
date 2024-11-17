@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=84 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -14,16 +14,20 @@
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
+[ext_resource type="Texture2D" uid="uid://bceeadgf5boyn" path="res://sprites/Background/banner-sheet.png" id="12_w22y7"]
 [ext_resource type="Texture2D" uid="uid://bli14ulvoi8xg" path="res://sprites/Background/balloonsblue-sheet.png" id="13_511yn"]
 [ext_resource type="Texture2D" uid="uid://co1rmrln8g5y5" path="res://sprites/Background/spacedoor2.png" id="14_1mlat"]
 [ext_resource type="Texture2D" uid="uid://dkrwk6pgn7cy1" path="res://sprites/Background/balloonspink-sheet.png" id="14_jj66r"]
 [ext_resource type="Texture2D" uid="uid://dryrvg8237o3j" path="res://sprites/Background/spacebox.png" id="15_y1361"]
 [ext_resource type="Texture2D" uid="uid://c40d2iqlyyagn" path="res://sprites/Background/spacecloset.png" id="16_8yehn"]
+[ext_resource type="Texture2D" uid="uid://bmd56xy64twgw" path="res://sprites/Background/tv-sheet.png" id="17_q720o"]
 [ext_resource type="PackedScene" uid="uid://bvndfvkma6tes" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
+[ext_resource type="Texture2D" uid="uid://0mycujuphsap" path="res://sprites/Background/sofa.png" id="19_bu61u"]
 [ext_resource type="PackedScene" uid="uid://cchwrfy400lx4" path="res://prefabs/props/bar.tscn" id="19_kdmmt"]
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
+[ext_resource type="Texture2D" uid="uid://cysga6gj2w5w2" path="res://sprites/Background/spacecat.png" id="20_hu5te"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
-[ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
+[ext_resource type="Texture2D" uid="uid://djc2aw643xdg0" path="res://sprites/Background/table.png" id="20_ugyn7"]
 [ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 [ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="23_acidh"]
 
@@ -111,20 +115,40 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_n4dxn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2uwk"]
+atlas = ExtResource("12_w22y7")
+region = Rect2(0, 0, 148, 77)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_pmavj"]
-gradient = SubResource("Gradient_n4dxn")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic8wd"]
+atlas = ExtResource("12_w22y7")
+region = Rect2(148, 0, 148, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwjry"]
+atlas = ExtResource("12_w22y7")
+region = Rect2(296, 0, 148, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e81e"]
+atlas = ExtResource("12_w22y7")
+region = Rect2(444, 0, 148, 77)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_02q5s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_2bm38")
+"texture": SubResource("AtlasTexture_x2uwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic8wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwjry")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e81e")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8o5b"]
@@ -248,17 +272,102 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t4oor"]
+atlas = ExtResource("17_q720o")
+region = Rect2(0, 0, 72, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ka3wc"]
+atlas = ExtResource("17_q720o")
+region = Rect2(72, 0, 72, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_olm08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t4oor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ka3wc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqfsg"]
+size = Vector2(36.875, 11.875)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f4r1"]
 size = Vector2(36, 37)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcftq"]
+size = Vector2(37, 75)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iwl3"]
+atlas = ExtResource("20_hu5te")
+region = Rect2(0, 0, 49, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ei08"]
+atlas = ExtResource("20_hu5te")
+region = Rect2(49, 0, 49, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_113jn"]
+atlas = ExtResource("20_hu5te")
+region = Rect2(98, 0, 49, 41)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf8db"]
+atlas = ExtResource("20_hu5te")
+region = Rect2(147, 0, 49, 41)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qsss0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iwl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ei08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_113jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mf8db")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpcey"]
+size = Vector2(29, 19.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m75nw"]
-size = Vector2(36, 73)
+size = Vector2(9, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx50w"]
+size = Vector2(13, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61lya"]
+size = Vector2(15, 13)
+
+[sub_resource type="Gradient" id="Gradient_n4dxn"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pmavj"]
+gradient = SubResource("Gradient_n4dxn")
+
+[sub_resource type="Gradient" id="Gradient_7cwh0"]
+offsets = PackedFloat32Array(0, 0.230089, 0.59882, 1)
+colors = PackedColorArray(1.7297e-08, 0, 0.0381066, 1, 0.0313726, 0.0313726, 0.0862745, 0.772549, 0.0392157, 0.0392157, 0.12549, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h83uk"]
+gradient = SubResource("Gradient_7cwh0")
 
 [node name="PiotrusScene2" type="Node2D"]
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(594, -65)
+position = Vector2(99, -13)
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
 thing_to_follow = NodePath("../Player")
@@ -392,14 +501,6 @@ texture_filter = 1
 position = Vector2(95, -16)
 sprite_frames = SubResource("SpriteFrames_10416")
 
-[node name="DarkEffect" type="Sprite2D" parent="."]
-modulate = Color(0.00392157, 0.027451, 0.0588235, 0.513726)
-z_index = 5
-texture_filter = 1
-position = Vector2(544, 12)
-scale = Vector2(32.1875, 25.8596)
-texture = SubResource("GradientTexture2D_pmavj")
-
 [node name="Flavour" type="Node2D" parent="."]
 
 [node name="Banner" type="AnimatedSprite2D" parent="Flavour"]
@@ -407,6 +508,7 @@ z_index = -1
 texture_filter = 1
 position = Vector2(1003, -45)
 sprite_frames = SubResource("SpriteFrames_02q5s")
+autoplay = "default"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Banner"]
 
@@ -425,6 +527,20 @@ frame_progress = 0.934898
 [node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Balloons"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Balloons/StaticBody2D"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_h8ljp")
+
+[node name="Balloons5" type="AnimatedSprite2D" parent="Flavour"]
+z_index = -1
+texture_filter = 1
+position = Vector2(830, 51)
+sprite_frames = SubResource("SpriteFrames_w46p4")
+autoplay = "default"
+frame_progress = 0.178524
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Balloons5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Balloons5/StaticBody2D"]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_h8ljp")
 
@@ -455,8 +571,21 @@ autoplay = "default"
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_h8ljp")
 
+[node name="Balloons4" type="AnimatedSprite2D" parent="Flavour"]
+z_index = -1
+texture_filter = 1
+position = Vector2(1097, 54)
+sprite_frames = SubResource("SpriteFrames_mks4y")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Balloons4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Balloons4/StaticBody2D"]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_h8ljp")
+
 [node name="PartyLight" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(516, -168)
@@ -467,19 +596,19 @@ autoplay = "default"
 frame_progress = 0.194817
 
 [node name="PartyLight7" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
-position = Vector2(654, -52)
+position = Vector2(653, -58)
 sprite_frames = SubResource("SpriteFrames_f5ja5")
 autoplay = "default"
 frame = 3
 
 [node name="PartyLight8" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
-position = Vector2(768, -55)
+position = Vector2(764, -59)
 rotation = 3.14159
 scale = Vector2(1, -1)
 sprite_frames = SubResource("SpriteFrames_f5ja5")
@@ -487,7 +616,7 @@ autoplay = "default"
 frame = 2
 
 [node name="PartyLight4" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(785, -171)
@@ -498,7 +627,7 @@ autoplay = "default"
 frame = 3
 
 [node name="PartyLight5" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(782, -171)
@@ -509,7 +638,7 @@ autoplay = "default"
 frame_progress = 0.639241
 
 [node name="PartyLight6" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(868, -172)
@@ -520,7 +649,7 @@ autoplay = "default"
 frame = 4
 
 [node name="PartyLight2" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(593, -170)
@@ -531,7 +660,7 @@ autoplay = "default"
 frame = 2
 
 [node name="PartyLight3" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(587, -171)
@@ -542,7 +671,7 @@ autoplay = "default"
 frame = 1
 
 [node name="PartyLight9" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(944, -44)
@@ -553,7 +682,7 @@ autoplay = "default"
 frame = 3
 
 [node name="PartyLight10" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(945, -43)
@@ -564,7 +693,7 @@ autoplay = "default"
 frame_progress = 0.194817
 
 [node name="PartyLight13" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(1087, -42)
@@ -575,7 +704,7 @@ autoplay = "default"
 frame = 4
 
 [node name="PartyLight15" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(1017.42, -45.3786)
@@ -586,7 +715,7 @@ autoplay = "default"
 frame = 2
 
 [node name="PartyLight16" type="AnimatedSprite2D" parent="Flavour"]
-z_index = 5
+z_index = 6
 z_as_relative = false
 texture_filter = 1
 position = Vector2(1011.42, -46.3786)
@@ -604,6 +733,18 @@ texture_filter = 1
 position = Vector2(525, 12)
 scale = Vector2(12.7297, 25.8596)
 texture = ExtResource("3_crhye")
+
+[node name="TVsceen" type="AnimatedSprite2D" parent="Flavour"]
+texture_filter = 1
+position = Vector2(278, -88)
+sprite_frames = SubResource("SpriteFrames_olm08")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/TVsceen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/TVsceen/StaticBody2D"]
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_wqfsg")
 
 [node name="SpaceCloset4" type="Sprite2D" parent="Flavour"]
 texture_filter = 1
@@ -624,22 +765,86 @@ texture = ExtResource("16_8yehn")
 [node name="StaticBody2D" type="StaticBody2D" parent="Flavour/SpaceCloset"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/SpaceCloset/StaticBody2D"]
-position = Vector2(0, 9.5)
+position = Vector2(0, 10)
+shape = SubResource("RectangleShape2D_wcftq")
+
+[node name="Kitty" type="AnimatedSprite2D" parent="Flavour"]
+texture_filter = 1
+position = Vector2(1406, -124)
+sprite_frames = SubResource("SpriteFrames_qsss0")
+autoplay = "default"
+frame_progress = 0.77714
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Kitty"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Kitty/StaticBody2D"]
+position = Vector2(-4, 6)
+shape = SubResource("RectangleShape2D_kpcey")
+
+[node name="Sofa" type="Sprite2D" parent="Flavour"]
+texture_filter = 1
+position = Vector2(1019, 111)
+texture = ExtResource("19_bu61u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Sofa"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Sofa/StaticBody2D"]
+position = Vector2(-5.5, 0)
 shape = SubResource("RectangleShape2D_m75nw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flavour/Sofa/StaticBody2D"]
+position = Vector2(5.5, 6.5)
+shape = SubResource("RectangleShape2D_xx50w")
+
+[node name="Sofa2" type="Sprite2D" parent="Flavour"]
+texture_filter = 1
+position = Vector2(1085, 111)
+scale = Vector2(-1, 1)
+texture = ExtResource("19_bu61u")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Sofa2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Sofa2/StaticBody2D"]
+position = Vector2(-5.5, 0)
+shape = SubResource("RectangleShape2D_m75nw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Flavour/Sofa2/StaticBody2D"]
+position = Vector2(5.5, 6.5)
+shape = SubResource("RectangleShape2D_xx50w")
+
+[node name="Table" type="Sprite2D" parent="Flavour"]
+texture_filter = 1
+position = Vector2(1053, 120)
+scale = Vector2(-1, 1)
+texture = ExtResource("20_ugyn7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Flavour/Table"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flavour/Table/StaticBody2D"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_61lya")
+
+[node name="DarkEffect" type="Sprite2D" parent="."]
+modulate = Color(0.00392157, 0.027451, 0.0588235, 0.513726)
+z_index = 5
+texture_filter = 1
+position = Vector2(769, -149)
+scale = Vector2(46.625, 25.8596)
+texture = SubResource("GradientTexture2D_pmavj")
 
 [node name="Fellas" type="Node2D" parent="."]
 
 [node name="Partygoer2" parent="Fellas" instance=ExtResource("5_m13ws")]
-position = Vector2(536, -220)
+position = Vector2(511, -204)
 
 [node name="Partygoer" parent="Fellas" instance=ExtResource("18_m5ujp")]
-position = Vector2(702, -216)
+position = Vector2(783, -206)
 
 [node name="Partygoer3" parent="Fellas" instance=ExtResource("20_psvbb")]
-position = Vector2(859, 102)
+position = Vector2(821, 99)
 
 [node name="Partygoer4" parent="Fellas" instance=ExtResource("19_t7da5")]
-position = Vector2(1042, 29)
+position = Vector2(1060, 88)
 
 [node name="PointsOfInterest" type="Node2D" parent="."]
 
@@ -668,16 +873,59 @@ autoplay = true
 max_distance = 300.0
 parameters/looping = true
 
+[node name="Ambience2" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1403, -115)
+stream = ExtResource("23_acidh")
+autoplay = true
+max_distance = 300.0
+parameters/looping = true
+
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Radio2" parent="Interactables" instance=ExtResource("8_8o70q")]
-position = Vector2(1056, 99)
+position = Vector2(1031, 100)
 
 [node name="Radio" parent="Interactables" instance=ExtResource("8_8o70q")]
 position = Vector2(663, -28)
 
 [node name="Bar" parent="Interactables" instance=ExtResource("19_kdmmt")]
 position = Vector2(708, -56)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -267.0
+offset_top = -429.0
+offset_right = 236.0
+offset_bottom = 311.0
+rotation = -0.0089972
+texture = SubResource("GradientTexture2D_h83uk")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1553.0
+offset_top = -428.0
+offset_right = 2056.0
+offset_bottom = 1390.0
+rotation = 1.56946
+texture = SubResource("GradientTexture2D_h83uk")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -269.0
+offset_top = 300.0
+offset_right = 234.0
+offset_bottom = 2118.0
+rotation = 4.70375
+texture = SubResource("GradientTexture2D_h83uk")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 1553.0
+offset_top = 277.0
+offset_right = 1864.0
+offset_bottom = 991.0
+rotation = 3.11802
+texture = SubResource("GradientTexture2D_h83uk")
 
 [connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]

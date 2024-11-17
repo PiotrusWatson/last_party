@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://d3iupxq2btdvu"]
+[gd_scene load_steps=19 format=4 uid="uid://d3iupxq2btdvu"]
 
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="1_cji82"]
 [ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="1_nnnu2"]
@@ -68,6 +68,13 @@ size = Vector2(36, 73)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nohvr"]
 size = Vector2(36, 37)
+
+[sub_resource type="Gradient" id="Gradient_awm7s"]
+offsets = PackedFloat32Array(0, 0.230089, 0.59882, 1)
+colors = PackedColorArray(1.7297e-08, 0, 0.0381066, 1, 0.0313726, 0.0313726, 0.0862745, 0.772549, 0.0392157, 0.0392157, 0.12549, 0, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8jos5"]
+gradient = SubResource("Gradient_awm7s")
 
 [node name="Tutorial_scene" type="Node2D"]
 
@@ -197,3 +204,39 @@ texture = ExtResource("7_m2opw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCloset4/StaticBody2D"]
 position = Vector2(0, 27.5)
 shape = SubResource("RectangleShape2D_nohvr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -388.0
+offset_top = -304.0
+offset_right = 53.0
+offset_bottom = 370.0
+rotation = -0.000234764
+texture = SubResource("GradientTexture2D_8jos5")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 752.0
+offset_top = -381.0
+offset_right = 1193.0
+offset_bottom = 771.0
+rotation = 1.52206
+texture = SubResource("GradientTexture2D_8jos5")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+z_index = -1
+offset_left = 785.0
+offset_top = 319.0
+offset_right = 1226.0
+offset_bottom = 1031.0
+rotation = 3.09211
+texture = SubResource("GradientTexture2D_8jos5")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+z_index = -1
+offset_left = -387.0
+offset_top = 384.0
+offset_right = 120.0
+offset_bottom = 1550.0
+rotation = 4.66116
+texture = SubResource("GradientTexture2D_8jos5")
