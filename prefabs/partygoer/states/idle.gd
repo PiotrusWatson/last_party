@@ -29,21 +29,14 @@ func change_direction():
 	
 func handle_seeing_something(body):
 	if body.is_in_group("Partiers") and body != partygoer:
-		partygoer.set_target(body)
-		set_colour_off_type_of_partier(body)
-		finished.emit(APPROACHING)
+		partygoer.go_towards_target(body)
+		if !body.is_in_group("Player"):
+			body.go_towards_target(partygoer)
 		
 		
 func exit():
 	partygoer.dialogue_displayer.display_text(Dialogues.greetings.pick_random())
 	partygoer.direction_timer.stop()
-	
-
-func set_colour_off_type_of_partier(body):
-	if body.is_in_group("Player"):
-		partygoer.change_cone_colour(Globals.ConeHas.SEEN_PLAYER)
-	else:
-		partygoer.change_cone_colour(Globals.ConeHas.SEEN_PARTYGOER)
 		
 func in_range_of_target():
 	return partygoer.global_position.distance_to(current_target.global_position) < distance_to_interest_point 

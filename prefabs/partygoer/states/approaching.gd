@@ -3,7 +3,6 @@ extends PartygoerState
 @export var speed = 30.0
 @export var distance_to_stop = 0.5
 func enter(previous_state_path: String, data := {}):
-	#speech bubble with greeting
 	pass
 	
 func physics_process(delta):

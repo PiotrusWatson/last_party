@@ -49,7 +49,19 @@ func flip_sprite_on_direction(direction):
 		animator.scale.x = abs(animator.scale.x)
 		flipped = false
 		head_pivot.global_position = neck.global_position
-	
+		
+		
+func set_colour_off_type_of_partier(body):
+	if body.is_in_group("Player"):
+		change_cone_colour(Globals.ConeHas.SEEN_PLAYER)
+	else:
+		change_cone_colour(Globals.ConeHas.SEEN_PARTYGOER)
+		
+func go_towards_target(partier):
+	set_target(partier)
+	set_colour_off_type_of_partier(partier)
+	state_machine._transition_to_next_state("Approaching")
+		
 func _on_vision_cone_2d_entered_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_seeing_something"):
 		state_machine.state.handle_seeing_something(body)
