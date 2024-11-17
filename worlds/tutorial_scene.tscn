@@ -98,7 +98,6 @@ tile_set = SubResource("TileSet_tugt4")
 
 [node name="Player" parent="." instance=ExtResource("2_fyrok")]
 position = Vector2(-23, 56)
-gravity_scale = 0.0
 
 [node name="RoomColliders" type="StaticBody2D" parent="."]
 visible = false
