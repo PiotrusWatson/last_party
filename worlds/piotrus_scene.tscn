@@ -169,7 +169,7 @@ animations = [{
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(547, -59)
+position = Vector2(594, -65)
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
 thing_to_follow = NodePath("../Player")

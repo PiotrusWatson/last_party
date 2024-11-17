@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://d3iupxq2btdvu"]
 
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="1_cji82"]
-[ext_resource type="PackedScene" path="res://components/main_camera.tscn" id="1_nnnu2"]
+[ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="1_nnnu2"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="2_fyrok"]
 [ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="3_7dlqw"]
 [ext_resource type="PackedScene" uid="uid://biujla5xj11xn" path="res://prefabs/props/spacedoor.tscn" id="5_gcj87"]
