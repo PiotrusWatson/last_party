@@ -370,7 +370,7 @@ gradient = SubResource("Gradient_7cwh0")
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(99, -13)
+position = Vector2(191, -13)
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
 thing_to_follow = NodePath("../Player")
@@ -493,7 +493,7 @@ script = ExtResource("10_wims2")
 script = ExtResource("10_gu7p8")
 
 [node name="GameTimer" type="Timer" parent="God"]
-wait_time = 900.0
+wait_time = 200.0
 one_shot = true
 autostart = true
 
@@ -945,7 +945,7 @@ rotation = 3.11802
 texture = SubResource("GradientTexture2D_h83uk")
 
 [node name="Partygoer" parent="." instance=ExtResource("20_psvbb")]
-position = Vector2(237, -17)
+position = Vector2(52, 13)
 
 [connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]
