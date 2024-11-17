@@ -9,6 +9,7 @@ class_name Partygoer
 @onready var boredom_timer = $Timers/BoredomTimer
 @onready var dialogue_displayer = $DialogueDisplayer
 @onready var head_pivot = $HeadPivot
+@onready var neck = $Neck
 
 var thirst = 0
 var restlessness = 0
@@ -21,6 +22,7 @@ func _ready() -> void:
 	mover.init(self)
 	cone_rotation_offset = vision_cone.rotation
 	points_of_interest = get_tree().get_nodes_in_group("PointsOfInterest")
+	head_pivot.global_position = neck.global_position
 	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)
@@ -32,9 +34,11 @@ func flip_sprite_on_direction(direction):
 	if direction.x < 0 and not flipped:
 		animator.scale.x *= -1
 		flipped = true
+		head_pivot.global_position = neck.global_position
 	elif direction.x >= 0 and flipped:
 		animator.scale.x = abs(animator.scale.x)
 		flipped = false
+		head_pivot.global_position = neck.global_position
 	
 func _on_vision_cone_2d_entered_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_seeing_something"):

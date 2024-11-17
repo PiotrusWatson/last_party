@@ -29,6 +29,8 @@ scale = Vector2(0.01, 0.01)
 sprite_frames = ExtResource("1_pv8j1")
 animation = &"placeholder"
 
+[node name="Neck" type="Marker2D" parent="AnimatedSprite2D"]
+
 [node name="VisionCone2D" parent="." instance=ExtResource("4_itfhl")]
 rotation = 4.71239
 angle_deg = 70
