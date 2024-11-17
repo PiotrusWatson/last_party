@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://cchwrfy400lx4"]
+[gd_scene load_steps=26 format=3 uid="uid://cchwrfy400lx4"]
 
 [ext_resource type="Script" path="res://prefabs/props/bar.gd" id="1_x8p1t"]
 [ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="2_3svus"]
@@ -21,9 +21,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_25pud"]
-size = Vector2(72, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d8wed"]
 atlas = ExtResource("4_h0ls8")
@@ -166,13 +163,6 @@ shape = SubResource("CircleShape2D_4sk1r")
 z_index = -1
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ldsge")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BarShelf"]
-position = Vector2(75, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarShelf/StaticBody2D"]
-position = Vector2(-74, -1.5)
-shape = SubResource("RectangleShape2D_25pud")
 
 [node name="Bartender" type="Node2D" parent="."]
 
