@@ -1,14 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjcgdm6yxg63q"]
+[gd_scene load_steps=19 format=3 uid="uid://cjcgdm6yxg63q"]
 
 [ext_resource type="Theme" uid="uid://bmbeei5krtm0i" path="res://UI/placeholder_UI.tres" id="1_b1byf"]
-[ext_resource type="Texture2D" uid="uid://bf01mbjlhf7kb" path="res://sprites/placeholder/Sam_Lake-MichaelFörtsch.jpg" id="1_sdea4"]
 [ext_resource type="Script" path="res://worlds/menu.gd" id="2_p5lr4"]
+[ext_resource type="Texture2D" uid="uid://bmlf5oryjiluv" path="res://UI/MainMenuBG.png" id="3_63drj"]
+[ext_resource type="FontFile" uid="uid://b5bnvck7qd1tf" path="res://prefabs/partygoer/Pixel NES.otf" id="4_k78cg"]
+[ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="5_f213s"]
+[ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="6_l54e3"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_yi5n6"]
-diffuse_texture = ExtResource("1_sdea4")
-normal_texture = ExtResource("1_sdea4")
-specular_texture = ExtResource("1_sdea4")
-specular_color = Color(0.203922, 1, 1, 1)
+[sub_resource type="Theme" id="Theme_cc17t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_chmol"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilmti"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_baw6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fjqwl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_14a4m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jo2tm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ysg3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oarws"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_anyhh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nx42d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3rej"]
 
 [node name="LossScreen" type="Control"]
 layout_mode = 3
@@ -21,40 +42,45 @@ theme = ExtResource("1_b1byf")
 script = ExtResource("2_p5lr4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(0.270222, 0.270222, 0.270222, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_yi5n6")
+texture = ExtResource("3_63drj")
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 82.0
+offset_left = -193.0
+offset_top = 132.0
+offset_right = 231.0
+offset_bottom = 215.0
 grow_horizontal = 2
 theme = ExtResource("1_b1byf")
+theme_override_colors/font_color = Color(0.873448, 0.322225, 0.328327, 1)
+theme_override_fonts/font = ExtResource("4_k78cg")
 text = "Uh oh..........."
 
 [node name="Description" type="RichTextLabel" parent="."]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -224.0
-offset_right = 1000.0
-offset_bottom = 176.0
-grow_vertical = 2
-text = "you run out of the party, sweating profusely. u get on the first space bus back to your house, and sit in bed. sleep doesn't come. a once in a lifetime party, and here you are. 
-eventually, sleep happens. the universe ends, right on schedule"
+offset_left = 291.0
+offset_top = 243.0
+offset_right = 1560.0
+offset_bottom = 1199.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_cc17t")
+theme_override_colors/default_color = Color(1, 1, 0.756863, 1)
+theme_override_fonts/normal_font = ExtResource("5_f213s")
+text = "you run out of the party, sweating profusely. You get on the first space bus back to your house, and sit in bed. sleep doesn't come. a once in a lifetime party, and here you are. 
+eventually, you fall asleep. the universe ends, right on schedule"
 
 [node name="PlayAgain" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -67,6 +93,25 @@ offset_right = 107.0
 offset_bottom = -72.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.921609, 0, 0.274832, 1)
+theme_override_fonts/font = ExtResource("4_k78cg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_chmol")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ilmti")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_baw6x")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_fjqwl")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_14a4m")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_jo2tm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_4ysg3")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_oarws")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_anyhh")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_nx42d")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_c3rej")
 text = "Play Again?"
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_l54e3")
+autoplay = true
 
 [connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]

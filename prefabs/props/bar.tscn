@@ -1,28 +1,203 @@
-[gd_scene load_steps=4 format=3 uid="uid://cchwrfy400lx4"]
+[gd_scene load_steps=27 format=3 uid="uid://cchwrfy400lx4"]
 
 [ext_resource type="Script" path="res://prefabs/props/bar.gd" id="1_x8p1t"]
-[ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="2_3svus"]
+[ext_resource type="PackedScene" uid="uid://dnck532nfk6np" path="res://components/interactable.tscn" id="2_k3fl2"]
+[ext_resource type="Texture2D" uid="uid://dcx7c5ra88lfa" path="res://sprites/Background/barShelf.png" id="3_flrdc"]
+[ext_resource type="FontFile" uid="uid://b5bnvck7qd1tf" path="res://prefabs/partygoer/Pixel NES.otf" id="3_k0aui"]
+[ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="4_h0ls8"]
+[ext_resource type="Texture2D" uid="uid://y5aqc3qr7seo" path="res://sprites/Bartender/bartender_GivesBeer.png" id="5_1tund"]
+[ext_resource type="Texture2D" uid="uid://btoh8ejigin3h" path="res://sprites/Background/BarDesk.png" id="5_104cm"]
+[ext_resource type="Texture2D" uid="uid://dr6rgtox24g5a" path="res://sprites/Bartender/bartender_PutsHandAway.png" id="6_b66nt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4sk1r"]
-radius = 41.0488
+radius = 88.9
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ldsge"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_flrdc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yswuq"]
+atlas = ExtResource("4_h0ls8")
+region = Rect2(0, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y44p7"]
+atlas = ExtResource("4_h0ls8")
+region = Rect2(80, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hh7u6"]
+atlas = ExtResource("4_h0ls8")
+region = Rect2(160, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrn3k"]
+atlas = ExtResource("4_h0ls8")
+region = Rect2(240, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvgl6"]
+atlas = ExtResource("5_1tund")
+region = Rect2(0, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ic0yr"]
+atlas = ExtResource("5_1tund")
+region = Rect2(80, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tlne"]
+atlas = ExtResource("5_1tund")
+region = Rect2(160, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7esmu"]
+atlas = ExtResource("5_1tund")
+region = Rect2(240, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivahe"]
+atlas = ExtResource("6_b66nt")
+region = Rect2(0, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jif2n"]
+atlas = ExtResource("6_b66nt")
+region = Rect2(80, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7w8n"]
+atlas = ExtResource("6_b66nt")
+region = Rect2(160, 0, 80, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_812nc"]
+atlas = ExtResource("6_b66nt")
+region = Rect2(240, 0, 80, 58)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fsoi8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yswuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y44p7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hh7u6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrn3k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvgl6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ic0yr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tlne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7esmu")
+}],
+"loop": false,
+"name": &"give_beer",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivahe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jif2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7w8n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_812nc")
+}],
+"loop": false,
+"name": &"put_hand_away",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhp0o"]
+radius = 13.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wdy0l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_104cm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3whc"]
+size = Vector2(87, 40)
 
 [node name="Bar" type="Node2D"]
 script = ExtResource("1_x8p1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Interactable" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -42.0
-offset_right = 117.0
-offset_bottom = -19.0
-text = "Press E"
-script = ExtResource("2_3svus")
+[node name="Interactable" parent="." instance=ExtResource("2_k3fl2")]
+texture_filter = 1
+offset_left = 12.0
+offset_top = -23.0
+offset_right = 97.0
+offset_bottom = 0.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("3_k0aui")
 
 [node name="InteractableZone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableZone"]
 shape = SubResource("CircleShape2D_4sk1r")
 
+[node name="BarShelf" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, -46)
+sprite_frames = SubResource("SpriteFrames_ldsge")
+
+[node name="Bartender" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bartender"]
+z_index = -1
+texture_filter = 1
+position = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_fsoi8")
+animation = &"put_hand_away"
+autoplay = "default"
+offset = Vector2(1.435, -10.345)
+
+[node name="BeerRadius" type="Area2D" parent="Bartender/AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bartender/AnimatedSprite2D/BeerRadius"]
+position = Vector2(-19, -1)
+shape = SubResource("CircleShape2D_dhp0o")
+
+[node name="BarDesk" type="AnimatedSprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 36)
+sprite_frames = SubResource("SpriteFrames_wdy0l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BarDesk"]
+position = Vector2(75, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BarDesk/StaticBody2D"]
+position = Vector2(-75.5, -2)
+shape = SubResource("RectangleShape2D_x3whc")
+
 [connection signal="body_entered" from="InteractableZone" to="." method="_on_interactable_zone_body_entered"]
 [connection signal="body_exited" from="InteractableZone" to="." method="_on_interactable_zone_body_exited"]
+[connection signal="animation_finished" from="Bartender/AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="body_entered" from="Bartender/AnimatedSprite2D/BeerRadius" to="." method="_on_beer_radius_body_entered"]
