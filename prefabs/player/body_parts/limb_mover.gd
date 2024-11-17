@@ -13,6 +13,9 @@ func _process(delta: float) -> void:
 	pass
 
 func move_to_target(target: Vector2):
+	#apply_central_impulse(target * force)
+	hand.apply_central_impulse(target * force)
+func stretch_to_target(target: Vector2):
 	hand.apply_central_impulse(target * force)
 
 func activate_beer(is_active):

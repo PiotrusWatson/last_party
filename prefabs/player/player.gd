@@ -46,6 +46,7 @@ func get_mouse_direction():
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Fire"):
 		arm.fire_arm()
+		left_arm.stretch_to_target(get_mouse_direction())
 	elif event.is_action_released("Fire"):
 		var thing = arm.release_arm()
 		if thing == null:

@@ -46,7 +46,7 @@ script = ExtResource("4_yw1gq")
 thing_to_throw = ExtResource("5_0tcwt")
 throw_location = NodePath("../../BodyParts/HandLocation")
 throw_force = 100.12
-recoil = 900.0
+recoil = 3000.0
 
 [node name="PersonalSpace" type="Area2D" parent="."]
 position = Vector2(0, 31.91)
