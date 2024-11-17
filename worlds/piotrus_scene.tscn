@@ -900,10 +900,10 @@ parameters/looping = true
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Radio2" parent="Interactables" instance=ExtResource("8_8o70q")]
-position = Vector2(1031, 100)
+position = Vector2(943, 107)
 
 [node name="Radio" parent="Interactables" instance=ExtResource("8_8o70q")]
-position = Vector2(663, -28)
+position = Vector2(556, -22)
 
 [node name="Bar" parent="Interactables" instance=ExtResource("19_kdmmt")]
 position = Vector2(708, -56)
