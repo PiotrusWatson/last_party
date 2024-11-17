@@ -5,12 +5,16 @@ extends RigidBody2D
 @onready var health = $Components/Health
 @onready var arm = $Arm
 @onready var left_arm = $BodyParts/LeftArm
+@onready var thrown_stuff = $ThrownStuff
+@onready var thrower = $Components/Thrower
 
 var direction = Vector2.ZERO
 var body_count = 0
 var can_interact = false
 var thing_interacted_with = null
 var max_health
+var ammo
+@export var max_ammo = 2
 @export var anxiety_damage = 5
 @export var beer_healing = 30
 
@@ -25,6 +29,8 @@ func _ready() -> void:
 	mover.init(self)
 	max_health = health.max_health
 	anxiety_changed.emit(health.health)
+	ammo = max_ammo
+	thrower.init(thrown_stuff)
 	
 
 func _process(delta: float) -> void:
@@ -34,6 +40,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	mover.push_direction(direction)
 	left_arm.move_to_target(get_mouse_direction())
+	
 func get_mouse_direction():
 	return (get_global_mouse_position() - global_position).normalized()
 func _unhandled_input(event: InputEvent) -> void:
@@ -45,7 +52,11 @@ func _unhandled_input(event: InputEvent) -> void:
 			return
 		var push_direction = (global_position - arm.get_pos()).normalized()
 		mover.push_direction(push_direction)
-		
+	
+	if event.is_action_released("AltFire") and ammo > 0:
+		thrower.throw_object(get_mouse_direction())
+		ammo -= 1
+	
 	if event.is_action_released("Interact") and can_interact:
 		thing_interacted_with.interact()
 	
@@ -84,6 +95,8 @@ func _on_anxiety_damage_timeout() -> void:
 func _on_health_dead() -> void:
 	dead.emit()
 
+func pickup():
+	ammo += 1
 
 func _on_drinker_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Beer") and left_arm.beer_ready:
