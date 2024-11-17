@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://d3iupxq2btdvu"]
+[gd_scene load_steps=18 format=4 uid="uid://d3iupxq2btdvu"]
 
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="1_cji82"]
 [ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="1_nnnu2"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="2_fyrok"]
 [ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="3_7dlqw"]
 [ext_resource type="Texture2D" uid="uid://nfv7k30txfvv" path="res://sprites/Background/spacedoor.png" id="5_xa0e4"]
+[ext_resource type="Texture2D" uid="uid://c40d2iqlyyagn" path="res://sprites/Background/spacecloset.png" id="6_fdyci"]
+[ext_resource type="Texture2D" uid="uid://dryrvg8237o3j" path="res://sprites/Background/spacebox.png" id="7_m2opw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2eeu"]
 texture = ExtResource("1_cji82")
@@ -72,6 +74,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yfy6"]
+size = Vector2(36, 73)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nohvr"]
+size = Vector2(36, 37)
+
 [node name="Tutorial_scene" type="Node2D"]
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("1_nnnu2")]
@@ -87,7 +95,7 @@ tile_set = SubResource("TileSet_tugt4")
 [node name="TileMapLayer_Stuff" type="TileMapLayer" parent="."]
 z_index = -1
 texture_filter = 1
-tile_map_data = PackedByteArray("AAABAP3/AAAHAAQAAAACAP3/AAAIAAQAAAADAP3/AAAHAAQAAAAEAP3/AAAIAAQAAAAFAP3/AAAHAAQAAAAGAP3/AAAIAAQAAAAHAP3/AAAHAAQAAAAIAP3/AAAIAAQAAAA=")
+tile_map_data = PackedByteArray("AAABAP3/AAAHAAQAAAACAP3/AAAIAAQAAAADAP3/AAAHAAQAAAAEAP3/AAAIAAQAAAAFAP3/AAAHAAQAAAAGAP3/AAAIAAQAAAAHAP3/AAAHAAQAAAAIAP3/AAAIAAQAAAD9////AAAFAAMAAAD+////AAAGAAMAAAA=")
 tile_set = SubResource("TileSet_tugt4")
 
 [node name="TileMapLayer_Floor" type="TileMapLayer" parent="."]
@@ -148,7 +156,6 @@ max_distance = 1000.0
 parameters/looping = true
 
 [node name="DarkEffect" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.00392157, 0.027451, 0.0588235, 0.513726)
 z_index = 5
 texture_filter = 1
@@ -160,3 +167,47 @@ texture = SubResource("GradientTexture2D_vjhjh")
 texture_filter = 1
 position = Vector2(487, -48)
 sprite_frames = SubResource("SpriteFrames_smg3e")
+
+[node name="SpaceCloset" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-98, 112)
+texture = ExtResource("6_fdyci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpaceCloset"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCloset/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_1yfy6")
+
+[node name="SpaceCloset2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(183, -15)
+texture = ExtResource("6_fdyci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpaceCloset2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCloset2/StaticBody2D"]
+position = Vector2(0, 9.5)
+shape = SubResource("RectangleShape2D_1yfy6")
+
+[node name="SpaceCloset3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-42, 112)
+texture = ExtResource("7_m2opw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpaceCloset3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCloset3/StaticBody2D"]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_nohvr")
+
+[node name="SpaceCloset4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(141, 48)
+texture = ExtResource("7_m2opw")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="SpaceCloset4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpaceCloset4/StaticBody2D"]
+position = Vector2(0, 27.5)
+shape = SubResource("RectangleShape2D_nohvr")
