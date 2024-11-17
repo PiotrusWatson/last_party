@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=50 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -15,11 +15,12 @@
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
+[ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
 [ext_resource type="PackedScene" uid="uid://bvndfvkma6tes" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
-[ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
+[ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02l5"]
 texture = ExtResource("5_xc60l")
@@ -152,6 +153,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbl53"]
 size = Vector2(86, 40)
 
+[sub_resource type="Theme" id="Theme_cy7yc"]
+default_font = ExtResource("11_pj3xo")
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_02q5s"]
 animations = [{
 "frames": [{
@@ -220,7 +224,8 @@ script = ExtResource("1_d6a5b")
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
 position = Vector2(548, -116)
 
-[node name="MainCamera" parent="." instance=ExtResource("3_st8m8")]
+[node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
+thing_to_follow = NodePath("../Player")
 
 [node name="TileMapLayer_Walls" type="TileMapLayer" parent="."]
 z_index = -1
@@ -337,18 +342,22 @@ mouse_filter = 1
 
 [node name="AnxietyBar" parent="UI/UI" instance=ExtResource("10_genvr")]
 layout_mode = 1
-offset_left = 100.0
-offset_right = -52.0
-offset_bottom = 73.0
+offset_left = 23.96
+offset_top = 51.0
+offset_right = -128.04
+offset_bottom = 86.0
 
 [node name="Clock" type="Label" parent="UI/UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -206.0
+offset_top = 25.0
+offset_right = -19.0
+offset_bottom = 48.0
 grow_horizontal = 0
+theme = SubResource("Theme_cy7yc")
 text = "🕒Time Left🕒: 30"
 script = ExtResource("10_wims2")
 
