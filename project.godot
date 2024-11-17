@@ -24,6 +24,10 @@ Dialogues="*res://scripts/dialogues.gd"
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="LastParty"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/vision_cone_2d/plugin.cfg")
