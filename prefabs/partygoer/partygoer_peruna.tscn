@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7lctqouhfm2f"]
+
+[ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_xb8ft"]
+[ext_resource type="Texture2D" uid="uid://dnehk34t1ewqk" path="res://sprites/Partygoers/peruna_body-sheet.png" id="2_tweu3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0w66"]
+atlas = ExtResource("2_tweu3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jalme"]
+atlas = ExtResource("2_tweu3")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grgva"]
+atlas = ExtResource("2_tweu3")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aejc"]
+atlas = ExtResource("2_tweu3")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lv70f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0w66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jalme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grgva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aejc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Partygoer" instance=ExtResource("1_xb8ft")]
+
+[node name="AnimatedSprite2D" parent="." index="1"]
+texture_filter = 1
+position = Vector2(0, -8)
+scale = Vector2(-1, 1)
+sprite_frames = SubResource("SpriteFrames_lv70f")
+animation = &"default"
+frame_progress = 0.139184

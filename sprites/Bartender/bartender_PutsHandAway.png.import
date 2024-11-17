@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dup1kjvglary3"
-path="res://.godot/imported/SamLake_Body.png-a7f7d38f6943f2fcf90b85b1e7b57d90.ctex"
+uid="uid://dr6rgtox24g5a"
+path="res://.godot/imported/bartender_PutsHandAway.png-90bd6956a913b3da81527cc9839f0cab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Partygoers/SamLake_Body.png"
-dest_files=["res://.godot/imported/SamLake_Body.png-a7f7d38f6943f2fcf90b85b1e7b57d90.ctex"]
+source_file="res://sprites/Bartender/bartender_PutsHandAway.png"
+dest_files=["res://.godot/imported/bartender_PutsHandAway.png-90bd6956a913b3da81527cc9839f0cab.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x2561b0ppig5"
-path="res://.godot/imported/SpaceDog_body.png-f36e3e4504529c707759c68e843db759.ctex"
+uid="uid://bnxoxoavmqir5"
+path="res://.godot/imported/peruna_head1.png-ebace045795e9f23352a84029ea0dbba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Partygoers/SpaceDog_body.png"
-dest_files=["res://.godot/imported/SpaceDog_body.png-f36e3e4504529c707759c68e843db759.ctex"]
+source_file="res://sprites/Partygoers/peruna_head1.png"
+dest_files=["res://.godot/imported/peruna_head1.png-ebace045795e9f23352a84029ea0dbba.ctex"]
 
 [params]
 

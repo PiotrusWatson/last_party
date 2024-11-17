@@ -1,12 +1,37 @@
-[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://c4iliosmvypyt"]
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://cl67tysuy3or3"]
 
-[ext_resource type="Texture2D" uid="uid://bchj6x0ebs115" path="res://sprites/Partygoers/SpaceDog.png" id="1_dl2xr"]
+[ext_resource type="Texture2D" uid="uid://cjbvb3tu1ghg8" path="res://sprites/Partygoers/SpaceDog_bodysheet.png" id="1_d07g0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm2i2"]
+atlas = ExtResource("1_d07g0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wkdk"]
+atlas = ExtResource("1_d07g0")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwtki"]
+atlas = ExtResource("1_d07g0")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i10gv"]
+atlas = ExtResource("1_d07g0")
+region = Rect2(192, 0, 64, 64)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_dl2xr")
+"texture": SubResource("AtlasTexture_sm2i2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wkdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwtki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i10gv")
 }],
 "loop": true,
 "name": &"default",
