@@ -9,5 +9,7 @@ func init(body):
 
 # Called when the node enters the scene tree for the first time.
 func push_direction(direction: Vector2):
-	body.apply_central_impulse(direction * speed)
+	push_direction_at_speed(direction, speed)
 	
+func push_direction_at_speed(direction: Vector2, speed: float):
+	body.apply_central_impulse(direction * speed)

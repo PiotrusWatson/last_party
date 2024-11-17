@@ -45,7 +45,8 @@ speed = 5000.0
 script = ExtResource("4_yw1gq")
 thing_to_throw = ExtResource("5_0tcwt")
 throw_location = NodePath("../../BodyParts/HandLocation")
-throw_force = 100.0
+throw_force = 100.12
+recoil = 900.0
 
 [node name="PersonalSpace" type="Area2D" parent="."]
 position = Vector2(0, 31.91)
@@ -143,6 +144,7 @@ offset = Vector2(-15.81, -61.36)
 [node name="ThrownStuff" type="Node2D" parent="."]
 
 [connection signal="dead" from="Components/Health" to="." method="_on_health_dead"]
+[connection signal="threw_something" from="Components/Thrower" to="." method="_on_thrower_threw_something"]
 [connection signal="body_entered" from="PersonalSpace" to="." method="_on_personal_space_body_entered"]
 [connection signal="body_exited" from="PersonalSpace" to="." method="_on_personal_space_body_exited"]
 [connection signal="timeout" from="Timers/AnxietyDamage" to="." method="_on_anxiety_damage_timeout"]
