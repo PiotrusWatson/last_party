@@ -566,15 +566,19 @@ texture = SubResource("GradientTexture2D_pmavj")
 
 [node name="Partygoer2" parent="Fellas" instance=ExtResource("5_m13ws")]
 position = Vector2(536, -220)
+head_rotation_amount = 1
 
 [node name="Partygoer" parent="Fellas" instance=ExtResource("18_m5ujp")]
 position = Vector2(702, -216)
+head_rotation_amount = 1
 
 [node name="Partygoer3" parent="Fellas" instance=ExtResource("20_psvbb")]
 position = Vector2(859, 102)
+head_rotation_amount = 1
 
 [node name="Partygoer4" parent="Fellas" instance=ExtResource("19_t7da5")]
 position = Vector2(1192, -83)
+head_rotation_amount = 1
 
 [node name="PointsOfInterest" type="Node2D" parent="."]
 

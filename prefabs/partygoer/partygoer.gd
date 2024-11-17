@@ -11,6 +11,7 @@ class_name Partygoer
 @onready var head_pivot = $HeadPivot
 @onready var neck = $AnimatedSprite2D/Neck
 
+@export var head_rotation_amount = 1
 var thirst = 0
 var restlessness = 0
 var points_of_interest = []
@@ -24,6 +25,7 @@ func _ready() -> void:
 	points_of_interest = get_tree().get_nodes_in_group("PointsOfInterest")
 	neck.global_position = head_pivot.global_position
 	head_pivot.global_position = neck.global_position
+	head_rotation_amount = deg_to_rad(head_rotation_amount)
 	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)
@@ -32,6 +34,11 @@ func change_direction_helper(new_direction):
 func rotate_head(angle):
 	vision_cone.rotation = angle + cone_rotation_offset
 	head_pivot.rotate_clamped(angle)
+	
+func push_head(amount):
+	head_pivot.push_rotation(amount)
+	vision_cone.rotation += amount * head_pivot.get_direction()
+	
 ## TODO: maybe move to an animator class later	
 func flip_sprite_on_direction(direction):
 	if direction.x < 0 and not flipped:
@@ -73,4 +80,5 @@ func _on_dialogue_displayer_finished_showing_text() -> void:
 
 
 func _on_rotation_timer_timeout() -> void:
-	
+	if state_machine.state.has_method("handle_head_pushing"):
+		state_machine.state.handle_head_pushing()

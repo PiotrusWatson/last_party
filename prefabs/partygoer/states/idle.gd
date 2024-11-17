@@ -57,3 +57,6 @@ func pick_target():
 
 func get_direction_from_target(target: Node2D):
 	return (target.global_position - partygoer.global_position).normalized()
+	
+func handle_head_pushing():
+	partygoer.push_head(partygoer.head_rotation_amount)

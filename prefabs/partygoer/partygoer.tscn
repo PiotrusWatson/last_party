@@ -18,8 +18,9 @@
 [sub_resource type="Theme" id="Theme_m38eg"]
 default_font = ExtResource("9_6g13c")
 
-[node name="Partygoer" type="CharacterBody2D" groups=["Partiers"]]
+[node name="Partygoer2" type="CharacterBody2D" groups=["Partiers"]]
 script = ExtResource("1_6njh4")
+head_rotation_amount = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_kjoc1")
@@ -63,6 +64,8 @@ wait_time = 2.0
 [node name="BoredomTimer" type="Timer" parent="Timers"]
 
 [node name="RotationTimer" type="Timer" parent="Timers"]
+wait_time = 0.3
+autostart = true
 
 [node name="DialogueDisplayer" type="Label" parent="."]
 texture_filter = 1
