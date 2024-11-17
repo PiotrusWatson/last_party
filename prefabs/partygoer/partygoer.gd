@@ -23,9 +23,11 @@ func _ready() -> void:
 	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)
-	vision_cone.rotation = new_direction.angle() + cone_rotation_offset
-	head_pivot.rotate_clamped(new_direction.angle())
-	
+	rotate_head(new_direction.angle())
+
+func rotate_head(angle):
+	vision_cone.rotation = angle + cone_rotation_offset
+	head_pivot.rotate_clamped(angle)
 ## TODO: maybe move to an animator class later	
 func flip_sprite_on_direction(direction):
 	if direction.x < 0:
@@ -60,3 +62,7 @@ func _on_boredom_timer_timeout() -> void:
 func _on_dialogue_displayer_finished_showing_text() -> void:
 	if state_machine.state.has_method("handle_finished_dialogue"):
 		state_machine.state.handle_finished_dialogue()
+
+
+func _on_rotation_timer_timeout() -> void:
+	

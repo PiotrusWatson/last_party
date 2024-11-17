@@ -94,5 +94,6 @@ texture = ExtResource("4_h2kyf")
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]
 [connection signal="timeout" from="Timers/WaitTimer" to="." method="_on_change_direction_timer_timeout"]
 [connection signal="timeout" from="Timers/BoredomTimer" to="." method="_on_boredom_timer_timeout"]
+[connection signal="timeout" from="Timers/RotationTimer" to="." method="_on_rotation_timer_timeout"]
 [connection signal="finished_showing_text" from="DialogueDisplayer" to="." method="_on_dialogue_displayer_finished_showing_text"]
 [connection signal="timeout" from="DialogueDisplayer/FadeTimer" to="DialogueDisplayer" method="_on_fade_timer_timeout"]
