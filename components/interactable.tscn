@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnck532nfk6np"]
+[gd_scene load_steps=3 format=3 uid="uid://dnck532nfk6np"]
 
 [ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="1_lmn3m"]
+[ext_resource type="FontFile" uid="uid://b5bnvck7qd1tf" path="res://prefabs/partygoer/Pixel NES.otf" id="1_pcmw1"]
 
 [node name="Interactable" type="Label"]
+texture_filter = 1
 offset_left = -23.0
 offset_top = -42.0
 offset_right = 117.0
 offset_bottom = -19.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("1_pcmw1")
 text = "Press E"
 script = ExtResource("1_lmn3m")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
-[ext_resource type="PackedScene" path="res://components/main_camera.tscn" id="3_st8m8"]
+[ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="3_st8m8"]
 [ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
-[ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
+[ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 [ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="23_acidh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02l5"]
@@ -170,7 +170,7 @@ animations = [{
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(198, -39)
+position = Vector2(594, -65)
 
 [node name="MainCamera" parent="." node_paths=PackedStringArray("thing_to_follow") instance=ExtResource("3_st8m8")]
 thing_to_follow = NodePath("../Player")
@@ -291,7 +291,6 @@ position = Vector2(95, -16)
 sprite_frames = SubResource("SpriteFrames_10416")
 
 [node name="DarkEffect" type="Sprite2D" parent="."]
-visible = false
 modulate = Color(0.00392157, 0.027451, 0.0588235, 0.513726)
 z_index = 5
 texture_filter = 1
@@ -495,7 +494,7 @@ position = Vector2(497, -235)
 [node name="Point4" parent="PointsOfInterest" instance=ExtResource("22_1mibo")]
 position = Vector2(781, -98)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="Ambience1" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(165, -50)
 stream = ExtResource("23_acidh")
 autoplay = true
@@ -511,7 +510,7 @@ position = Vector2(1056, 99)
 position = Vector2(663, -28)
 
 [node name="Bar" parent="Interactables" instance=ExtResource("19_kdmmt")]
-position = Vector2(671, -56)
+position = Vector2(708, -56)
 
 [connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]
