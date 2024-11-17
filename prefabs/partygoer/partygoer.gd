@@ -9,7 +9,7 @@ class_name Partygoer
 @onready var boredom_timer = $Timers/BoredomTimer
 @onready var dialogue_displayer = $DialogueDisplayer
 @onready var head_pivot = $HeadPivot
-@onready var neck = $Neck
+@onready var neck = $AnimatedSprite2D/Neck
 
 var thirst = 0
 var restlessness = 0
@@ -22,6 +22,7 @@ func _ready() -> void:
 	mover.init(self)
 	cone_rotation_offset = vision_cone.rotation
 	points_of_interest = get_tree().get_nodes_in_group("PointsOfInterest")
+	neck.global_position = head_pivot.global_position
 	head_pivot.global_position = neck.global_position
 	
 func change_direction_helper(new_direction):

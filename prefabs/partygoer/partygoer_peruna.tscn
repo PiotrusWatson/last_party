@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7lctqouhfm2f"]
+[gd_scene load_steps=9 format=3 uid="uid://bvndfvkma6tes"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_xb8ft"]
 [ext_resource type="Texture2D" uid="uid://dnehk34t1ewqk" path="res://sprites/Partygoers/peruna_body-sheet.png" id="2_tweu3"]
@@ -49,6 +49,9 @@ scale = Vector2(-1, 1)
 sprite_frames = SubResource("SpriteFrames_lv70f")
 animation = &"default"
 frame_progress = 0.139184
+
+[node name="Neck" parent="AnimatedSprite2D" index="0"]
+position = Vector2(0, -8)
 
 [node name="HeadPivot" parent="." index="7"]
 position = Vector2(0, -8)

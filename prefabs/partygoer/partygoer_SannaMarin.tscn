@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfedeoca0btn"]
+[gd_scene load_steps=9 format=3 uid="uid://b17g4mpnhehpj"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_tj1sd"]
 [ext_resource type="Texture2D" uid="uid://doai5hd75idg" path="res://sprites/Partygoers/SannaMarin_body-sheet.png" id="2_vpjir"]
@@ -50,6 +50,9 @@ sprite_frames = SubResource("SpriteFrames_evgrn")
 animation = &"default"
 autoplay = "default"
 frame_progress = 0.0696398
+
+[node name="Neck" parent="AnimatedSprite2D" index="0"]
+position = Vector2(0, -14)
 
 [node name="HeadPivot" parent="." index="7"]
 position = Vector2(0, -14)

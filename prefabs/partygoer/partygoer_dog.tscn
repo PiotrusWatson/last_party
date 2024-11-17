@@ -14,6 +14,9 @@ animation = &"default"
 autoplay = "default"
 frame_progress = 0.921658
 
+[node name="Neck" parent="AnimatedSprite2D" index="0"]
+position = Vector2(7, -7)
+
 [node name="HeadPivot" parent="." index="7"]
 position = Vector2(7, -7)
 
