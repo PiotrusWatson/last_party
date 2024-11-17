@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=48 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -6,14 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
 [ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
-[ext_resource type="Texture2D" uid="uid://l3ixci0mdpp2" path="res://icon.svg" id="7_5p2nu"]
-[ext_resource type="Texture2D" uid="uid://wdilcwlyp1c1" path="res://sprites/placeholder/Debugempty.png" id="7_pb6ad"]
 [ext_resource type="Texture2D" uid="uid://btoh8ejigin3h" path="res://sprites/Background/BarDesk.png" id="8_7mumj"]
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
 [ext_resource type="PackedScene" uid="uid://1ciexgxjj0hb" path="res://prefabs/props/radio.tscn" id="8_8o70q"]
 [ext_resource type="Texture2D" uid="uid://crdceov406tde" path="res://sprites/Background/lightblue-sheet.png" id="8_78bav"]
 [ext_resource type="Texture2D" uid="uid://dcx7c5ra88lfa" path="res://sprites/Background/barShelf.png" id="8_yop10"]
-[ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="9_xhapp"]
+[ext_resource type="PackedScene" uid="uid://c2jcjr23v276m" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
@@ -21,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
-[ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
+[ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxbmk"]
 texture = ExtResource("5_xc60l")
@@ -221,7 +219,6 @@ script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
 position = Vector2(548, -116)
-gravity_scale = 0.0
 
 [node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
 zoom = Vector2(3, 3)
@@ -331,7 +328,6 @@ shape = SubResource("RectangleShape2D_rbl53")
 position = Vector2(663, -28)
 
 [node name="UI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="UI" type="Control" parent="UI"]
 layout_mode = 3
@@ -342,29 +338,11 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="AnxietyBar" type="TextureProgressBar" parent="UI/UI"]
+[node name="AnxietyBar" parent="UI/UI" instance=ExtResource("10_genvr")]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_top = 30.0
-offset_bottom = 60.0
-grow_horizontal = 2
-nine_patch_stretch = true
-texture_under = ExtResource("7_5p2nu")
-texture_progress = ExtResource("7_pb6ad")
-script = ExtResource("9_xhapp")
-
-[node name="Label" type="Label" parent="UI/UI/AnxietyBar"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -45.0
-offset_top = -25.0
-offset_right = 45.0
-offset_bottom = -2.0
-grow_horizontal = 2
-text = "Anxiety Bar"
+offset_left = 100.0
+offset_right = -52.0
+offset_bottom = 73.0
 
 [node name="Clock" type="Label" parent="UI/UI"]
 layout_mode = 1
