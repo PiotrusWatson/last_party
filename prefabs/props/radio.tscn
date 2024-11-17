@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://1ciexgxjj0hb"]
+[gd_scene load_steps=10 format=3 uid="uid://1ciexgxjj0hb"]
 
 [ext_resource type="Script" path="res://prefabs/props/jukebox.gd" id="1_lgh0h"]
 [ext_resource type="AudioStream" uid="uid://cxyppxjbem1rn" path="res://Audio/sussy beat.mp3" id="1_vt85b"]
 [ext_resource type="Texture2D" uid="uid://bfnbjtkawrcho" path="res://sprites/Props/Jukebox.png" id="2_ka0r5"]
 [ext_resource type="AudioStream" uid="uid://bqh8ux18g7dkc" path="res://Audio/sus and bass.mp3" id="2_qsuad"]
+[ext_resource type="PackedScene" uid="uid://dnck532nfk6np" path="res://components/interactable.tscn" id="5_a7vak"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_amkaw"]
 animations = [{
@@ -22,9 +23,12 @@ size = Vector2(23, 32)
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p8yn1"]
 radius = 11.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xt0fn"]
+radius = 45.5412
+
 [node name="Radio" type="Node2D"]
 z_index = -1
-position = Vector2(-29, 6)
+position = Vector2(0, 6)
 script = ExtResource("1_lgh0h")
 tracks = Array[AudioStreamMP3]([ExtResource("1_vt85b"), ExtResource("2_qsuad")])
 
@@ -37,15 +41,22 @@ parameters/looping = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 3
-position = Vector2(-75, -2)
+position = Vector2(2, -8)
 sprite_frames = SubResource("SpriteFrames_amkaw")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-75.5, 11)
+position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_mv0lo")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-75, 2)
+position = Vector2(0, -6)
 shape = SubResource("CapsuleShape2D_p8yn1")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xt0fn")
+
+[node name="Interactable" parent="." instance=ExtResource("5_a7vak")]

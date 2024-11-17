@@ -4,7 +4,7 @@ class_name Interactable
 var thing_to_interact_with = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "Press " + InputMap.action_get_events("Interact")[0].as_text()
+	text = "Press " + InputMap.action_get_events("Interact")[0].as_text().split(" ")[0]
 	visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

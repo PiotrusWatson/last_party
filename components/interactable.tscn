@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b5bnvck7qd1tf" path="res://prefabs/partygoer/Pixel NES.otf" id="1_pcmw1"]
 
 [node name="Interactable" type="Label"]
+z_index = 10
 texture_filter = 1
 offset_left = -23.0
 offset_top = -42.0
