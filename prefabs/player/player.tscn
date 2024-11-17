@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brgqd5do7bveh" path="res://sprites/placeholder/circle.tres" id="4_ujjfo"]
 [ext_resource type="PackedScene" uid="uid://couje8gm6mtot" path="res://components/health.tscn" id="4_yrta5"]
 [ext_resource type="Script" path="res://prefabs/player/thrower.gd" id="4_yw1gq"]
-[ext_resource type="PackedScene" path="res://prefabs/player/junk.tscn" id="5_0tcwt"]
+[ext_resource type="PackedScene" uid="uid://c2bpcs8bg8q5i" path="res://prefabs/player/junk.tscn" id="5_0tcwt"]
 [ext_resource type="Script" path="res://prefabs/arm/arm.gd" id="6_2gfem"]
 [ext_resource type="PackedScene" uid="uid://1se5evh7ewp0" path="res://prefabs/player/body_parts/left_arm.tscn" id="9_xjprf"]
 [ext_resource type="PackedScene" uid="uid://5q8im6l7tr55" path="res://prefabs/player/body_parts/left_leg.tscn" id="10_v0n13"]
