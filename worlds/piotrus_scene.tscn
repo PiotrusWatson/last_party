@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=43 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -9,10 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
 [ext_resource type="PackedScene" uid="uid://1ciexgxjj0hb" path="res://prefabs/props/radio.tscn" id="8_8o70q"]
 [ext_resource type="Texture2D" uid="uid://crdceov406tde" path="res://sprites/Background/lightblue-sheet.png" id="8_78bav"]
-[ext_resource type="FontFile" uid="uid://7kjkx5wbsxcg" path="res://UI/Fonts/Pixel NES.otf" id="9_l0ye3"]
+[ext_resource type="PackedScene" uid="uid://dhxd0u2kwku3i" path="res://UI/ammo.tscn" id="9_mxbnv"]
 [ext_resource type="PackedScene" uid="uid://x0p1kxaj6hkj" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
-[ext_resource type="Script" path="res://UI/ammo.gd" id="10_pnqr4"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
 [ext_resource type="Texture2D" uid="uid://co1rmrln8g5y5" path="res://sprites/Background/spacedoor2.png" id="14_1mlat"]
@@ -271,19 +270,9 @@ theme = SubResource("Theme_cy7yc")
 text = "🕒Time Left🕒: 30"
 script = ExtResource("10_wims2")
 
-[node name="Ammo" type="Label" parent="UI/UI"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -49.0
-offset_top = 49.0
-offset_right = 62.0
-offset_bottom = 72.0
-grow_horizontal = 2
-theme_override_fonts/font = ExtResource("9_l0ye3")
-text = "👟Ammo👟: 2"
-script = ExtResource("10_pnqr4")
+[node name="Ammo" parent="UI/UI" instance=ExtResource("9_mxbnv")]
+layout_mode = 0
+anchors_preset = 0
 
 [node name="God" type="Node" parent="."]
 script = ExtResource("10_gu7p8")
