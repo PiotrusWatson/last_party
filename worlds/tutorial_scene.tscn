@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://d3iupxq2btdvu"]
+[gd_scene load_steps=20 format=4 uid="uid://d3iupxq2btdvu"]
 
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="1_cji82"]
 [ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="1_nnnu2"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://biujla5xj11xn" path="res://prefabs/props/spacedoor.tscn" id="5_gcj87"]
 [ext_resource type="Texture2D" uid="uid://c40d2iqlyyagn" path="res://sprites/Background/spacecloset.png" id="6_fdyci"]
 [ext_resource type="Texture2D" uid="uid://dryrvg8237o3j" path="res://sprites/Background/spacebox.png" id="7_m2opw"]
+[ext_resource type="FontFile" uid="uid://b5bnvck7qd1tf" path="res://prefabs/partygoer/Pixel NES.otf" id="8_sm8rp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r2eeu"]
 texture = ExtResource("1_cji82")
@@ -240,3 +241,27 @@ offset_right = 120.0
 offset_bottom = 1550.0
 rotation = 4.66116
 texture = SubResource("GradientTexture2D_8jos5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/UI"]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 27.0
+offset_right = 726.0
+offset_bottom = 185.0
+theme_override_fonts/font = ExtResource("8_sm8rp")
+text = "Mission: survive the last party
+
+Launch yourself off walls and objects by left click
+throw your boot for momentum by right click
+
+Don't let party guests get too close to your personal space
+Drink alcohol to soothe anxiety"
