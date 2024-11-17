@@ -72,6 +72,7 @@ func _on_vision_cone_2d_entered_vision_cone(body: Variant) -> void:
 func _on_vision_cone_2d_exited_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_no_longer_seeing_something"):
 		state_machine.state.handle_no_longer_seeing_something(body)
+		
 
 
 func _on_change_direction_timer_timeout() -> void:

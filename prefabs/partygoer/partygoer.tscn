@@ -59,10 +59,6 @@ boredom_threshold = 15.0
 
 [node name="Searching" type="Node" parent="StateMachine"]
 script = ExtResource("9_k0d1o")
-speed = null
-distance_to_target = null
-boredom_threshold = null
-boredom_tick = null
 
 [node name="Timers" type="Node" parent="."]
 
