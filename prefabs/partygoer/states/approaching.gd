@@ -10,7 +10,9 @@ func physics_process(delta):
 	partygoer.mover.move_direction_at_speed(direction, speed)
 	partygoer.change_direction_helper(direction)
 	if partygoer.global_position.distance_to(partygoer.target.global_position) < distance_to_stop:
+		partygoer.exclamation.toggle_show(false)
 		finished.emit(CHATTING)
+		
 	
 func handle_no_longer_seeing_something(thing):
 	if thing == partygoer.target:

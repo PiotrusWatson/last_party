@@ -33,6 +33,8 @@ func handle_seeing_something(body):
 		partygoer.go_towards_target(body)
 		if !body.is_in_group("Player"):
 			body.go_towards_target(partygoer)
+		else:
+			partygoer.exclamation.toggle_show(true)
 		
 		
 func exit():

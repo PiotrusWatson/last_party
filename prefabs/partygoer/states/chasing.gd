@@ -14,6 +14,7 @@ func enter(previous_state_path: String, data := {}):
 	boredom = 0
 	partygoer.dialogue_displayer.display_text(Dialogues.search_dialogues.pick_random())
 	partygoer.boredom_timer.start()
+
 	
 func physics_process(delta):
 	if !at_last_seen and is_away_from_target():
@@ -32,6 +33,7 @@ func handle_head_pushing():
 func handle_boredom_tick():
 	boredom += boredom_tick
 	if boredom >= boredom_threshold:
+		partygoer.exclamation.toggle_show(false)
 		finished.emit(IDLE)
 
 func exit():

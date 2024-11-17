@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=19 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -13,6 +13,9 @@
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="9_6g13c"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/chasing.gd" id="9_k0d1o"]
 [ext_resource type="Script" path="res://prefabs/partygoer/head_pivot.gd" id="11_nfr8r"]
+[ext_resource type="Script" path="res://prefabs/partygoer/pusher.gd" id="14_o2w40"]
+[ext_resource type="Texture2D" uid="uid://cnp4naygachbv" path="res://UI/ExcMark1.png" id="15_oen5b"]
+[ext_resource type="Script" path="res://prefabs/partygoer/exclamation.gd" id="16_b7oiq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kjoc1"]
 
@@ -55,7 +58,6 @@ distance_to_stop = 30.0
 
 [node name="Chatting" type="Node" parent="StateMachine"]
 script = ExtResource("8_r3y4m")
-boredom_threshold = 15.0
 
 [node name="Searching" type="Node" parent="StateMachine"]
 script = ExtResource("9_k0d1o")
@@ -66,6 +68,7 @@ script = ExtResource("9_k0d1o")
 wait_time = 2.0
 
 [node name="BoredomTimer" type="Timer" parent="Timers"]
+wait_time = 2.0
 
 [node name="RotationTimer" type="Timer" parent="Timers"]
 wait_time = 0.3
@@ -99,6 +102,15 @@ position = Vector2(3, 16)
 rotation = -3.14159
 scale = Vector2(1, -1)
 texture = ExtResource("4_h2kyf")
+
+[node name="Pusher" type="RayCast2D" parent="."]
+target_position = Vector2(43, 0)
+script = ExtResource("14_o2w40")
+
+[node name="Exclamation" type="Sprite2D" parent="."]
+position = Vector2(0, -29)
+texture = ExtResource("15_oen5b")
+script = ExtResource("16_b7oiq")
 
 [connection signal="entered_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_entered_vision_cone"]
 [connection signal="exited_vision_cone" from="VisionCone2D" to="." method="_on_vision_cone_2d_exited_vision_cone"]

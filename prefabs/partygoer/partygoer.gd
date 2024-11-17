@@ -11,10 +11,10 @@ class_name Partygoer
 @onready var dialogue_displayer = $DialogueDisplayer
 @onready var head_pivot = $HeadPivot
 @onready var neck = $AnimatedSprite2D/Neck
+@onready var exclamation = $Exclamation
 
 @export var head_rotation_amount = 1
-var thirst = 0
-var restlessness = 0
+var conversation_leader = false
 var points_of_interest = []
 var target: Node2D
 var last_seen: Vector2
@@ -93,6 +93,14 @@ func _on_dialogue_displayer_finished_showing_text() -> void:
 	if state_machine.state.has_method("handle_finished_dialogue"):
 		state_machine.state.handle_finished_dialogue()
 
+func say_rant():
+	dialogue_displayer.display_text(Dialogues.rants.pick_random())
+	
+func say_concerned():
+	dialogue_displayer.display_text(Dialogues.player_initiators.pick_random())
+
+func say_response():
+	dialogue_displayer.display_text(Dialogues.responses.pick_random())
 
 func _on_rotation_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_head_pushing"):
