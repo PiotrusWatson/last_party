@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnck532nfk6np"]
+
+[ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="1_lmn3m"]
+
+[node name="Interactable" type="Label"]
+offset_left = -23.0
+offset_top = -42.0
+offset_right = 117.0
+offset_bottom = -19.0
+text = "Press E"
+script = ExtResource("1_lmn3m")

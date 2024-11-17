@@ -1,10 +1,10 @@
-[gd_scene load_steps=18 format=4 uid="uid://d3iupxq2btdvu"]
+[gd_scene load_steps=17 format=4 uid="uid://d3iupxq2btdvu"]
 
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="1_cji82"]
-[ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="1_nnnu2"]
+[ext_resource type="PackedScene" path="res://components/main_camera.tscn" id="1_nnnu2"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="2_fyrok"]
 [ext_resource type="AudioStream" uid="uid://q5vgjiybmydh" path="res://Audio/sussy ambience.mp3" id="3_7dlqw"]
-[ext_resource type="Texture2D" uid="uid://nfv7k30txfvv" path="res://sprites/Background/spacedoor.png" id="5_xa0e4"]
+[ext_resource type="PackedScene" uid="uid://biujla5xj11xn" path="res://prefabs/props/spacedoor.tscn" id="5_gcj87"]
 [ext_resource type="Texture2D" uid="uid://c40d2iqlyyagn" path="res://sprites/Background/spacecloset.png" id="6_fdyci"]
 [ext_resource type="Texture2D" uid="uid://dryrvg8237o3j" path="res://sprites/Background/spacebox.png" id="7_m2opw"]
 
@@ -63,17 +63,6 @@ size = Vector2(62.75, 271.5)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_vjhjh"]
 gradient = SubResource("Gradient_xnum7")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_smg3e"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_xa0e4")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1yfy6"]
 size = Vector2(36, 73)
 
@@ -105,7 +94,7 @@ tile_map_data = PackedByteArray("AAAFAAEAAAABAAAAAAAFAAIAAAABAAEAAAAGAAEAAAACAAA
 tile_set = SubResource("TileSet_tugt4")
 
 [node name="Player" parent="." instance=ExtResource("2_fyrok")]
-position = Vector2(-23, 56)
+position = Vector2(-23, 55)
 
 [node name="RoomColliders" type="StaticBody2D" parent="."]
 visible = false
@@ -163,10 +152,7 @@ position = Vector2(354, -60)
 scale = Vector2(32.1875, 25.8596)
 texture = SubResource("GradientTexture2D_vjhjh")
 
-[node name="Spacedoor" type="AnimatedSprite2D" parent="."]
-texture_filter = 1
-position = Vector2(487, -48)
-sprite_frames = SubResource("SpriteFrames_smg3e")
+[node name="Spacedoor" parent="." instance=ExtResource("5_gcj87")]
 
 [node name="SpaceCloset" type="Sprite2D" parent="."]
 texture_filter = 1

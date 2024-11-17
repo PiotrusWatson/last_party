@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://cchwrfy400lx4"]
 
 [ext_resource type="Script" path="res://prefabs/props/bar.gd" id="1_x8p1t"]
-[ext_resource type="Script" path="res://prefabs/props/interactable.gd" id="2_3svus"]
+[ext_resource type="PackedScene" uid="uid://dnck532nfk6np" path="res://components/interactable.tscn" id="2_k3fl2"]
 [ext_resource type="Texture2D" uid="uid://dcx7c5ra88lfa" path="res://sprites/Background/barShelf.png" id="3_flrdc"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="4_h0ls8"]
 [ext_resource type="Texture2D" uid="uid://y5aqc3qr7seo" path="res://sprites/Bartender/bartender_GivesBeer.png" id="5_1tund"]
@@ -146,13 +146,7 @@ script = ExtResource("1_x8p1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="Interactable" type="Label" parent="."]
-offset_left = -23.0
-offset_top = -42.0
-offset_right = 117.0
-offset_bottom = -19.0
-text = "Press E"
-script = ExtResource("2_3svus")
+[node name="Interactable" parent="." instance=ExtResource("2_k3fl2")]
 
 [node name="InteractableZone" type="Area2D" parent="."]
 

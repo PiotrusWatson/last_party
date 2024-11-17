@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://biujla5xj11xn"]
+
+[ext_resource type="Texture2D" uid="uid://nfv7k30txfvv" path="res://sprites/Background/spacedoor.png" id="1_nvatx"]
+[ext_resource type="Script" path="res://worlds/spacedoor.gd" id="2_aseso"]
+[ext_resource type="PackedScene" uid="uid://dnck532nfk6np" path="res://components/interactable.tscn" id="3_u8nbj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smg3e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nvatx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_am4v4"]
+radius = 102.956
+
+[node name="Spacedoor" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(487, -48)
+sprite_frames = SubResource("SpriteFrames_smg3e")
+script = ExtResource("2_aseso")
+
+[node name="Interactable" parent="." instance=ExtResource("3_u8nbj")]
+offset_top = -45.0
+offset_bottom = -22.0
+
+[node name="Radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Radius"]
+shape = SubResource("CircleShape2D_am4v4")
+
+[connection signal="body_entered" from="Radius" to="." method="_on_radius_body_entered"]
+[connection signal="body_exited" from="Radius" to="." method="_on_radius_body_exited"]
