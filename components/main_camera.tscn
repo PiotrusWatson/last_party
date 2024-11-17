@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmde1kq7j0gey"]
+
+[ext_resource type="Script" path="res://worlds/follow_thing.gd" id="1_gwxq2"]
+
+[node name="MainCamera" type="Camera2D" node_paths=PackedStringArray("thing_to_follow")]
+zoom = Vector2(3, 3)
+script = ExtResource("1_gwxq2")
+thing_to_follow = NodePath("")

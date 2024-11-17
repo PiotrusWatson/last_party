@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
-[ext_resource type="Script" path="res://worlds/follow_thing.gd" id="2_hmd5b"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
+[ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="3_st8m8"]
 [ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
 [ext_resource type="Texture2D" uid="uid://btoh8ejigin3h" path="res://sprites/Background/BarDesk.png" id="8_7mumj"]
@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
 [ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxbmk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02l5"]
 texture = ExtResource("5_xc60l")
 texture_region_size = Vector2i(32, 32)
 1:0/0 = 0
@@ -60,7 +60,7 @@ texture_region_size = Vector2i(32, 32)
 
 [sub_resource type="TileSet" id="TileSet_b871j"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_mxbmk")
+sources/0 = SubResource("TileSetAtlasSource_i02l5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tkuml"]
 size = Vector2(582.5, 177)
@@ -209,10 +209,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_wq4ab"]
+[sub_resource type="Gradient" id="Gradient_n4dxn"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_pmavj"]
-gradient = SubResource("Gradient_wq4ab")
+gradient = SubResource("Gradient_n4dxn")
 
 [node name="PiotrusScene2" type="Node2D"]
 script = ExtResource("1_d6a5b")
@@ -220,10 +220,7 @@ script = ExtResource("1_d6a5b")
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
 position = Vector2(548, -116)
 
-[node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
-zoom = Vector2(3, 3)
-script = ExtResource("2_hmd5b")
-thing_to_follow = NodePath("../Player")
+[node name="MainCamera" parent="." instance=ExtResource("3_st8m8")]
 
 [node name="TileMapLayer_Walls" type="TileMapLayer" parent="."]
 z_index = -1
