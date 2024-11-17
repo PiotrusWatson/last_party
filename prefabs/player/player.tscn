@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=17 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="Texture2D" uid="uid://tb5t6kmedonj" path="res://sprites/Player/BodyParts/Astronaut_floating_torso.png" id="2_iw4hd"]
 [ext_resource type="PackedScene" uid="uid://b3r3r55bme8l6" path="res://components/physics_mover.tscn" id="3_chdan"]
 [ext_resource type="Texture2D" uid="uid://brgqd5do7bveh" path="res://sprites/placeholder/circle.tres" id="4_ujjfo"]
 [ext_resource type="PackedScene" uid="uid://couje8gm6mtot" path="res://components/health.tscn" id="4_yrta5"]
+[ext_resource type="Script" path="res://prefabs/player/thrower.gd" id="4_yw1gq"]
 [ext_resource type="Script" path="res://prefabs/arm/arm.gd" id="6_2gfem"]
 [ext_resource type="PackedScene" uid="uid://1se5evh7ewp0" path="res://prefabs/player/body_parts/left_arm.tscn" id="9_xjprf"]
 [ext_resource type="PackedScene" uid="uid://5q8im6l7tr55" path="res://prefabs/player/body_parts/left_leg.tscn" id="10_v0n13"]
 [ext_resource type="PackedScene" uid="uid://be57jqugphug1" path="res://prefabs/player/body_parts/right_arm.tscn" id="11_3snor"]
+[ext_resource type="Script" path="res://prefabs/player/follow_hand.gd" id="11_a5qr1"]
 [ext_resource type="Texture2D" uid="uid://dxtlht4jxmb7h" path="res://sprites/Player/BodyParts/Astronaut_floating_head.png" id="12_jf1pr"]
 [ext_resource type="PackedScene" uid="uid://ciilee4wpa3e4" path="res://prefabs/player/body_parts/right_leg.tscn" id="12_xwh6r"]
 
@@ -37,6 +39,10 @@ shape = SubResource("CapsuleShape2D_lxn8t")
 speed = 5000.0
 
 [node name="Health" parent="Components" instance=ExtResource("4_yrta5")]
+
+[node name="Thrower" type="Node" parent="Components" node_paths=PackedStringArray("throw_location")]
+script = ExtResource("4_yw1gq")
+throw_location = NodePath("../../BodyParts/HandLocation")
 
 [node name="PersonalSpace" type="Area2D" parent="."]
 position = Vector2(0, 31.91)
@@ -85,6 +91,9 @@ collision_mask = 16
 position = Vector2(8, 6)
 collision_layer = 16
 collision_mask = 16
+
+[node name="HandLocation" type="Marker2D" parent="BodyParts"]
+script = ExtResource("11_a5qr1")
 
 [node name="Joints" type="Node2D" parent="."]
 
