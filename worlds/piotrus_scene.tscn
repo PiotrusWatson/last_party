@@ -467,6 +467,7 @@ offset_left = -540.0
 offset_top = 98.0
 offset_right = -417.0
 offset_bottom = 121.0
+text = "Boots: 2"
 
 [node name="AnxietyBar" parent="UI/UI" instance=ExtResource("10_genvr")]
 layout_mode = 1
@@ -486,7 +487,7 @@ offset_right = -19.0
 offset_bottom = 48.0
 grow_horizontal = 0
 theme = SubResource("Theme_cy7yc")
-text = "🕒Time Left🕒: 30"
+text = "Time Left: 30"
 script = ExtResource("10_wims2")
 
 [node name="God" type="Node" parent="."]
