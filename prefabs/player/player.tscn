@@ -38,6 +38,7 @@ speed = 5000.0
 [node name="Health" parent="Components" instance=ExtResource("4_yrta5")]
 
 [node name="PersonalSpace" type="Area2D" parent="."]
+position = Vector2(0, 31.91)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PersonalSpace"]
 position = Vector2(0, -32)
@@ -65,7 +66,7 @@ z_index = 2
 position = Vector2(-5, 7)
 collision_layer = 8
 collision_mask = 8
-force = 0.01
+force = 1.0
 
 [node name="LeftLeg" parent="BodyParts" instance=ExtResource("10_v0n13")]
 z_index = 2
