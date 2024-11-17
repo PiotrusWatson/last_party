@@ -36,7 +36,7 @@ animation = &"placeholder"
 [node name="VisionCone2D" parent="." instance=ExtResource("4_itfhl")]
 rotation = 4.71239
 angle_deg = 70
-max_distance = 250.0
+max_distance = 150.0
 
 [node name="Components" type="Node" parent="."]
 
@@ -57,8 +57,12 @@ distance_to_stop = 30.0
 script = ExtResource("8_r3y4m")
 boredom_threshold = 15.0
 
-[node name="Chasing" type="Node" parent="StateMachine"]
+[node name="Searching" type="Node" parent="StateMachine"]
 script = ExtResource("9_k0d1o")
+speed = null
+distance_to_target = null
+boredom_threshold = null
+boredom_tick = null
 
 [node name="Timers" type="Node" parent="."]
 
@@ -69,7 +73,6 @@ wait_time = 2.0
 
 [node name="RotationTimer" type="Timer" parent="Timers"]
 wait_time = 0.3
-autostart = true
 
 [node name="DialogueDisplayer" type="Label" parent="."]
 texture_filter = 1
@@ -88,6 +91,8 @@ metadata/_edit_use_anchors_ = true
 [node name="FadeTimer" type="Timer" parent="DialogueDisplayer"]
 wait_time = 2.0
 one_shot = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueDisplayer"]
 
 [node name="HeadPivot" type="Marker2D" parent="."]
 script = ExtResource("11_nfr8r")

@@ -17,3 +17,8 @@ func handle_boredom_tick():
 		
 func exit():
 	partygoer.boredom_timer.stop()
+	
+func handle_no_longer_seeing_something(thing):
+	if thing == partygoer.target and thing.is_in_group("Player"):
+		partygoer.last_seen = thing.global_position
+		finished.emit(SEARCHING)

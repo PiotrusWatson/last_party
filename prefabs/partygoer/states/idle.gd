@@ -11,6 +11,7 @@ func enter(previous_state_path: String, data := {}):
 	current_direction = get_direction_from_target(current_target)
 	partygoer.change_direction_helper(current_direction)
 	partygoer.change_cone_colour(Globals.ConeHas.SEEN_NOTHING)
+	partygoer.rotation_timer.start()
 	
 
 func physics_process(delta):
@@ -35,8 +36,8 @@ func handle_seeing_something(body):
 		
 		
 func exit():
-	partygoer.dialogue_displayer.display_text(Dialogues.greetings.pick_random())
 	partygoer.direction_timer.stop()
+	partygoer.rotation_timer.stop()
 		
 func in_range_of_target():
 	return partygoer.global_position.distance_to(current_target.global_position) < distance_to_interest_point 

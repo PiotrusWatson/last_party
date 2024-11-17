@@ -7,6 +7,7 @@ class_name Partygoer
 @onready var state_machine = $StateMachine
 @onready var direction_timer = $Timers/WaitTimer
 @onready var boredom_timer = $Timers/BoredomTimer
+@onready var rotation_timer = $Timers/RotationTimer
 @onready var dialogue_displayer = $DialogueDisplayer
 @onready var head_pivot = $HeadPivot
 @onready var neck = $AnimatedSprite2D/Neck
@@ -16,6 +17,7 @@ var thirst = 0
 var restlessness = 0
 var points_of_interest = []
 var target: Node2D
+var last_seen: Vector2
 var cone_rotation_offset
 var flipped = false
 
@@ -34,7 +36,7 @@ func change_direction_helper(new_direction):
 func rotate_head(angle):
 	vision_cone.rotation = angle + cone_rotation_offset
 	head_pivot.rotate_clamped(angle)
-	
+
 func push_head(amount):
 	head_pivot.push_rotation(amount)
 	vision_cone.rotation += amount * head_pivot.get_direction()

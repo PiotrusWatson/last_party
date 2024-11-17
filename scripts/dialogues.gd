@@ -8,10 +8,20 @@ var greetings = [
 	"How are you?"
 ]
 
-var initiators = [
+var player_initiators = [
 	"So, how do you know the host?",
 	"Tell me your hopes and or dreams",
 	"You seem really quiet, are you doing ok?",
+	"What's up with you?",
+	"You look pretty unwell! That's wild",
+	"Are you shaking right now? Crazy"
+]
+
+var search_dialogues = [
+	"Get back here!",
+	"How rude! Come back!!!",
+	"Why don't you want to talk to me?",
+	"Come on! Let's have a lil chat",
 ]
 
 var rants = [
