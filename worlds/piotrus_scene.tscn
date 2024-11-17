@@ -17,9 +17,9 @@
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
-[ext_resource type="PackedScene" uid="uid://b7lctqouhfm2f" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
-[ext_resource type="PackedScene" uid="uid://cdnoddup85xw6" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
-[ext_resource type="PackedScene" uid="uid://bfedeoca0btn" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
+[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
+[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
+[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
 
 [sub_resource type="Gradient" id="Gradient_wq4ab"]

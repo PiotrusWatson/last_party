@@ -33,8 +33,9 @@ func _process(delta: float) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	mover.push_direction(direction)
-	left_arm.move_to_target(get_global_mouse_position())
-
+	left_arm.move_to_target(get_mouse_direction())
+func get_mouse_direction():
+	return (get_global_mouse_position() - global_position).normalized()
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Fire"):
 		arm.fire_arm()
