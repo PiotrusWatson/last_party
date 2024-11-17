@@ -1,14 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://b8gk5p5ua16q2"]
+[gd_scene load_steps=19 format=3 uid="uid://b8gk5p5ua16q2"]
 
 [ext_resource type="Theme" uid="uid://bmbeei5krtm0i" path="res://UI/placeholder_UI.tres" id="1_ihie8"]
 [ext_resource type="Script" path="res://worlds/menu.gd" id="2_00f0c"]
-[ext_resource type="Texture2D" uid="uid://bf01mbjlhf7kb" path="res://sprites/placeholder/Sam_Lake-MichaelFörtsch.jpg" id="3_bj6pp"]
+[ext_resource type="Texture2D" uid="uid://bmlf5oryjiluv" path="res://UI/MainMenuBG.png" id="3_1e12n"]
+[ext_resource type="Texture2D" uid="uid://bf4hle18twxlm" path="res://UI/logo.png" id="4_jiwy4"]
+[ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="5_2y5i3"]
+[ext_resource type="AudioStream" uid="uid://bqh8ux18g7dkc" path="res://Audio/sus and bass.mp3" id="6_ipxkh"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_yi5n6"]
-diffuse_texture = ExtResource("3_bj6pp")
-normal_texture = ExtResource("3_bj6pp")
-specular_texture = ExtResource("3_bj6pp")
-specular_color = Color(0.203922, 1, 1, 1)
+[sub_resource type="Theme" id="Theme_ertm5"]
+default_font = ExtResource("5_2y5i3")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngciv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qjo6y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f00yb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_61ryw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1da3a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6clg5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fifbh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_36nc2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2tqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mavjg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6a8ks"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -27,45 +49,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_yi5n6")
+texture = ExtResource("3_1e12n")
 
-[node name="Title" type="Label" parent="."]
+[node name="Logo" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -175.0
-offset_right = 175.0
-offset_bottom = 82.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 266.0
+offset_top = -81.0
+offset_right = -263.0
+offset_bottom = -48.0
 grow_horizontal = 2
-theme = ExtResource("1_ihie8")
-text = "My first video game"
-
-[node name="Description" type="RichTextLabel" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 100.0
-offset_top = -224.0
-offset_right = 1000.0
-offset_bottom = 176.0
 grow_vertical = 2
-text = "please be kind to me its my first time"
+texture = ExtResource("4_jiwy4")
 
 [node name="PlayGame" type="Button" parent="."]
+modulate = Color(1, 1, 0.647059, 1)
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -127.0
-offset_top = -269.0
-offset_right = 80.0
-offset_bottom = -216.0
+offset_left = -98.0
+offset_top = -252.0
+offset_right = 109.0
+offset_bottom = -198.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = SubResource("Theme_ertm5")
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.945098, 0, 0.145098, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngciv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qjo6y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f00yb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_61ryw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1da3a")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6clg5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fifbh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_36nc2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2tqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mavjg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6a8ks")
 text = "Play"
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ipxkh")
+autoplay = true
 
 [connection signal="pressed" from="PlayGame" to="." method="_on_play_again_win_pressed"]
