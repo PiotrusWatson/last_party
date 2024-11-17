@@ -26,9 +26,19 @@ var search_dialogues = [
 
 var rants = [
 	"Did you know that the British Rail Class 58 had a brief stint in Spain in 2000?",
-	"I can't believe Jenny from HR! I asked her for time off and she said it wasn't her business but",
-	"What an insane display last night from Borbington! A magician with the ball I can't believe the ref banned him",
-	"woa"
+	"Sometimes, I dream about cheese...",
+	"Studio Ghibli food rly does slap",
+	"Chilli dogs or fruit cakes?? You can only have one",
+	"Have u ever tried drinking water? It's wild",
+	"Anyway, Flareon is the only fully evolved Fire type that can't learn solarbeam",
+	"Sometimes I rub garlic on my eyes, just to feel something",
+	"If sonic the hedgehog had realistic feet, I don't think he could run as fast",
+	"What kind of a name is imagine dragons? I can imagine some dragons right now",
+	"It's kinda crazy that we live in the future",
+	"I've always dreamt of seeing the stars",
+	"What a time to be alive",
+	"If you clip through the wall at just the right angle, you can see the credits in 5 minutes",
+	"Those clowns at Washington! Boy if I could give them a piece of my mind",
 ]
 
 var responses = [
@@ -37,5 +47,6 @@ var responses = [
 	"Wow...",
 	"Really!!!",
 	"Insane...",
-	"That's so interesting..."
+	"That's so interesting...",
+	"So true bestie..."
 ]
