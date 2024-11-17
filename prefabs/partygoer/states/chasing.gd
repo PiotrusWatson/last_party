@@ -17,11 +17,14 @@ func enter(previous_state_path: String, data := {}):
 
 	
 func physics_process(delta):
-	if !at_last_seen and is_away_from_target():
+	partygoer.move_to_target(speed)
+
+	## TODO: make this behaviour actually good
+	"""if !at_last_seen and is_away_from_target():
 		partygoer.mover.move_direction_at_speed(current_direction, speed)
 	elif !at_last_seen:
 		at_last_seen = true
-		partygoer.rotation_timer.start()
+		partygoer.rotation_timer.start()"""
 	
 		
 func is_away_from_target():

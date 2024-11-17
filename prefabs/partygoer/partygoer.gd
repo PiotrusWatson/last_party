@@ -73,7 +73,10 @@ func _on_vision_cone_2d_exited_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_no_longer_seeing_something"):
 		state_machine.state.handle_no_longer_seeing_something(body)
 		
-
+func move_to_target(speed):
+	var direction = (target.global_position - global_position).normalized()
+	mover.move_direction_at_speed(direction, speed)
+	change_direction_helper(direction)
 
 func _on_change_direction_timer_timeout() -> void:
 	if state_machine.state.has_method("change_direction"):
