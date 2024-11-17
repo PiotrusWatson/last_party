@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c2jcjr23v276m"]
+[gd_scene load_steps=7 format=3 uid="uid://x0p1kxaj6hkj"]
 
 [ext_resource type="Texture2D" uid="uid://bcnnx371gayei" path="res://UI/Anxietybar_frame.png" id="1_3vr3l"]
 [ext_resource type="Texture2D" uid="uid://clhoytmatma7a" path="res://UI/Anxietybar_filling.png" id="2_waixi"]
