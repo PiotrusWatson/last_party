@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djw3s61m8ih8c"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_774kt"]
-[ext_resource type="SpriteFrames" uid="uid://c4iliosmvypyt" path="res://Dog_anims.tres" id="2_tvbuy"]
+[ext_resource type="SpriteFrames" uid="uid://cl67tysuy3or3" path="res://Dog_anims.tres" id="2_tvbuy"]
 
 [node name="Partygoer" instance=ExtResource("1_774kt")]
 

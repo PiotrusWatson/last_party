@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=53 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -17,10 +17,10 @@
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
-[ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
+[ext_resource type="PackedScene" uid="uid://b7lctqouhfm2f" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
+[ext_resource type="PackedScene" uid="uid://cdnoddup85xw6" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
+[ext_resource type="PackedScene" uid="uid://bfedeoca0btn" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
+[ext_resource type="Texture2D" uid="uid://bceeadgf5boyn" path="res://sprites/Background/banner-sheet.png" id="21_g00vj"]
 
 [sub_resource type="Gradient" id="Gradient_wq4ab"]
 
@@ -201,15 +201,40 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbl53"]
 size = Vector2(86, 40)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppgvr"]
+atlas = ExtResource("21_g00vj")
+region = Rect2(0, 0, 148, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qfuq"]
+atlas = ExtResource("21_g00vj")
+region = Rect2(148, 0, 148, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmvlf"]
+atlas = ExtResource("21_g00vj")
+region = Rect2(296, 0, 148, 77)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqokv"]
+atlas = ExtResource("21_g00vj")
+region = Rect2(444, 0, 148, 77)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_02q5s"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("21_2bm38")
+"texture": SubResource("AtlasTexture_ppgvr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qfuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmvlf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqokv")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8o5b"]
@@ -405,7 +430,6 @@ autoplay = "default"
 frame = 1
 
 [node name="WorldColliders" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldColliders"]
 position = Vector2(4.75, 121)
@@ -437,6 +461,14 @@ shape = SubResource("RectangleShape2D_hrodv")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="WorldColliders"]
 position = Vector2(1023, 236)
+shape = SubResource("RectangleShape2D_hrodv")
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="WorldColliders"]
+position = Vector2(1373, 75)
+shape = SubResource("RectangleShape2D_hrodv")
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="WorldColliders"]
+position = Vector2(1504, -71)
 shape = SubResource("RectangleShape2D_hrodv")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="WorldColliders"]
@@ -563,6 +595,7 @@ z_index = -1
 texture_filter = 1
 position = Vector2(1003, -45)
 sprite_frames = SubResource("SpriteFrames_02q5s")
+autoplay = "default"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Banner"]
 
