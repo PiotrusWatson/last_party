@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bqh8ux18g7dkc"
+path="res://.godot/imported/sus and bass.mp3-3e84e03a8db4dd683b6d6775e7ac8bc2.mp3str"
+
+[deps]
+
+source_file="res://Audio/sus and bass.mp3"
+dest_files=["res://.godot/imported/sus and bass.mp3-3e84e03a8db4dd683b6d6775e7ac8bc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
