@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdnoddup85xw6"]
+[gd_scene load_steps=2 format=3 uid="uid://c54k5p1wrajp3"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_5b4xu"]
 
@@ -10,3 +10,14 @@ position = Vector2(0, -6)
 scale = Vector2(-1, 1)
 autoplay = "placeholder"
 frame_progress = 0.830842
+
+[node name="Neck" parent="AnimatedSprite2D" index="0"]
+position = Vector2(-4, -16)
+
+[node name="HeadPivot" parent="." index="7"]
+position = Vector2(-4, -16)
+
+[node name="Head" parent="HeadPivot" index="0"]
+texture_filter = 1
+position = Vector2(0, 0)
+offset = Vector2(-4.295, 10.14)

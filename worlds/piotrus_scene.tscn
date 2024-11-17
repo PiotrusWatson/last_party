@@ -17,9 +17,9 @@
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
-[ext_resource type="PackedScene" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
+[ext_resource type="PackedScene" uid="uid://bvndfvkma6tes" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
+[ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
+[ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
 [ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
@@ -220,7 +220,7 @@ gradient = SubResource("Gradient_wq4ab")
 script = ExtResource("1_d6a5b")
 
 [node name="Player" parent="." instance=ExtResource("1_xf4hq")]
-position = Vector2(609, -83)
+position = Vector2(818, -176)
 gravity_scale = 0.0
 
 [node name="MainCamera" type="Camera2D" parent="." node_paths=PackedStringArray("thing_to_follow")]
