@@ -15,6 +15,7 @@ var restlessness = 0
 var points_of_interest = []
 var target: Node2D
 var cone_rotation_offset
+var flipped = false
 
 func _ready() -> void:
 	mover.init(self)
@@ -28,10 +29,12 @@ func change_direction_helper(new_direction):
 	
 ## TODO: maybe move to an animator class later	
 func flip_sprite_on_direction(direction):
-	if direction.x < 0:
-		animator.flip_h = true
-	else:
-		animator.flip_h = false
+	if direction.x < 0 and not flipped:
+		animator.scale.x *= -1
+		flipped = true
+	elif direction.x >= 0 and flipped:
+		animator.scale.x = abs(animator.scale.x)
+		flipped = false
 	
 func _on_vision_cone_2d_entered_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_seeing_something"):
