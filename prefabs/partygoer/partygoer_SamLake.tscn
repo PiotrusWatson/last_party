@@ -10,3 +10,11 @@ position = Vector2(0, -6)
 scale = Vector2(-1, 1)
 autoplay = "placeholder"
 frame_progress = 0.830842
+
+[node name="HeadPivot" parent="." index="7"]
+position = Vector2(-4, -16)
+
+[node name="Head" parent="HeadPivot" index="0"]
+texture_filter = 1
+position = Vector2(0, 0)
+offset = Vector2(-4.295, 10.14)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bfedeoca0btn"]
+[gd_scene load_steps=9 format=3 uid="uid://bfedeoca0btn"]
 
 [ext_resource type="PackedScene" uid="uid://bycx0utujr7qt" path="res://prefabs/partygoer/partygoer.tscn" id="1_tj1sd"]
 [ext_resource type="Texture2D" uid="uid://doai5hd75idg" path="res://sprites/Partygoers/SannaMarin_body-sheet.png" id="2_vpjir"]
+[ext_resource type="Texture2D" uid="uid://efuul6ywsybj" path="res://sprites/Partygoers/SannaMarin_head1.png" id="3_hjm4h"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_orusa"]
 atlas = ExtResource("2_vpjir")
@@ -49,3 +50,11 @@ sprite_frames = SubResource("SpriteFrames_evgrn")
 animation = &"default"
 autoplay = "default"
 frame_progress = 0.0696398
+
+[node name="HeadPivot" parent="." index="7"]
+position = Vector2(0, -14)
+
+[node name="Head" parent="HeadPivot" index="0"]
+texture_filter = 1
+position = Vector2(1, 11)
+texture = ExtResource("3_hjm4h")
