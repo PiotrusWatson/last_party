@@ -21,6 +21,7 @@ script = ExtResource("1_l0l6u")
 force = 0.001
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(9, -6)
 texture = ExtResource("1_drhip")
 

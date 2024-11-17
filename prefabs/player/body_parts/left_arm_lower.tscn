@@ -10,6 +10,7 @@ height = 12.7692
 mass = 0.01
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 3
 position = Vector2(15, -10)
 texture = ExtResource("1_51sg8")
 
