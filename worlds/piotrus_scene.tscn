@@ -1,26 +1,24 @@
-[gd_scene load_steps=50 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=39 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
 [ext_resource type="Texture2D" uid="uid://dpneqkfqk5mvj" path="res://sprites/Background/BG_Placeholder.png" id="3_crhye"]
-[ext_resource type="PackedScene" uid="uid://bmde1kq7j0gey" path="res://components/main_camera.tscn" id="3_st8m8"]
+[ext_resource type="PackedScene" path="res://components/main_camera.tscn" id="3_st8m8"]
 [ext_resource type="PackedScene" uid="uid://djw3s61m8ih8c" path="res://prefabs/partygoer/partygoer_dog.tscn" id="5_m13ws"]
 [ext_resource type="Texture2D" uid="uid://b10repbx682cb" path="res://sprites/Background/tilesheet1.png" id="5_xc60l"]
-[ext_resource type="Texture2D" uid="uid://btoh8ejigin3h" path="res://sprites/Background/BarDesk.png" id="8_7mumj"]
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
 [ext_resource type="PackedScene" uid="uid://1ciexgxjj0hb" path="res://prefabs/props/radio.tscn" id="8_8o70q"]
 [ext_resource type="Texture2D" uid="uid://crdceov406tde" path="res://sprites/Background/lightblue-sheet.png" id="8_78bav"]
-[ext_resource type="Texture2D" uid="uid://dcx7c5ra88lfa" path="res://sprites/Background/barShelf.png" id="8_yop10"]
-[ext_resource type="PackedScene" uid="uid://c2jcjr23v276m" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
+[ext_resource type="PackedScene" uid="uid://x0p1kxaj6hkj" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://prefabs/god.gd" id="10_gu7p8"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
-[ext_resource type="Texture2D" uid="uid://trq1eadbtpqw" path="res://sprites/Bartender/bartender_idle.png" id="11_ltvq2"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
 [ext_resource type="PackedScene" uid="uid://bvndfvkma6tes" path="res://prefabs/partygoer/partygoer_peruna.tscn" id="18_m5ujp"]
+[ext_resource type="PackedScene" uid="uid://cchwrfy400lx4" path="res://prefabs/props/bar.tscn" id="19_kdmmt"]
 [ext_resource type="PackedScene" uid="uid://c54k5p1wrajp3" path="res://prefabs/partygoer/partygoer_SamLake.tscn" id="19_t7da5"]
 [ext_resource type="PackedScene" uid="uid://b17g4mpnhehpj" path="res://prefabs/partygoer/partygoer_SannaMarin.tscn" id="20_psvbb"]
 [ext_resource type="Texture2D" uid="uid://kylcrv3b35yk" path="res://sprites/Background/banner.png" id="21_2bm38"]
-[ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
+[ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="22_1mibo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i02l5"]
 texture = ExtResource("5_xc60l")
@@ -88,70 +86,6 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_tlsvw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_yop10")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot34g"]
-size = Vector2(72, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8wed"]
-atlas = ExtResource("11_ltvq2")
-region = Rect2(0, 0, 56, 54)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxvjv"]
-atlas = ExtResource("11_ltvq2")
-region = Rect2(56, 0, 56, 54)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_abfja"]
-atlas = ExtResource("11_ltvq2")
-region = Rect2(112, 0, 56, 54)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ldfh0"]
-atlas = ExtResource("11_ltvq2")
-region = Rect2(168, 0, 56, 54)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xlwq5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d8wed")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yxvjv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_abfja")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ldfh0")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_78qsw"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("8_7mumj")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbl53"]
-size = Vector2(86, 40)
 
 [sub_resource type="Theme" id="Theme_cy7yc"]
 default_font = ExtResource("11_pj3xo")
@@ -289,42 +223,6 @@ z_index = -1
 texture_filter = 1
 position = Vector2(654, -148)
 sprite_frames = SubResource("SpriteFrames_65mgi")
-
-[node name="BarShelf" type="AnimatedSprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(710, -78)
-sprite_frames = SubResource("SpriteFrames_tlsvw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BarShelf"]
-position = Vector2(75, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarShelf/StaticBody2D"]
-position = Vector2(-74, -1.5)
-shape = SubResource("RectangleShape2D_ot34g")
-
-[node name="Bartender" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bartender"]
-z_index = -1
-texture_filter = 1
-position = Vector2(711, -57)
-sprite_frames = SubResource("SpriteFrames_xlwq5")
-autoplay = "default"
-frame_progress = 0.861159
-
-[node name="BarDesk" type="AnimatedSprite2D" parent="."]
-z_index = -1
-texture_filter = 1
-position = Vector2(711, -21)
-sprite_frames = SubResource("SpriteFrames_78qsw")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="BarDesk"]
-position = Vector2(75, 2)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BarDesk/StaticBody2D"]
-position = Vector2(-75, -2)
-shape = SubResource("RectangleShape2D_rbl53")
 
 [node name="Radio" parent="." instance=ExtResource("8_8o70q")]
 position = Vector2(663, -28)
@@ -578,6 +476,9 @@ position = Vector2(497, -235)
 
 [node name="Point4" parent="PointsOfInterest" instance=ExtResource("22_1mibo")]
 position = Vector2(781, -98)
+
+[node name="Bar" parent="." instance=ExtResource("19_kdmmt")]
+position = Vector2(697, -56)
 
 [connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]
