@@ -944,5 +944,8 @@ offset_bottom = 987.0
 rotation = 3.11802
 texture = SubResource("GradientTexture2D_h83uk")
 
+[node name="Partygoer" parent="." instance=ExtResource("20_psvbb")]
+position = Vector2(237, -17)
+
 [connection signal="timeout" from="God/GameTimer" to="God" method="_on_game_timer_timeout"]
 [connection signal="timeout" from="God/GameTick" to="God" method="_on_game_tick_timeout"]
