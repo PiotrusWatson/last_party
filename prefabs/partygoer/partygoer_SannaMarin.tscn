@@ -61,3 +61,7 @@ position = Vector2(0, -14)
 texture_filter = 1
 position = Vector2(1, 11)
 texture = ExtResource("3_hjm4h")
+
+[node name="Exclamation" parent="." index="9"]
+texture_filter = 1
+position = Vector2(-7, -38)

@@ -21,3 +21,7 @@ position = Vector2(-4, -16)
 texture_filter = 1
 position = Vector2(0, 0)
 offset = Vector2(-4.295, 10.14)
+
+[node name="Exclamation" parent="." index="9"]
+texture_filter = 1
+position = Vector2(-9, -40)
