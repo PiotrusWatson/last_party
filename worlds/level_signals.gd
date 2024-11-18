@@ -6,6 +6,7 @@ extends Node2D
 @onready var ammo = $UI/UI/Ammo
 @onready var god = $God
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	angst_bar.init(player.max_health)
 	ammo.display_ammo(player.ammo)

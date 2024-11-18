@@ -97,8 +97,42 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_6a8ks")
 text = "Play"
 flat = true
 
+[node name="Credits" type="Button" parent="."]
+modulate = Color(1, 1, 0.647059, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -207.0
+offset_right = 109.0
+offset_bottom = -153.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_ertm5")
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.945098, 0, 0.145098, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ngciv")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_qjo6y")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_f00yb")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_61ryw")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_1da3a")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6clg5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fifbh")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_36nc2")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2tqx")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_mavjg")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_6a8ks")
+text = "Credits
+"
+flat = true
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_ipxkh")
 autoplay = true
 
 [connection signal="pressed" from="PlayGame" to="." method="_on_play_again_win_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
