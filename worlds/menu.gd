@@ -23,10 +23,8 @@ func _on_play_again_pressed() -> void:
 func _on_play_again_win_pressed() -> void:
 	play_game()
 
-
 func _on_back_pressed() -> void:
 	back_to_menu()
-
 
 func _on_credits_pressed() -> void:
 	get_tree().change_scene_to_file(credit_scene)
