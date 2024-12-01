@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://esj3r8ps5to8"]
+
+[ext_resource type="Script" path="res://worlds/spawner.gd" id="1_eoqug"]
+
+[node name="PartygoerSpawner" type="Marker2D" groups=["Spawner"]]
+position = Vector2(94, -16)
+script = ExtResource("1_eoqug")
