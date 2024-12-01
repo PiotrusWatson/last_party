@@ -50,6 +50,9 @@ script = ExtResource("2_tnmw0")
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("5_u77gh")
 
+[node name="Spawning" type="Node" parent="StateMachine"]
+script = ExtResource("10_xgxyg")
+
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource("6_mjqa1")
 
@@ -62,9 +65,6 @@ script = ExtResource("8_r3y4m")
 
 [node name="Searching" type="Node" parent="StateMachine"]
 script = ExtResource("9_k0d1o")
-
-[node name="Spawning" type="Node" parent="StateMachine"]
-script = ExtResource("10_xgxyg")
 
 [node name="Timers" type="Node" parent="."]
 

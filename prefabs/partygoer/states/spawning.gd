@@ -1,11 +1,16 @@
-extends Node
+extends PartygoerState
 
-
+@export var fade_speed = 3
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func enter(previous_state_path: String, data := {}):
+	partygoer.set_transparency(0)
+	partygoer.say_intro()
 
+func process(delta):
+	partygoer.fade_in(fade_speed*delta)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func exit():
+	partygoer.set_transparency(255)
+	
+func handle_spawn_timer_over():
+	finished.emit(IDLE)
