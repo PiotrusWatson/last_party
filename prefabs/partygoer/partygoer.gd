@@ -105,6 +105,13 @@ func say_concerned():
 func say_response():
 	dialogue_displayer.display_text(Dialogues.responses.pick_random())
 
+func say_intro():
+	dialogue_displayer.display_text(Dialogues.responses.pick_random())
 func _on_rotation_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_head_pushing"):
 		state_machine.state.handle_head_pushing()
+
+
+func _on_spawn_timer_timeout() -> void:
+	if state_machine.state.has_method("handle_spawn_timer_over"):
+		state_machine.state.handle_spawn_timer_over()

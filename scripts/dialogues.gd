@@ -1,5 +1,18 @@
 extends Node
 
+
+var intro_words = [
+	"Thanks for inviting me!",
+	"I...have arrived",
+	"I'm heeeere",
+	"Hey everybody!!",
+	"Hello fellas",
+	"What is, UP, my guys??",
+	"I'm new here. Love the place.",
+	"Wow I LOVE what you've done with the place",
+	"Sup all"
+]
+
 var greetings = [
 	"Wow, you seem interesting!",
 	"Hello there!",

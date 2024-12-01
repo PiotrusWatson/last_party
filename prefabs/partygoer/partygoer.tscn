@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bycx0utujr7qt"]
+[gd_scene load_steps=20 format=3 uid="uid://bycx0utujr7qt"]
 
 [ext_resource type="Script" path="res://prefabs/partygoer/partygoer.gd" id="1_6njh4"]
 [ext_resource type="SpriteFrames" uid="uid://cxn82o0kqhfsp" path="res://prefabs/partygoer/partygoer_anims.tres" id="1_pv8j1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" path="res://prefabs/partygoer/show_dialogue.gd" id="9_1flnt"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="9_6g13c"]
 [ext_resource type="Script" path="res://prefabs/partygoer/states/chasing.gd" id="9_k0d1o"]
+[ext_resource type="Script" path="res://prefabs/partygoer/states/spawning.gd" id="10_xgxyg"]
 [ext_resource type="Script" path="res://prefabs/partygoer/head_pivot.gd" id="11_nfr8r"]
 [ext_resource type="Script" path="res://prefabs/partygoer/pusher.gd" id="14_o2w40"]
 [ext_resource type="Texture2D" uid="uid://cnp4naygachbv" path="res://UI/ExcMark1.png" id="15_oen5b"]
@@ -62,6 +63,9 @@ script = ExtResource("8_r3y4m")
 [node name="Searching" type="Node" parent="StateMachine"]
 script = ExtResource("9_k0d1o")
 
+[node name="Spawning" type="Node" parent="StateMachine"]
+script = ExtResource("10_xgxyg")
+
 [node name="Timers" type="Node" parent="."]
 
 [node name="WaitTimer" type="Timer" parent="Timers"]
@@ -72,6 +76,11 @@ wait_time = 2.0
 
 [node name="RotationTimer" type="Timer" parent="Timers"]
 wait_time = 0.3
+
+[node name="SpawnTimer" type="Timer" parent="Timers"]
+wait_time = 4.0
+one_shot = true
+autostart = true
 
 [node name="DialogueDisplayer" type="Label" parent="."]
 z_index = 10
@@ -118,5 +127,6 @@ script = ExtResource("16_b7oiq")
 [connection signal="timeout" from="Timers/WaitTimer" to="." method="_on_change_direction_timer_timeout"]
 [connection signal="timeout" from="Timers/BoredomTimer" to="." method="_on_boredom_timer_timeout"]
 [connection signal="timeout" from="Timers/RotationTimer" to="." method="_on_rotation_timer_timeout"]
+[connection signal="timeout" from="Timers/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="finished_showing_text" from="DialogueDisplayer" to="." method="_on_dialogue_displayer_finished_showing_text"]
 [connection signal="timeout" from="DialogueDisplayer/FadeTimer" to="DialogueDisplayer" method="_on_fade_timer_timeout"]

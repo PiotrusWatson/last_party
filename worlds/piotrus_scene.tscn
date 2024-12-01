@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=89 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://x0p1kxaj6hkj" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
 [ext_resource type="FontFile" uid="uid://d4nirmpkhfngg" path="res://UI/Fonts/pixel/Pixel NES.otf" id="11_pj3xo"]
+[ext_resource type="Script" path="res://worlds/spawner.gd" id="12_jrm7u"]
 [ext_resource type="Texture2D" uid="uid://bceeadgf5boyn" path="res://sprites/Background/banner-sheet.png" id="12_w22y7"]
 [ext_resource type="Texture2D" uid="uid://bli14ulvoi8xg" path="res://sprites/Background/balloonsblue-sheet.png" id="13_511yn"]
 [ext_resource type="Texture2D" uid="uid://co1rmrln8g5y5" path="res://sprites/Background/spacedoor2.png" id="14_1mlat"]
@@ -953,3 +954,11 @@ position = Vector2(52, 13)
 position = Vector2(1, 0)
 
 [node name="PartygoerSpawner" parent="Spawners" instance=ExtResource("33_8nk7y")]
+
+[node name="PartygoerSpawnerStart" type="Marker2D" parent="Spawners" groups=["StartSpawner"]]
+position = Vector2(513, -208)
+script = ExtResource("12_jrm7u")
+
+[node name="PartygoerSpawnerStart2" type="Marker2D" parent="Spawners" groups=["StartSpawner"]]
+position = Vector2(790, -208)
+script = ExtResource("12_jrm7u")

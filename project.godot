@@ -39,6 +39,7 @@ Player=""
 Beer=""
 PointsOfInterest=""
 Spawner=""
+StartSpawner=""
 
 [input]
 
