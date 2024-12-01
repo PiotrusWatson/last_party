@@ -1,4 +1,5 @@
 extends RigidBody2D
+enum BodyParts{FEET = 0, HANDS = 1}
 
 @onready var mover = $Components/PhysicsMover
 @onready var anxiety_timer = $Timers/AnxietyDamage
@@ -43,6 +44,7 @@ func _physics_process(delta: float) -> void:
 	
 func get_mouse_direction():
 	return (get_global_mouse_position() - global_position).normalized()
+	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Fire"):
 		arm.fire_arm()
