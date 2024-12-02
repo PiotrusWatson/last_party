@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2bpcs8bg8q5i"]
 
-[ext_resource type="Script" path="res://prefabs/player/junk.gd" id="1_euaia"]
-[ext_resource type="Texture2D" uid="uid://3acovkwk1m3r" path="res://prefabs/player/boot.png" id="1_rnu36"]
+[ext_resource type="Script" path="res://prefabs/player/throwables/junk.gd" id="1_a8c42"]
+[ext_resource type="Texture2D" uid="uid://3acovkwk1m3r" path="res://prefabs/player/throwables/boot.png" id="2_44ymk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u285r"]
-radius = 2.21971
-height = 7.77496
+radius = 3.0
+height = 14.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_57vt8"]
 radius = 12.0416
@@ -14,7 +14,7 @@ radius = 12.0416
 z_index = 4
 mass = 0.3
 gravity_scale = 0.0
-script = ExtResource("1_euaia")
+script = ExtResource("1_a8c42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -24,7 +24,7 @@ shape = SubResource("CapsuleShape2D_u285r")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(-23, -1)
-texture = ExtResource("1_rnu36")
+texture = ExtResource("2_44ymk")
 
 [node name="PickupRadius" type="Area2D" parent="."]
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6c8a7hjo5yx8"]
+
+[ext_resource type="PackedScene" uid="uid://c00jxq4ifixv2" path="res://prefabs/player/throwables/glove.tscn" id="1_umjwt"]
+[ext_resource type="Texture2D" uid="uid://b0qex00nt15ia" path="res://sprites/Props/beerbotleh.png" id="2_dm8k4"]
+
+[node name="Beer" instance=ExtResource("1_umjwt")]
+ammo_type = -1
+
+[node name="CollisionShape2D" parent="." index="0"]
+rotation = 0.0
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(2, -2)
+texture = ExtResource("2_dm8k4")
