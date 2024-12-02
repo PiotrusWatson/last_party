@@ -8,14 +8,13 @@ enum BodyParts{FEET = 0, HANDS = 1}
 @onready var left_arm = $BodyParts/LeftArm
 @onready var thrown_stuff = $ThrownStuff
 @onready var thrower = $Components/Thrower
+@onready var ammo_manager = $Components/AmmoManager
 
 var direction = Vector2.ZERO
 var body_count = 0
 var can_interact = false
 var thing_interacted_with = null
 var max_health
-var ammo
-@export var max_ammo = 2
 @export var anxiety_damage = 5
 @export var beer_healing = 30
 
@@ -31,7 +30,6 @@ func _ready() -> void:
 	mover.init(self)
 	max_health = health.max_health
 	anxiety_changed.emit(health.health)
-	ammo = max_ammo
 	thrower.init(thrown_stuff)
 
 func _process(delta: float) -> void:
@@ -56,9 +54,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		var push_direction = (global_position - arm.get_pos()).normalized()
 		mover.push_direction(push_direction)
 	
-	if event.is_action_released("AltFire") and ammo > 0:
+	if event.is_action_released("AltFire"):
+		var thing_to_throw = ammo_manager.get_ammo()
+		if thing_to_throw == null:
+			return
+		
 		thrower.throw_object(get_mouse_direction())
-		ammo -= 1
 		threw_thing.emit(ammo)
 	
 	if event.is_action_released("Interact") and can_interact:
