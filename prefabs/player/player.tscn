@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=21 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="Texture2D" uid="uid://tb5t6kmedonj" path="res://sprites/Player/BodyParts/Astronaut_floating_torso.png" id="2_iw4hd"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://c2bpcs8bg8q5i" path="res://prefabs/player/throwables/boot.tscn" id="5_0tcwt"]
 [ext_resource type="Script" path="res://prefabs/arm/arm.gd" id="6_2gfem"]
 [ext_resource type="Script" path="res://prefabs/player/ammo_manager.gd" id="6_bjch2"]
+[ext_resource type="PackedScene" uid="uid://c00jxq4ifixv2" path="res://prefabs/player/throwables/glove.tscn" id="7_5xltu"]
+[ext_resource type="PackedScene" uid="uid://c6c8a7hjo5yx8" path="res://prefabs/player/throwables/beer.tscn" id="8_kvyfe"]
 [ext_resource type="PackedScene" uid="uid://1se5evh7ewp0" path="res://prefabs/player/body_parts/left_arm.tscn" id="9_xjprf"]
 [ext_resource type="PackedScene" uid="uid://5q8im6l7tr55" path="res://prefabs/player/body_parts/left_leg.tscn" id="10_v0n13"]
 [ext_resource type="PackedScene" uid="uid://be57jqugphug1" path="res://prefabs/player/body_parts/right_arm.tscn" id="11_3snor"]
@@ -51,6 +53,9 @@ recoil = 3000.0
 
 [node name="AmmoManager" type="Node" parent="Components"]
 script = ExtResource("6_bjch2")
+ammo_types = Array[PackedScene]([ExtResource("5_0tcwt"), ExtResource("7_5xltu")])
+max_amount_of_ammo = Array[int]([2, 2])
+bonus_ammo_type = ExtResource("8_kvyfe")
 
 [node name="PersonalSpace" type="Area2D" parent="."]
 position = Vector2(0, 31.91)
