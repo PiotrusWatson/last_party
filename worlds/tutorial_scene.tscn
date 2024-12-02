@@ -260,9 +260,9 @@ offset_bottom = 185.0
 theme_override_fonts/font = ExtResource("8_sm8rp")
 text = "Mission: survive the last party
 
-Launch yourself off walls and objects by left click
-throw your boot for momentum by right click
-You can get your boots back by bumping into them
+Launch yourself off walls and objects using left click
+throw boots, gloves, beer for momentum using right click
+You can get your gloves and boots back by bumping into them
 
 Don't let party guests get too close to your personal space
 Drink alcohol to soothe anxiety"
