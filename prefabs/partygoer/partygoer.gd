@@ -22,7 +22,7 @@ var last_seen: Vector2
 var cone_rotation_offset
 var flipped = false
 
-var default_modulate = head.modulate
+var default_modulate
 
 func _ready() -> void:
 	mover.init(self)
@@ -31,6 +31,7 @@ func _ready() -> void:
 	neck.global_position = head_pivot.global_position
 	head_pivot.global_position = neck.global_position
 	head_rotation_amount = deg_to_rad(head_rotation_amount)
+	default_modulate = head.modulate
 	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)

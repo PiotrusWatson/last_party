@@ -498,6 +498,7 @@ script = ExtResource("10_wims2")
 
 [node name="SpawnerManager" type="Node" parent="."]
 script = ExtResource("33_ilmj0")
+guests_to_spawn = Array[PackedScene]([ExtResource("5_m13ws"), ExtResource("18_m5ujp"), ExtResource("19_t7da5"), ExtResource("20_psvbb")])
 
 [node name="TimeToNextGuest" type="Timer" parent="SpawnerManager"]
 wait_time = 25.0
@@ -854,18 +855,6 @@ texture = SubResource("GradientTexture2D_pmavj")
 
 [node name="Fellas" type="Node2D" parent="."]
 
-[node name="Partygoer2" parent="Fellas" instance=ExtResource("5_m13ws")]
-position = Vector2(511, -204)
-
-[node name="Partygoer" parent="Fellas" instance=ExtResource("18_m5ujp")]
-position = Vector2(783, -206)
-
-[node name="Partygoer3" parent="Fellas" instance=ExtResource("20_psvbb")]
-position = Vector2(821, 99)
-
-[node name="Partygoer4" parent="Fellas" instance=ExtResource("19_t7da5")]
-position = Vector2(1060, 88)
-
 [node name="PointsOfInterest" type="Node2D" parent="."]
 
 [node name="Point1" parent="PointsOfInterest" instance=ExtResource("22_1mibo")]
@@ -947,20 +936,20 @@ offset_bottom = 987.0
 rotation = 3.11802
 texture = SubResource("GradientTexture2D_h83uk")
 
-[node name="Partygoer" parent="." instance=ExtResource("20_psvbb")]
-position = Vector2(52, 13)
-
 [node name="Spawners" type="Node2D" parent="."]
 position = Vector2(1, 0)
 
-[node name="PartygoerSpawner" parent="Spawners" instance=ExtResource("33_8nk7y")]
+[node name="PartygoerSpawner" parent="Spawners" node_paths=PackedStringArray("parent") instance=ExtResource("33_8nk7y")]
+parent = NodePath("../../Fellas")
 
-[node name="PartygoerSpawnerStart" type="Marker2D" parent="Spawners" groups=["StartSpawner"]]
+[node name="PartygoerSpawnerStart" type="Marker2D" parent="Spawners" node_paths=PackedStringArray("parent") groups=["StartSpawner"]]
 position = Vector2(513, -208)
 script = ExtResource("12_jrm7u")
+parent = NodePath("../../Fellas")
 
-[node name="PartygoerSpawnerStart2" type="Marker2D" parent="Spawners" groups=["StartSpawner"]]
+[node name="PartygoerSpawnerStart2" type="Marker2D" parent="Spawners" node_paths=PackedStringArray("parent") groups=["StartSpawner"]]
 position = Vector2(790, -208)
 script = ExtResource("12_jrm7u")
+parent = NodePath("../../Fellas")
 
 [connection signal="timeout" from="SpawnerManager/TimeToNextGuest" to="SpawnerManager" method="_on_time_to_next_guest_timeout"]
