@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_pickup_radius_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and body.has_method("pickup") and is_ready:
-		body.pickup()
+		body.pickup(ammo_type)
 		queue_free()
 	
 	if ammo_type == Globals.AmmoType.BEER:

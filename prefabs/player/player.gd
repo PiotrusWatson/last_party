@@ -61,7 +61,10 @@ func _unhandled_input(event: InputEvent) -> void:
 		if thing_to_throw == null:
 			return
 		
-		thrower.throw_object(get_mouse_direction())
+		thrower.throw_passed_object(thing_to_throw, get_mouse_direction())
+		if thing_to_throw.ammo_type == Globals.AmmoType.BEER:
+			left_arm.activate_beer(false)
+			
 		threw_thing.emit(ammo)
 	
 	if event.is_action_released("Interact") and can_interact:
@@ -100,14 +103,14 @@ func _on_anxiety_damage_timeout() -> void:
 func _on_health_dead() -> void:
 	dead.emit()
 
-func pickup():
-	ammo += 1
-	threw_thing.emit(ammo)
+func pickup(ammo_type):
+	ammo_manager.refill_ammo(ammo_type)
+	threw_thing.emit(ammo_type)
 
 func _on_drinker_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Beer") and left_arm.beer_ready:
 		health.damage(-beer_healing)
-		left_arm.activate_beer(false)
+		left_arm.drink_beer()
 
 func _on_thrower_threw_something(direction: Variant, speed: Variant) -> void:
 	mover.push_direction_at_speed(direction, speed)

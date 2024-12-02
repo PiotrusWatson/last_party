@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://1se5evh7ewp0"]
+[gd_scene load_steps=8 format=3 uid="uid://1se5evh7ewp0"]
 
 [ext_resource type="Texture2D" uid="uid://cm47wn8a378su" path="res://sprites/Player/BodyParts/Astronaut_floating_armL.png" id="1_drhip"]
 [ext_resource type="Script" path="res://prefabs/player/body_parts/limb_mover.gd" id="1_l0l6u"]
 [ext_resource type="PackedScene" uid="uid://bqv1ov364bud6" path="res://prefabs/player/body_parts/left_arm_lower.tscn" id="2_q3ljb"]
+[ext_resource type="Texture2D" uid="uid://dh7d1lfv6innl" path="res://sprites/Props/empty_bottle.png" id="3_dka25"]
 [ext_resource type="Texture2D" uid="uid://b0qex00nt15ia" path="res://sprites/Props/beerbotleh.png" id="4_nsg3i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
@@ -19,6 +20,8 @@ collision_mask = 0
 mass = 0.01
 script = ExtResource("1_l0l6u")
 force = 0.001
+full_beer_sprite = ExtResource("4_nsg3i")
+empty_beer_sprite = ExtResource("3_dka25")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 3
