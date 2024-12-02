@@ -13,6 +13,8 @@ var ammo_cursor = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	amount_of_ammo = max_amount_of_ammo.duplicate()
+	Globals.ammo_amount = amount_of_ammo
+	Globals.bonus_ammo_amount = bonus_ammo_amount
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -24,6 +26,7 @@ func get_ammo():
 		
 	if bonus_ammo_amount > 0:
 		bonus_ammo_amount -= 1
+		Globals.bonus_ammo_amount -= 1
 		return bonus_ammo_type
 	if amount_of_ammo[ammo_cursor] <= 0:
 		ammo_cursor += 1
@@ -35,6 +38,7 @@ func get_ammo():
 func refill_ammo(ammo_type: Globals.AmmoType):
 	if ammo_type == Globals.AmmoType.BEER and ammo_type < max_bonus_ammo_amount:
 		bonus_ammo_amount += 1
+		Globals.bonus_ammo_amount += 1
 	elif amount_of_ammo[ammo_type] < max_amount_of_ammo[ammo_type]:
 		amount_of_ammo[ammo_type] += 1
 		
