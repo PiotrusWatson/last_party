@@ -14,3 +14,4 @@ func _ready() -> void:
 	player.anxiety_changed.connect(angst_bar.set_anxiety)
 	player.dead.connect(god.die)
 	god.timer_changed.connect(clock.set_time)
+	ammo.setup_ammo()

@@ -24,7 +24,7 @@ signal personal_space_violated
 signal personal_space_freed
 signal anxiety_changed(health)
 signal dead
-signal threw_thing(ammo)
+signal threw_thing(ammo_type)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -61,11 +61,11 @@ func _unhandled_input(event: InputEvent) -> void:
 		if thing_to_throw == null:
 			return
 		
-		thrower.throw_passed_object(thing_to_throw, get_mouse_direction())
-		if thing_to_throw.ammo_type == Globals.AmmoType.BEER:
+		thrower.throw_passed_object(thing_to_throw["object"], get_mouse_direction())
+		if thing_to_throw["type"]== Globals.AmmoType.BEER:
 			left_arm.activate_beer(false)
 			
-		threw_thing.emit(ammo)
+		threw_thing.emit(thing_to_throw["type"])
 	
 	if event.is_action_released("Interact") and can_interact:
 		thing_interacted_with.interact()

@@ -1,17 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhxd0u2kwku3i"]
+[gd_scene load_steps=7 format=3 uid="uid://dhxd0u2kwku3i"]
 
 [ext_resource type="FontFile" uid="uid://7kjkx5wbsxcg" path="res://UI/Fonts/Pixel NES.otf" id="1_m0cv7"]
 [ext_resource type="Script" path="res://UI/ammo.gd" id="2_0o1u5"]
+[ext_resource type="Texture2D" uid="uid://carrtwmn5n1hh" path="res://UI/boot.png" id="2_b7710"]
+[ext_resource type="Script" path="res://UI/ammo_icon.gd" id="3_53jii"]
+[ext_resource type="Texture2D" uid="uid://dsv2uknxwdhoj" path="res://UI/glove.png" id="4_u0juk"]
+[ext_resource type="Texture2D" uid="uid://dh7d1lfv6innl" path="res://sprites/Props/empty_bottle.png" id="5_8bmx7"]
 
-[node name="Ammo" type="Label"]
+[node name="Ammo" type="HBoxContainer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -49.0
+offset_left = -116.0
 offset_top = 49.0
-offset_right = 62.0
-offset_bottom = 72.0
+offset_right = 93.0
+offset_bottom = 116.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_m0cv7")
-text = "👟Ammo👟: 2"
 script = ExtResource("2_0o1u5")
+
+[node name="Boot" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("2_b7710")
+expand_mode = 2
+script = ExtResource("3_53jii")
+
+[node name="Amount" type="Label" parent="Boot"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 3.0
+offset_top = -5.0
+offset_right = 32.0
+offset_bottom = 64.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("1_m0cv7")
+theme_override_font_sizes/font_size = 50
+text = "2
+"
+
+[node name="Glove" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_u0juk")
+expand_mode = 2
+script = ExtResource("3_53jii")
+
+[node name="Amount" type="Label" parent="Glove"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 30.0
+offset_bottom = 64.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("1_m0cv7")
+theme_override_font_sizes/font_size = 50
+text = "2
+"
+
+[node name="Bottle" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("5_8bmx7")
+expand_mode = 2
+script = ExtResource("3_53jii")
+
+[node name="Amount" type="Label" parent="Bottle"]
+texture_filter = 1
+layout_mode = 2
+offset_left = 1.0
+offset_top = -4.0
+offset_right = 30.0
+offset_bottom = 65.0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/font = ExtResource("1_m0cv7")
+theme_override_font_sizes/font_size = 50
+text = "2
+"

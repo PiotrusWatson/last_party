@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=4 uid="uid://c4uyb55a4rjwc"]
+[gd_scene load_steps=90 format=4 uid="uid://c4uyb55a4rjwc"]
 
 [ext_resource type="Script" path="res://worlds/level_signals.gd" id="1_d6a5b"]
 [ext_resource type="PackedScene" uid="uid://bovapflawkyh" path="res://prefabs/player/player.tscn" id="1_xf4hq"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cx2awtj7b7uxg" path="res://sprites/Background/spacewindow.png" id="8_8aiih"]
 [ext_resource type="PackedScene" uid="uid://1ciexgxjj0hb" path="res://prefabs/props/radio.tscn" id="8_8o70q"]
 [ext_resource type="Texture2D" uid="uid://crdceov406tde" path="res://sprites/Background/lightblue-sheet.png" id="8_78bav"]
+[ext_resource type="FontFile" uid="uid://7kjkx5wbsxcg" path="res://UI/Fonts/Pixel NES.otf" id="10_0i1eo"]
 [ext_resource type="PackedScene" uid="uid://675tnvfdvw5a" path="res://prefabs/invisible_stuff/god.tscn" id="10_516n3"]
 [ext_resource type="PackedScene" uid="uid://x0p1kxaj6hkj" path="res://UI/anxiety_bar.tscn" id="10_genvr"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="10_wims2"]
@@ -467,11 +468,10 @@ mouse_filter = 1
 
 [node name="Ammo" parent="UI/UI" instance=ExtResource("6_2v875")]
 layout_mode = 1
-offset_left = -540.0
-offset_top = 98.0
-offset_right = -417.0
-offset_bottom = 121.0
-text = "Boots: 2"
+offset_left = -528.0
+offset_top = 124.0
+offset_right = -328.0
+offset_bottom = 188.0
 
 [node name="AnxietyBar" parent="UI/UI" instance=ExtResource("10_genvr")]
 layout_mode = 1
@@ -493,6 +493,15 @@ grow_horizontal = 0
 theme = SubResource("Theme_cy7yc")
 text = "Time Left: 30"
 script = ExtResource("10_wims2")
+
+[node name="AmmoLabel" type="Label" parent="UI/UI"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 96.0
+offset_right = 89.0
+offset_bottom = 119.0
+theme_override_fonts/font = ExtResource("10_0i1eo")
+text = "Ammo"
 
 [node name="God" parent="." instance=ExtResource("10_516n3")]
 
@@ -920,10 +929,10 @@ texture = SubResource("GradientTexture2D_h83uk")
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 z_index = -1
-offset_left = -268.0
-offset_top = 354.0
-offset_right = 289.0
-offset_bottom = 2352.0
+offset_left = -134.0
+offset_top = 366.0
+offset_right = 423.0
+offset_bottom = 2364.0
 rotation = 4.70375
 texture = SubResource("GradientTexture2D_h83uk")
 

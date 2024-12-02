@@ -27,13 +27,13 @@ func get_ammo():
 	if bonus_ammo_amount > 0:
 		bonus_ammo_amount -= 1
 		Globals.bonus_ammo_amount -= 1
-		return bonus_ammo_type
+		return {"object": bonus_ammo_type, "type": Globals.AmmoType.BEER}
 	if amount_of_ammo[ammo_cursor] <= 0:
 		ammo_cursor += 1
 		ammo_cursor %= ammo_types.size()
 	var ammo_type = ammo_types[ammo_cursor]
 	amount_of_ammo[ammo_cursor] -= 1
-	return ammo_type
+	return {"object": ammo_type, "type": ammo_cursor as Globals.AmmoType}
 
 func refill_ammo(ammo_type: Globals.AmmoType):
 	if ammo_type == Globals.AmmoType.BEER and ammo_type < max_bonus_ammo_amount:
