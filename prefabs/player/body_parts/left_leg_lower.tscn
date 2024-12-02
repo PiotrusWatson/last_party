@@ -1,17 +1,24 @@
-[gd_scene load_steps=3 format=3 uid="uid://cejt2b41n1wov"]
+[gd_scene load_steps=5 format=3 uid="uid://cejt2b41n1wov"]
 
+[ext_resource type="Script" path="res://prefabs/player/body_parts/limb.gd" id="1_ktwvr"]
 [ext_resource type="Texture2D" uid="uid://4oe46jn53rxt" path="res://sprites/Player/BodyParts/Astronaut_floating_feetL.png" id="1_vev6g"]
+[ext_resource type="Texture2D" uid="uid://47lkrooevtp5" path="res://prefabs/player/naked_body_parts/right_foot.png" id="2_lhm3r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
 radius = 2.08141
 height = 12.7845
 
-[node name="RightLegLower" type="RigidBody2D"]
+[node name="LeftLegLower" type="RigidBody2D"]
 mass = 0.01
+script = ExtResource("1_ktwvr")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Clothed" type="Sprite2D" parent="."]
 position = Vector2(-21, -4)
 texture = ExtResource("1_vev6g")
+
+[node name="Unclothed" type="Sprite2D" parent="."]
+position = Vector2(2, -1)
+texture = ExtResource("2_lhm3r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 0)

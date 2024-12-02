@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://5q8im6l7tr55"]
+[gd_scene load_steps=5 format=3 uid="uid://5q8im6l7tr55"]
 
+[ext_resource type="Script" path="res://prefabs/player/body_parts/upper_limb.gd" id="1_3vdy3"]
 [ext_resource type="Texture2D" uid="uid://dipr34ghqx313" path="res://sprites/Player/BodyParts/Astronaut_floating_legL.png" id="1_eyks7"]
 [ext_resource type="PackedScene" uid="uid://cejt2b41n1wov" path="res://prefabs/player/body_parts/left_leg_lower.tscn" id="2_yruof"]
 
@@ -10,6 +11,7 @@ height = 14.2363
 [node name="LeftLeg" type="RigidBody2D"]
 collision_layer = 0
 mass = 0.01
+script = ExtResource("1_3vdy3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-12, -4)
@@ -20,7 +22,7 @@ position = Vector2(-1, 0)
 rotation = 2.39285
 shape = SubResource("CapsuleShape2D_cjmcl")
 
-[node name="LeftLegLower" parent="." instance=ExtResource("2_yruof")]
+[node name="LowerLimb" parent="." instance=ExtResource("2_yruof")]
 position = Vector2(7, 1)
 collision_layer = 0
 collision_mask = 0
@@ -28,4 +30,4 @@ collision_mask = 0
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(3, 4)
 node_a = NodePath("..")
-node_b = NodePath("../LeftLegLower")
+node_b = NodePath("../LowerLimb")

@@ -1,20 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqv1ov364bud6"]
+[gd_scene load_steps=5 format=3 uid="uid://bqv1ov364bud6"]
 
 [ext_resource type="Texture2D" uid="uid://bv57qvmo562pj" path="res://sprites/Player/BodyParts/Astronaut_floating_handL.png" id="1_51sg8"]
+[ext_resource type="Script" path="res://prefabs/player/body_parts/limb.gd" id="1_bxnhk"]
+[ext_resource type="Texture2D" uid="uid://xj7ucf7blne2" path="res://prefabs/player/naked_body_parts/right_hand_1.png" id="2_cojbk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cjmcl"]
 radius = 2.18749
 height = 12.7692
 
 [node name="LeftArmLower" type="RigidBody2D"]
+texture_filter = 1
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
+script = ExtResource("1_bxnhk")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Clothed" type="Sprite2D" parent="."]
 z_index = 3
 position = Vector2(15, -10)
 texture = ExtResource("1_51sg8")
+
+[node name="Unclothed" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(-1, 3)
+texture = ExtResource("2_cojbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.31598

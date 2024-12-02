@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bovapflawkyh"]
+[gd_scene load_steps=22 format=3 uid="uid://bovapflawkyh"]
 
 [ext_resource type="Script" path="res://prefabs/player/player.gd" id="1_4ttaq"]
 [ext_resource type="Texture2D" uid="uid://tb5t6kmedonj" path="res://sprites/Player/BodyParts/Astronaut_floating_torso.png" id="2_iw4hd"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://5q8im6l7tr55" path="res://prefabs/player/body_parts/left_leg.tscn" id="10_v0n13"]
 [ext_resource type="PackedScene" uid="uid://be57jqugphug1" path="res://prefabs/player/body_parts/right_arm.tscn" id="11_3snor"]
 [ext_resource type="Script" path="res://prefabs/player/follow_hand.gd" id="11_a5qr1"]
+[ext_resource type="Script" path="res://prefabs/player/clothing_manager.gd" id="11_u8hge"]
 [ext_resource type="Texture2D" uid="uid://dxtlht4jxmb7h" path="res://sprites/Player/BodyParts/Astronaut_floating_head.png" id="12_jf1pr"]
 [ext_resource type="PackedScene" uid="uid://ciilee4wpa3e4" path="res://prefabs/player/body_parts/right_leg.tscn" id="12_xwh6r"]
 
@@ -81,6 +82,7 @@ target_position = Vector2(38, 0)
 script = ExtResource("6_2gfem")
 
 [node name="BodyParts" type="Node2D" parent="."]
+script = ExtResource("11_u8hge")
 
 [node name="LeftArm" parent="BodyParts" instance=ExtResource("9_xjprf")]
 z_index = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://be57jqugphug1"]
+[gd_scene load_steps=5 format=3 uid="uid://be57jqugphug1"]
 
+[ext_resource type="Script" path="res://prefabs/player/body_parts/upper_limb.gd" id="1_qqw1i"]
 [ext_resource type="Texture2D" uid="uid://cn10rlnjgdwlp" path="res://sprites/Player/BodyParts/Astronaut_floating_armR.png" id="1_s3vmh"]
 [ext_resource type="PackedScene" uid="uid://dnb2dj3kxpc4l" path="res://prefabs/player/body_parts/right_arm_lower.tscn" id="2_wpyop"]
 
@@ -11,6 +12,7 @@ height = 8.24581
 collision_layer = 0
 collision_mask = 0
 mass = 0.01
+script = ExtResource("1_qqw1i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(14, -4)
@@ -24,9 +26,9 @@ shape = SubResource("CapsuleShape2D_cjmcl")
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
 position = Vector2(-4.94, 0.81)
 node_a = NodePath("..")
-node_b = NodePath("../RightArmLower")
+node_b = NodePath("../LowerLimb")
 
-[node name="RightArmLower" parent="." instance=ExtResource("2_wpyop")]
+[node name="LowerLimb" parent="." instance=ExtResource("2_wpyop")]
 position = Vector2(-9.1, 1.375)
 collision_layer = 0
 collision_mask = 0

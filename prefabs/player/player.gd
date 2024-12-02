@@ -9,7 +9,7 @@ enum BodyParts{FEET = 0, HANDS = 1}
 @onready var thrown_stuff = $ThrownStuff
 @onready var thrower = $Components/Thrower
 @onready var ammo_manager = $Components/AmmoManager
-
+@onready var body_parts = $BodyParts
 var direction = Vector2.ZERO
 var body_count = 0
 var can_interact = false
@@ -66,6 +66,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			left_arm.activate_beer(false)
 			
 		threw_thing.emit(thing_to_throw["type"])
+		body_parts.handle_clothing()
 	
 	if event.is_action_released("Interact") and can_interact:
 		thing_interacted_with.interact()
@@ -108,6 +109,7 @@ func _on_health_dead() -> void:
 func pickup(ammo_type):
 	ammo_manager.refill_ammo(ammo_type)
 	threw_thing.emit(ammo_type)
+	body_parts.handle_clothing()
 
 func _on_drinker_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Beer") and left_arm.beer_ready:

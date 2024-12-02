@@ -30,3 +30,6 @@ func activate_beer(is_active):
 		beer_sprite.texture = full_beer_sprite
 	beer_ready = is_active
 	beer.visible = is_active
+
+func set_clothed(is_clothed):
+	hand.set_clothed(is_clothed)
