@@ -90,6 +90,8 @@ position = Vector2(-5, 7)
 collision_layer = 8
 collision_mask = 8
 force = 1.0
+full_beer_sprite = null
+empty_beer_sprite = null
 
 [node name="LeftLeg" parent="BodyParts" instance=ExtResource("10_v0n13")]
 z_index = 2

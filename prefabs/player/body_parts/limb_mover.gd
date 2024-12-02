@@ -24,6 +24,7 @@ func stretch_to_target(target: Vector2):
 
 func drink_beer():
 	beer_sprite.texture = empty_beer_sprite
+	beer_ready = false
 	
 func activate_beer(is_active):
 	if is_active:
