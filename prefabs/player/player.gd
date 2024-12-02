@@ -15,6 +15,8 @@ var body_count = 0
 var can_interact = false
 var thing_interacted_with = null
 var max_health
+var ammo
+@export var max_ammo = 2
 @export var anxiety_damage = 5
 @export var beer_healing = 30
 
@@ -24,12 +26,12 @@ signal anxiety_changed(health)
 signal dead
 signal threw_thing(ammo)
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	mover.init(self)
 	max_health = health.max_health
 	anxiety_changed.emit(health.health)
+	ammo = max_ammo
 	thrower.init(thrown_stuff)
 
 func _process(delta: float) -> void:
@@ -75,14 +77,12 @@ func set_interactability(is_interactable, thing_interacted_with):
 func get_beer():
 	left_arm.activate_beer(true)
 		
-
 func _on_personal_space_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Partiers") and body != self:
 		personal_space_violated.emit()
 		if body_count == 0:
 			anxiety_timer.start()
 		body_count += 1
-		
 		
 func _on_personal_space_body_exited(body: Node2D) -> void:
 	if body.is_in_group("Partiers") and body != self:
@@ -108,7 +108,6 @@ func _on_drinker_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Beer") and left_arm.beer_ready:
 		health.damage(-beer_healing)
 		left_arm.activate_beer(false)
-
 
 func _on_thrower_threw_something(direction: Variant, speed: Variant) -> void:
 	mover.push_direction_at_speed(direction, speed)

@@ -6,14 +6,19 @@ extends Node
 @export var recoil = 40.0
 
 signal threw_something(direction, speed)
+
 var thrown_stuff
+
 func init(thrown_stuff):
 	self.thrown_stuff = thrown_stuff
-	
-func throw_object(direction: Vector2):
-	var thrown_thing = thing_to_throw.instantiate() as RigidBody2D
+
+func throw_passed_object(object: PackedScene, direction: Vector2):
+	var thrown_thing = object.instantiate() as RigidBody2D
 	thrown_stuff.add_child(thrown_thing)
 	thrown_thing.global_position = throw_location.global_position
 	thrown_thing.apply_central_impulse(direction * throw_force)
 	threw_something.emit(-1 * direction, recoil)
+	
+func throw_saved_object(direction: Vector2):
+	throw_passed_object(thing_to_throw, direction)
 	
