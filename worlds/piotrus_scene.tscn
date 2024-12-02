@@ -962,3 +962,5 @@ script = ExtResource("12_jrm7u")
 [node name="PartygoerSpawnerStart2" type="Marker2D" parent="Spawners" groups=["StartSpawner"]]
 position = Vector2(790, -208)
 script = ExtResource("12_jrm7u")
+
+[connection signal="timeout" from="SpawnerManager/TimeToNextGuest" to="SpawnerManager" method="_on_time_to_next_guest_timeout"]
