@@ -12,6 +12,7 @@ class_name Partygoer
 @onready var head_pivot = $HeadPivot
 @onready var neck = $AnimatedSprite2D/Neck
 @onready var exclamation = $Exclamation
+@onready var head = $HeadPivot/Head
 
 @export var head_rotation_amount = 1
 var conversation_leader = false
@@ -21,6 +22,8 @@ var last_seen: Vector2
 var cone_rotation_offset
 var flipped = false
 
+var default_modulate
+
 func _ready() -> void:
 	mover.init(self)
 	cone_rotation_offset = vision_cone.rotation
@@ -28,6 +31,7 @@ func _ready() -> void:
 	neck.global_position = head_pivot.global_position
 	head_pivot.global_position = neck.global_position
 	head_rotation_amount = deg_to_rad(head_rotation_amount)
+	default_modulate = head.modulate
 	
 func change_direction_helper(new_direction):
 	flip_sprite_on_direction(new_direction)
@@ -51,8 +55,19 @@ func flip_sprite_on_direction(direction):
 		animator.scale.x = abs(animator.scale.x)
 		flipped = false
 		head_pivot.global_position = neck.global_position
-		
-		
+
+func set_transparency(amount):
+	head.modulate = Color(default_modulate[0], default_modulate[1], default_modulate[2], amount)
+	animator.modulate = Color(default_modulate[0], default_modulate[1], default_modulate[2], amount)
+
+func fade_out(speed):
+	head.modulate = lerp(head.modulate, Color.TRANSPARENT, speed)
+	animator.modulate = lerp(animator.modulate, Color.TRANSPARENT, speed)
+
+func fade_in(speed):
+	head.modulate = lerp(head.modulate, default_modulate, speed)
+	animator.modulate = lerp(animator.modulate, default_modulate, speed)
+	
 func set_colour_off_type_of_partier(body):
 	if body.is_in_group("Player"):
 		change_cone_colour(Globals.ConeHas.SEEN_PLAYER)
@@ -63,6 +78,8 @@ func go_towards_target(partier):
 	set_target(partier)
 	set_colour_off_type_of_partier(partier)
 	state_machine._transition_to_next_state("Approaching")
+	
+
 		
 func _on_vision_cone_2d_entered_vision_cone(body: Variant) -> void:
 	if state_machine.state.has_method("handle_seeing_something"):
@@ -105,6 +122,14 @@ func say_concerned():
 func say_response():
 	dialogue_displayer.display_text(Dialogues.responses.pick_random())
 
+func say_intro():
+	dialogue_displayer.display_text(Dialogues.intro_words.pick_random())
+	
 func _on_rotation_timer_timeout() -> void:
 	if state_machine.state.has_method("handle_head_pushing"):
 		state_machine.state.handle_head_pushing()
+
+
+func _on_spawn_timer_timeout() -> void:
+	if state_machine.state.has_method("handle_spawn_timer_over"):
+		state_machine.state.handle_spawn_timer_over()

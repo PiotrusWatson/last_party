@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://worlds/anxiety_bar.gd" id="12_v8vr6"]
 [ext_resource type="PackedScene" uid="uid://cchwrfy400lx4" path="res://prefabs/props/bar.tscn" id="13_cx0op"]
 [ext_resource type="Script" path="res://UI/clock.gd" id="13_y8ygh"]
-[ext_resource type="PackedScene" uid="uid://dx2implnlqytc" path="res://prefabs/props/point_1.tscn" id="14_0f1cr"]
-[ext_resource type="Script" path="res://prefabs/god.gd" id="14_rb6bv"]
+[ext_resource type="PackedScene" path="res://prefabs/props/point_1.tscn" id="14_0f1cr"]
+[ext_resource type="Script" path="res://prefabs/invisible_stuff/god.gd" id="14_rb6bv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxbmk"]
 texture = ExtResource("5_nxc8h")

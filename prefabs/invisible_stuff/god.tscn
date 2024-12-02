@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://675tnvfdvw5a"]
+
+[ext_resource type="Script" path="res://prefabs/invisible_stuff/god.gd" id="1_0eihq"]
+
+[node name="God" type="Node"]
+script = ExtResource("1_0eihq")
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 200.0
+one_shot = true
+autostart = true
+
+[node name="GameTick" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="timeout" from="GameTick" to="." method="_on_game_tick_timeout"]

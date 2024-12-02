@@ -5,6 +5,7 @@ const IDLE = "Idle"
 const APPROACHING = "Approaching"
 const CHATTING = "Chatting"
 const SEARCHING = "Searching"
+const SPAWNING = "Spawning"
 
 var partygoer : Partygoer
 
