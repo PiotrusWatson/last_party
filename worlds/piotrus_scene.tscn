@@ -501,7 +501,7 @@ offset_top = 96.0
 offset_right = 89.0
 offset_bottom = 119.0
 theme_override_fonts/font = ExtResource("10_0i1eo")
-text = "Ammo"
+text = "Inventory"
 
 [node name="God" parent="." instance=ExtResource("10_516n3")]
 

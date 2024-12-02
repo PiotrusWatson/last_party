@@ -79,6 +79,8 @@ func set_interactability(is_interactable, thing_interacted_with):
 
 func get_beer():
 	left_arm.activate_beer(true)
+	ammo_manager.refill_ammo(Globals.AmmoType.BEER)
+	threw_thing.emit(Globals.AmmoType.BEER)
 		
 func _on_personal_space_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Partiers") and body != self:
