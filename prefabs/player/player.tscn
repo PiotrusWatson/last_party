@@ -29,6 +29,7 @@ radius = 58.0086
 [sub_resource type="CircleShape2D" id="CircleShape2D_kdbi3"]
 
 [node name="Player" type="RigidBody2D" groups=["Partiers", "Player"]]
+z_index = 1
 texture_filter = 1
 mass = 30.0
 gravity_scale = 0.0
@@ -85,7 +86,7 @@ script = ExtResource("6_2gfem")
 script = ExtResource("11_u8hge")
 
 [node name="LeftArm" parent="BodyParts" instance=ExtResource("9_xjprf")]
-z_index = 2
+z_index = 1
 position = Vector2(-5, 7)
 collision_layer = 8
 collision_mask = 8
